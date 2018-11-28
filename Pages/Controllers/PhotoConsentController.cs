@@ -38,7 +38,6 @@ namespace her_care.Controllers
                 cmd.Parameters.Add("@Signature", SqlDbType.VarChar, 50).Value = model.VolunteerSignature;
 
                 cmd.CommandText = "VolunteerInsert";
-                //cmd.CommandText = "INSERT INTO Volunteer (FName, LName, TestimonialConsent, EngageConsent, MediaConsent, VolunteerSignature, DateCreated) VALUES ('Robert', 'Bolden', 1, 0, 1, 'RBolden', '12/01/2018');";
 
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -52,14 +51,7 @@ namespace her_care.Controllers
             {
                 CloseConnection(cmd);
             }
-            string FName = model.FName;
-            string LName = model.LName;
-            Boolean TestimonialConsent = model.TestimonialConsent;
-            Boolean EngageConsent = model.EngageConsent;
-            Boolean MediaConsent = model.MediaConsent;
-            string VolunteerSignature = model.VolunteerSignature;
-          //some operations goes here
-            //return View(); //return some view to the user
+
            return null;
         }
      } 
