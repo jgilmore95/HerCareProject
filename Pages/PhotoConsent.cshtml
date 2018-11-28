@@ -1,10 +1,11 @@
 @page
-@model PhotoConsentModel
+{
+@model VolunteerModel
 @{
     ViewData["Title"] = "Home page";
 }
-<html>
-	<body>
+@using(Html.BeginForm("Submit", "PhotoConsent", "", FormMethod.Post, false, ""))
+{
 		<table height="100%" width="100%" >
 			<tr height="75px">
 				<td>
@@ -32,29 +33,33 @@
                     This form is to determin your consent</i></p>
 					<br>
 					<br>
-					<p align="center">I <input type="text" placeholder="First Name"> <input type="text" placeholder="Last Name"> allow Northeast Florida Women Veterans, Inc to use my photo in any of the following ways that are checked:</p>
-                    <input type="checkbox">I grant Northeast Florida Women Veterans, Inc. the use of <b>my testimonial</b> for gran purposes, the website, promotion materials, or
-                    any advertising.
-                    <br>
-					<br>
-                    <input type="checkbox">I grant Northeast Floriad Women Veterans, Inc., its representatives and employees the right to take photographs or recordings of 
-                    me and my property while engaged in organizational or community activities.
-                    <br>
-					<br>
-                    <input type="checkbox">I agree that Northeast Florida Women Veterans, Inc. may use such photographs or recordings of me with or without my name and for any
-                    lawful purpose, including such purposes as publicity, illustration, advertising, social media, and web content
-                    <br>
-					<br>
-                    I have read and understand the above.
-					<p align="right">
-					<input type="checkbox"> By checking this you are agreeing to the <a href="terms.cshtml">terms of conditions</a> provided in the link 
-					<br>
-					<br>
-					Signature: <input type="text">
-					<br>
-					<small>Please sign using your first and last name and the last 4 digits of your phone number using no spaces</small>
-					</p>
-					
+						<p align="center">I  @Html.TextBox("FName", "", new { placeholder = "First Name", required="required" }) @Html.TextBox("LName" , "", new { placeholder = "Last Name", required="required" }) allow Northeast Florida Women Veterans, Inc to use my photo in any of the following ways that are checked:</p>
+                    	@Html.CheckBox("TestimonialConsent")I grant Northeast Florida Women Veterans, Inc. the use of <b>my testimonial</b> for grant purposes, the website, promotion materials, or
+                    	any advertising.
+                   		<br>
+						<br>
+                    	@Html.CheckBox("EngageConsent")
+						I grant Northeast Floriad Women Veterans, Inc., its representatives and employees the right to take photographs or recordings of 
+                    	me and my property while engaged in organizational or community activities.
+                    	<br>
+						<br>
+                    	@Html.CheckBox("MediaConsent")I agree that Northeast Florida Women Veterans, Inc. may use such photographs or recordings of me with or without my name and for any
+                    	lawful purpose, including such purposes as publicity, illustration, advertising, social media, and web content
+                    	<br>
+						<br>
+                    	I have read and understand the above.
+						<p align="right">
+						<input type="checkbox" required> By checking this you are agreeing to the <a href="terms.cshtml">terms of conditions</a> provided in the link 
+						<br>
+						<br>
+						Signature: @Html.TextBox("VolunteerSignature", "", new {required="required"})
+						<br>
+						<small>Please sign using your first and last name and the last 4 digits of your phone number using no spaces</small>
+						</p>
+						<p align="center">
+							<input type="submit" value="Submit"/>
+
+						</p>
 					
 				</td>
 				<td width="25%">
@@ -62,5 +67,5 @@
 				</td>
 			</tr>
 		</table>
-	</body>
-</html>
+}
+}
