@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel.DataAnnotations;
 
 namespace her_care.Pages
 {
@@ -22,6 +23,9 @@ namespace her_care.Pages
     {
         public string FirstName {get; set;}
         public string LastName {get; set;}
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime TodaysDate {get; set;}
         public DateTime DateOfBirth {get; set;}
         public string Phone {get; set;}

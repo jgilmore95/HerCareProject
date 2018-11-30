@@ -1,0 +1,113 @@
+@page
+@{
+    ViewData["Title"] = "EmergencyContact";
+}
+
+@model her_care.Models.EmergencyContact
+
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta name="viewport" content="width-device-width"/>
+        <title>EmergencyContact</title>
+        <link rel="site" href="~/css/site.css" />
+    </head>
+    <body>
+        <div class="panel panel-success">
+            <div class"panel-heading text-center"><h1>Emergency Contact Form</h1>
+            <br />
+            <h2>THE PRIVACY ACT OF 1974.5 U.S.C S.S. 552a ESTABLISHES A CODE OF FAIR INFORMATION PRACTICES THAT GOVERNS
+            THE COLLECTION, MAINTENANCE, USE, AND DISSEMINATION OF INFORMATION ABOUT INDIVIDUALS THAT IS 
+            MAINTAINED IN SYSTEMS OF RECORDS BY FEDERAL AGENCIES.
+            </h2></div>
+            <br />
+            <br />
+            <div class="panel-body">
+            <h3>Primary Emergency Contact Info:</h3>
+            <form class="p-a-1" asp-action="Intake" method="post">
+            <div asp-validation-summary="All"></div>
+            <div class="form-group">
+            <label asp-for="FirstNameEC">Primary Contact Name:</label>
+            <input class="form-control" asp-for="FirstNameEC"/>       
+            </div>
+            <div class="form-group">
+            <label asp-for="LastNameEC">Primary Contact Last Name:</label>
+            <input class="form-control" asp-for="LastNameEC"/>    
+            </div>
+            <div class="form-group">
+            <label asp-for="RelationshipEC">Relationship:</label>
+            <input class="form-control" asp-for="RelationshipEC"/>    
+            </div>
+            <div class="form-group">
+            <label asp-for="AddressEC">Physical Address (For internal use only):</label>
+            <input class="form-control" asp-for="AddressEC"/>
+            </div>
+            <div class="form-group">
+            <label asp-for="CityEC">City:</label>
+            <input class="form-control" asp-for="CityEC"/>
+            </div>
+            <div class="form-group">
+            <label asp-for="StateEC">State:</label>
+            <input class="form-control" asp-for="StateEC"/>
+            </div>
+            <div class="form-group">
+            <label asp-for="ZipcodeEC">ZipCode:</label>
+            <input class="form-control" asp-for="ZipcodeEC"/>
+            </div>
+            <div class="form-group">
+            <label asp-for="MainPhoneEC">Main Phone Number: </label>
+            <input class="from-control" asp-for="MainPhoneEC"/>
+            </div>
+            <div class="form-group">
+            <label asp-for="SecondaryPhoneEC">Main Phone Number: </label>
+            <input class="from-control" asp-for="SecondaryPhoneEC"/>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <h3>Secondary Emergency Contact Info:</h3>
+            <div asp-validation-summary="All"></div>
+            <div class="form-group">
+            <label asp-for="FirstNameEC2">Primary Contact Name:</label>
+            <input class="form-control" asp-for="FirstNameEC2"/>       
+            </div>
+            <div class="form-group">
+            <label asp-for="LastNameEC2">Primary Contact Last Name:</label>
+            <input class="form-control" asp-for="LastNameEC2"/>    
+            </div>
+            <div class="form-group">
+            <label asp-for="RelationshipEC2">Relationship:</label>
+            <input class="form-control" asp-for="RelationshipEC2"/>    
+            </div>
+            <div class="form-group">
+            <label asp-for="AddressEC2">Physical Address (For internal use only):</label>
+            <input class="form-control" asp-for="AddressEC2"/>
+            </div>
+            <div class="form-group">
+            <label asp-for="CityEC2">City:</label>
+            <input class="form-control" asp-for="CityEC2"/>
+            </div>
+            <div class="form-group">
+            <label asp-for="StateEC2">State:</label>
+            <input class="form-control" asp-for="StateEC2"/>
+            </div>
+            <div class="form-group">
+            <label asp-for="ZipcodeEC2">ZipCode:</label>
+            <input class="form-control" asp-for="ZipcodeEC2"/>
+            </div>
+            <div class="form-group">
+            <label asp-for="MainPhoneEC2">Main Phone Number: </label>
+            <input class="from-control" asp-for="MainPhoneEC2"/>
+            </div>
+            <div class="form-group">
+            <label asp-for="SecondaryPhoneEC2">Main Phone Number: </label>
+            <input class="from-control" asp-for="SecondaryPhoneEC2"/>
+            </div>
+            </form>
+            <input type="submit" name="submit" value="submit" /><br>
+            </div>
+        </div>
+    </body>
+</html>
