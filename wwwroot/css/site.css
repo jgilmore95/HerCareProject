@@ -111,6 +111,12 @@ h3 {
     font-size: small;
     text-decoration: underline;
 }
+h2 {
+    color: #000000;
+    text-align: auto;
+    width: 100%;
+    font-size: small;
+}
 
 .form-group {
     margin-bottom: 10px;
