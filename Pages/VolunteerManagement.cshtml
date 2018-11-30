@@ -1,0 +1,101 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<html>
+ <head>
+  <meta charset = "utf-8">
+  <title>Volunteers Management</title>
+  <link rel = "stylesheet" type = "text/css" href = "VM_CSS.css">
+ </head>
+ 
+ <body><div class="vm"><br>
+     <button class="" value="">View Time Sheet</button><br><br>
+<br>
+     <button class="" value="">Search Volunteer</button>
+     From: <input type="date" min="1970-01-01" max="2020-12-31" value="2015-10-21" />
+     To : <input type="date" value="2018-10-01"/><br><br>
+     
+     
+     <button class="" value="">Edit Volunteer</button>
+     <button class="" value="">Delete Volunteer</button><br><br>
+
+
+     Volunteer Name:<input type="text" name="firstname"><br><br>
+     <h2> Volinteers Time Sheet</h2>
+
+<table>
+ <thead>
+     <tr>
+         <th>Date</th>
+         <th>Name</th> 
+         <th>Time in</th> 
+         <th>Time out</th>
+         <th>Hours Worked</th> 
+         <th>Total Hours/Week</th> 
+     </tr>
+ </thead>
+    <tbody class=strip>
+        <tr>
+            <td>06/06/2018</td> 
+            <td>volunteer1</td> 
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        
+        <tr>
+            <td>06/06/2018</td> 
+            <td>volunteer2</td> 
+            <td>2</td> 
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>06/06/2018</td> 
+            <td>volunteer3</td> 
+            <td>3</td> 
+            <td>3</td> 
+            <td>3</td> 
+            <td>3</td> 
+        </tr>
+        <tr>
+            <td>06/06/2018</td> 
+            <td>volunteer4</td> 
+            <td>4</td> 
+            <td>4</td>
+            <td>4</td>
+            <td>4</td>
+        </tr>
+        
+        <tr>
+            <td>06/06/2018</td> 
+            <td>volunteer5</td> 
+            <td>5</td>
+            <td>5</td>
+            <td>5</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>06/06/2018</td> 
+            <td>volunteer6</td> 
+            <td>6</td> 
+            <td>6</td> 
+            <td>6</td> 
+            <td>6</td> 
+            
+        </tr>
+    <tbody>
+     </table>
+      <br><br>
+     </div>
+    
+
+
+ </body>
+</html>
