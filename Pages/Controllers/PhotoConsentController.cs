@@ -28,7 +28,7 @@ namespace her_care.Controllers
 
             try
             {
-                cmd = Connect();
+                cmd = Connect("VolunteerInsert");
 
                 cmd.Parameters.Add("@FName", SqlDbType.VarChar, 50).Value = model.FName;
                 cmd.Parameters.Add("@LName", SqlDbType.VarChar, 50).Value = model.LName;
@@ -36,10 +36,6 @@ namespace her_care.Controllers
                 cmd.Parameters.Add("@Engage", SqlDbType.Bit).Value = model.EngageConsent;
                 cmd.Parameters.Add("@Media", SqlDbType.Bit).Value = model.MediaConsent;
                 cmd.Parameters.Add("@Signature", SqlDbType.VarChar, 50).Value = model.VolunteerSignature;
-
-                cmd.CommandText = "VolunteerInsert";
-
-                cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.ExecuteNonQuery();
             }

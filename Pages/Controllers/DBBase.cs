@@ -9,12 +9,13 @@ using System.Data.SqlClient;
 using System.Collections.Specialized;
 using System.Configuration;
 using System.Configuration.Assemblies;
+using System.Data;
  
 namespace her_care.Controllers
 {
     public class DBBase : Controller
     {
-    protected static SqlCommand Connect()
+    protected static SqlCommand Connect(string storedProcName)
     {
         String cnxStr = Environment.GetEnvironmentVariable("connString");
 
@@ -22,8 +23,8 @@ namespace her_care.Controllers
 
         cnx.Open();
 
-        SqlCommand cmd = new SqlCommand();
-        cmd.Connection = cnx;
+        SqlCommand cmd = new SqlCommand(storedProcName, cnx);
+        cmd.CommandType = CommandType.StoredProcedure;
         return cmd;
     }
          
