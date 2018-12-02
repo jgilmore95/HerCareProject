@@ -202,3 +202,29 @@ searchbox
     top:30%;
     left:50%;
 }
+
+div.volunteerprofile {
+    display:grid;
+    grid-template-columns: max-content max-content;
+    grid-gap:5px;
+}
+
+table.searchresult {
+	border-collapse: collapse;
+	text-align:center;
+	width: 650px;
+}
+
+table.strip 
+	tr:nth-child(odd) {background: rgb(209, 198, 236);}
+
+
+
+th {
+    color: blue;
+}
+
+.volunteermanagmentbutton {
+    text-align: center;
+    margin: 0 auto;
+}

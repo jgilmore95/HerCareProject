@@ -12,88 +12,37 @@
   <link rel = "stylesheet" type = "text/css" href = "VM_CSS.css">
  </head>
  
- <body><div class="vm"><br>
-     <button class="" value="">View Time Sheet</button><br><br>
-<br>
-     <button class="" value="">Search Volunteer</button>
-     From: <input type="date" min="1970-01-01" max="2020-12-31" value="2015-10-21" />
-     To : <input type="date" value="2018-10-01"/><br><br>
+ <body><div><br>
+        <form method="post" name="formVolunteerSearch" id="formVolunteerSearch">
+            <label style="margin: 0px 25px 0px 00px;">Volunteer's Name:</label><input type="text" name="volunteerName" style="margin: 12px 90px;" required><br>
+            <label>From: </label> <input type="date" min="1970-01-01" max="2020-12-31" placeholder="2015-10-21" />
+            <label style="margin: 10px 4px 12px 40px;">To :</label> <input type="date" placeholder="2018-10-01"/><br><br>	
+             <!-- <button class="btn btn-primary" value="">View Time Sheet</button><br><br> -->
+            <br>
+            <button type="submit" class="btn btn-primary" value="Submit">Search Volunteer</button>
+        </form><br>
      
-     
-     <button class="" value="">Edit Volunteer</button>
-     <button class="" value="">Delete Volunteer</button><br><br>
+     <!-- <h2> Volinteers Time Sheet</h2> -->
+<div class = "" id="volunteer_display">
+            <h4>Match Volunteer(s) Found:</h4>
 
+                <h3>Click on a volunteer name to view <strong>Time Sheet Details</strong> </h3>
 
-     Volunteer Name:<input type="text" name="firstname"><br><br>
-     <h2> Volinteers Time Sheet</h2>
-
-<table>
- <thead>
-     <tr>
-         <th>Date</th>
-         <th>Name</th> 
-         <th>Time in</th> 
-         <th>Time out</th>
-         <th>Hours Worked</th> 
-         <th>Total Hours/Week</th> 
-     </tr>
- </thead>
-    <tbody class=strip>
-        <tr>
-            <td>06/06/2018</td> 
-            <td>volunteer1</td> 
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-        </tr>
-        
-        <tr>
-            <td>06/06/2018</td> 
-            <td>volunteer2</td> 
-            <td>2</td> 
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
-        </tr>
-        <tr>
-            <td>06/06/2018</td> 
-            <td>volunteer3</td> 
-            <td>3</td> 
-            <td>3</td> 
-            <td>3</td> 
-            <td>3</td> 
-        </tr>
-        <tr>
-            <td>06/06/2018</td> 
-            <td>volunteer4</td> 
-            <td>4</td> 
-            <td>4</td>
-            <td>4</td>
-            <td>4</td>
-        </tr>
-        
-        <tr>
-            <td>06/06/2018</td> 
-            <td>volunteer5</td> 
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>06/06/2018</td> 
-            <td>volunteer6</td> 
-            <td>6</td> 
-            <td>6</td> 
-            <td>6</td> 
-            <td>6</td> 
-            
-        </tr>
+        <table>
+        <thead>
+        </thead>
+        <tbody class=strip>
+        <tr><td><a asp-page="/VolunteerInfo">John Smith</a></td></tr>
+        <tr><td>Volunteer 1</td></tr>
+        <tr><td>Volunteer 2</td></tr>
+        <tr><td>Volunteer 3</td></tr>
+        <tr><td>Volunteer 4</td></tr>
+        <tr><td>Volunteer 5</td></tr>
     <tbody>
      </table>
       <br><br>
-     </div>
+
+    </div>
     
 
 
