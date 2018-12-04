@@ -1,23 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace her_care.Pages
+namespace her_care.Models
 {
-    public class IntakeModel : PageModel
-    {
-        public void OnGet()
-        {
-
-        }
-    }
-  
 
 
-    
+
+
     public class Demographics
     {
         public string FirstName {get; set;}
@@ -36,11 +25,43 @@ namespace her_care.Pages
          public string EmergencyContactPhone {get; set;}
          public string BranchOfService {get; set;}
          public DateTime EntryDate {get; set;}
-         public DateTime DischargDate {get; set;}
+         public DateTime DischargeDate {get; set;}
          public string DischargeType {get; set;}
          public Boolean CombatVet {get; set;}
-         public string DisabliityRating {get; set;}
+         public string DisabilityRating {get; set;}
          public Boolean ActiveDuty {get; set;} //were you or are you on active duty, reserves, or national guard
+          public Boolean Employed {get; set;}
+        public Boolean Student {get; set;}
+        public Boolean SelfEmployed {get; set;}
+        public Boolean Contractor {get; set;}
+        public Boolean WorkStudy {get; set;}
+        public Boolean Intern {get; set;}
+        public Boolean Unemployed {get; set;}
+        public string Other {get; set;}
+         public Boolean OnStreet {get; set;}
+        public Boolean SofaSurfing {get; set;}
+        public Boolean Shelter {get; set;}
+        public Boolean TransitionalHousing {get; set;}
+        public Boolean GroupHome {get; set;}
+        public Boolean Rental {get; set;}
+        public Boolean OwnHome {get; set;}
+         public Boolean FriendsOrRelatives {get; set;}
+        public Boolean Alone {get; set;}
+        public Boolean Temporary {get; set;}
+        public Boolean Permanent {get; set;}
+        public Boolean BusinessResources {get; set;}
+        public Boolean DayCare {get; set;}
+        public Boolean Housing {get; set;}
+        public Boolean Clothing {get; set;}
+        public Boolean DisabilityClaim {get; set;}
+        public Boolean Legal {get; set;}
+        public Boolean Counseling {get; set;}
+        public Boolean EducationalOrVocationalRehab {get; set;}
+        public Boolean Utilities {get; set;}
+        public Boolean Food {get; set;}
+        public Boolean Employment {get; set;}
+        public Boolean Transportation {get; set;}
+        
     }
 
     public class CurrentEmploymentStatus
@@ -55,7 +76,7 @@ namespace her_care.Pages
         public string Other {get; set;}
     }
 
-    public class Livingsituation
+    public class LivingSituation
     {
         public Boolean OnStreet {get; set;}
         public Boolean SofaSurfing {get; set;}
@@ -67,7 +88,7 @@ namespace her_care.Pages
         public string Other {get; set;}
     }
     
-    public class Livingarrangments
+    public class LivingArrangments
     {
         public Boolean FriendsOrRelatives {get; set;}
         public Boolean Alone {get; set;}
@@ -104,4 +125,3 @@ namespace her_care.Pages
     }
     
 }
-

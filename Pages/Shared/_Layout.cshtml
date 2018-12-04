@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - her_care</title>
+    <title>@ViewData["Title"] - HerCare</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -29,11 +29,11 @@
                 <!-- <a asp-page="/Index" class="navbar-brand">HerCare System</a> -->
                 <img src="~/images/northeast-florida-women-veterans-association-navlogo.png">
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+            <div class="navbar-collapse collapse" >
+                <ul class="nav navbar-nav" >
                     <li><a asp-page="/Index">Home</a></li>
                     <li><a asp-page="/Intake">Intake</a></li>
-                    <li><a asp-page="/VolunteerHours">Volunteer</a></li>
+                    <li><a asp-page="/VolunteerVerification">Volunteer</a></li>
                     <li><a asp-page="/Cohort">HerTotalWellness</a></li>
                     <li><a asp-page="/AdministrationPortal">Adminstration Portal</a></li>
                     <li><a asp-page="/SignIn">SignIn</a></li>
@@ -44,12 +44,28 @@
 
     <partial name="_CookieConsentPartial" />
 
+
     <div class="container body-content">
-        @RenderBody()
+        <table width="100%" align="center">
+            <tr>
+                <td>
+                    @RenderBody()
+                </td>
+            </tr>
+            
         <hr />
-        <footer>
-            <p>&copy; 2018 - HerCare</p>
-        </footer>
+        
+        
+            <tr align="center">
+                <td>
+                <footer>
+                     <p>&copy; 2018 - HerCare</p>
+                </footer>     
+                </td>
+            </tr>
+           
+        
+        </table>
     </div>
 
     <environment include="Development">

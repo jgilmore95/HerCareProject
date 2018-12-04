@@ -3,14 +3,26 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<body>
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-<link rel="stylesheet" href="~/css/sit.css">
+    <link rel="stylesheet" href="~/css/site.css">
+</head>
+<body>
+ <!--   
 <div>This is the home page. This will most likely be the landing page for selecting admin, check in, volunteer hours.</div>
-<div>
-    <a asp-page="/Intake">Click here for check-in page</a> ||
-    <a asp-page="/VolunteerHours">Click here for Volunteer Page</a> ||
-    <a asp-page="/Cohort">Click here for the cohort page</a> || 
-    <a asp-page="/AdministrationPortal">Click here for Administration Page</a>
+-->
+<div class="col-md-4 text-center buttons" >
+  <table class="box" align="center"  width="100%">
+        <tr><td>    <a asp-page="/Intake"><button type="button" class="btn btn-primary">First time here?</button></a> </br></td></tr>
+        <tr><td>    <a asp-page="/VolunteerVerification"><button type="button" class="btn btn-primary">Are you a volunteer?</button></a> </br></td></tr>
+        <tr><td>    <a asp-page="/Cohort"><button type="button" class="btn btn-primary">HerTotalWellness</button></a>  </br></td></tr>
+        <tr><td>    <a asp-page="/AdministrationPortal"><button type="button" class="btn btn-primary">AdministrationPortal</button></a> </br></td></tr>
 </div>
 </body>
+</html>

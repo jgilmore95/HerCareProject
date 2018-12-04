@@ -11,7 +11,7 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-    padding-top: 50px;
+   
 }
 
 /* Carousel */
@@ -45,6 +45,7 @@ body {
 
 .navbar-collapse {
     background-color: rgb(83, 81, 81);
+    text-align: center;
 
 }
 .navbar-inverse{
@@ -59,4 +60,145 @@ body {
 .navbar{
     background-color: rgb(83, 81, 81);
 
+}
+
+.navbar-nav {
+    margin: 7.5px -15px;
+    text-align: center;
+
+  }
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+    text-align: center;
+  }
+
+#footer {
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:30px;
+    width:100%;
+    background:#999;
+ }
+
+
+header{
+    text-align: center;
+    font-size: 38pt;
+    padding-bottom: 50px;
+}
+
+h1 {
+    color: #2b2b2b;
+    text-align: center;
+    width: 100%;
+    font-size: xx-large;
+    background: rgb(249, 226, 237);
+
+}
+h2 {
+    color: #000000;
+    text-align: center;
+    width: 100%;
+    font-size: x-small;
+}
+h3 {
+    color: #2b2b2b;
+    text-align: center;
+    width: 100%;
+    font-size: small;
+    text-decoration: underline;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    text-align: left;
+}
+#wrapper
+{
+  border: 1px solid #888;
+  display: inline-block;
+  padding:20px;
+  
+}
+.panel-body{
+    background: rgb(249, 226, 237);
+
+}
+.panel-success {
+    background: rgb(249, 226, 237);
+
+}
+
+
+
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+/* 
+searchbox
+*/
+
+.search {
+  width: 100%;
+  position: relative
+}
+
+.searchTerm {
+  float: left;
+  width: 100%;
+  border: 3px solid rgb(204, 0, 61);
+  padding: 5px;
+  height: 40px;
+  border-radius: 5px;
+  outline: none;
+  color: rgb(216, 30, 101);
+}
+
+.searchTerm:focus{
+  color: rgb(204, 58, 0);
+}
+
+.searchButton {
+  position: absolute;  
+  right: -100px;
+  width: 80px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: rgb(204, 0, 51);
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 50%;
+  position: relative;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-top: 20px
+}
+
+.div-buttons{
+    padding-top: 20%
+}
+.box {
+    width:300px;
+    height:300px;
+    
+    position:fixed;
+    margin-left:-150px; /* half of width */
+    margin-top:-150px;  /* half of height */
+    top:30%;
+    left:50%;
 }

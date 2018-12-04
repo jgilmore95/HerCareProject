@@ -1,6 +1,198 @@
 @page
-@model IndexModel
+
 @{
     ViewData["Title"] = "Home page";
 }
-<div>This will be where we put the intake form.</div>
+@model her_care.Models.Demographics
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width"/>
+        <title>Intake</title>
+        <link rel="site" href="~/css/site.css" /> 
+    </head>
+    <body>
+        <!-- <nav class="navbar">
+             <a asp-page="/Intake">Click here for check-in page</a> ||
+              <a asp-page="/VolunteerHours">Click here for Volunteer Page</a> ||
+                <a asp-page="/Cohort">Click here for the cohort page</a> || 
+                  <a asp-page="/AdministrationPortal">Click here for Administration Page</a>
+        </nav> -->
+        <h2>THE PRIVACY ACT OF 1974.5 U.S.C S.S. 552a ESTABLISHES A CODE OF FAIR INFORMATION PRACTICES THAT GOVERNS
+            THE COLLECTION, MAINTENANCE, USE, AND DISSEMINATION OF INFORMATION ABOUT INDIVIDUALS THAT IS 
+            MAINTAINED IN SYSTEMS OF RECORDS BY FEDERAL AGENCIES.
+        </h2>
+    <div class="panel panel-success">
+        <div class"panel-heading text-center"> <h1>Intake Form</h1></div>
+        <div class="panel-body">
+            <h3>DEMOGRAPHICS</h3>
+            <form class="p-a-1" asp-action="Intake" method="post">
+                <div asp-validation-summary="All"></div>
+                <div class="form-group">
+                    <label asp-for="FirstName">First Name:</label>
+                    <input class="form-control" asp-for="FirstName"/>                    
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName">Last Name:</label>
+                    <input class="form-control" asp-for="LastName"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="TodaysDate">Today's Date:</label>
+                    <input class="form-control" asp-for="TodaysDate"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DateOfBirth">DOB (mm/dd/year):</label>
+                    <input class="form-control" asp-for="DateOfBirth"/>                    
+                </div>
+                <div class="form-group">
+                    <label asp-for="Phone">Phone:</label>
+                    <input class="form-control" asp-for="Phone">
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmailAddress">Email:</label>
+                    <input class="form-control" asp-for="EmailAddress"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AddressOne">Address:</label>
+                    <input class="form-control" asp-for="AddressOne"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="City">City:</label>
+                    <input class="form-control" asp-for="City"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="State">State:</label>
+                    <input class="form-control" asp-for="State"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Zip">ZipCode:</label>
+                    <input class="form-control" asp-for="Zip"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmergencyContactFirst">Emergency Contact First Name:</label>
+                    <input class="form-control" asp-for="EmergencyContactFirst"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmergencyContactLast">Emergency Contact Last Name:</label>
+                    <input class="form-control" asp-for="EmergencyContactLast"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BranchOfService">Branch Of Service:</label>
+                    <input class="form-control" asp-for="BranchOfService"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EntryDate">Entry Date:</label>
+                    <input class="form-control" asp-for="EntryDate"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DischargeDate">Discharge Date:</label>
+                    <input class="form-control" asp-for="DischargeDate"/>
+                </div>
+                <div id="wrapper">
+                    <label asp-for="CombatVet">Are You A Combat Vet?</label>
+                    <p>
+                        <input type="radio" name="yes_no">Yes</input>
+                    </p>
+                    <p>
+                        <input type="radio" name="yes_no" checked>No</input>
+                    </p>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DisabilityRating">Disibility Rating:</label>
+                    <input class="form-control" asp-for="DisabilityRating"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ActiveDuty">Were you or are you on Active Duty, in the Reserves or the National Guard?</label>
+                    <label asp-for="ActiveDuty">Active Duty</label>
+                    <input type="checkbox" name="ActiveDuty" value="Active Duty"/>
+                     <label asp-for="ActiveDuty">Reserves</label>
+                    <input type="checkbox" name="ActiveDuty" value="Reserves"/>
+                    <label asp-for="ActiveDuty">National Guard</label>
+                    <input type="checkbox" name="ActiveDuty" value="National Guard"/>
+                </div>
+                <h3>CURRENT EMPLOYMENT STATUS (check all that apply)</h3>
+                <div class="form-group">
+                    <label asp-for="Employed">Employed</label>
+                    <input type="checkbox" name="Employed" value="Employed"/>
+                     <label asp-for="Student">Student</label>
+                    <input type="checkbox" name="Student" value="Student"/>
+                     <label asp-for="SelfEmployed">Self Employed</label>
+                    <input type="checkbox" name="SelfEmployed" value="Self-Employed"/>
+                     <label asp-for="Contractor">Contractor</label>
+                    <input type="checkbox" name="Contractor" value="Contractor"/>
+                     <label asp-for="WorkStudy">Word Study</label>
+                    <input type="checkbox" name="WorkStudy" value="Work Study"/>
+                     <label asp-for="Intern">Intern</label>
+                    <input type="checkbox" name="Intern" value="Intern"/>
+                     <label asp-for="Unemployed">Unemployed</label>
+                    <input type="checkbox" name="Unemployed" value="Unemployed"/>
+                     <label asp-for="Other">Other</label>
+                    <input type="checkbox" name="Other" value="Other"/>
+                </div>
+                <h3>LIVING SITUATION</h3>
+                <div class="form-group">
+                     <label asp-for="OnStreet">On Street</label>
+                    <input type="checkbox" name="OnStreet" value="On Street"/>
+                     <label asp-for="SofaSurfing">Sofa Surfing</label>
+                    <input type="checkbox" name="SofaSurfing" value="Sofa Surfing"/>
+                     <label asp-for="Shelter">Shelter</label>
+                    <input type="checkbox" name="Shelter" value="Shelter"/>
+                     <label asp-for="TransitionalHousing">Transitional Housing</label>
+                    <input type="checkbox" name="TransitionalHousing" value="Transitional Housing"/>
+                     <label asp-for="GroupHome">Group Home</label>
+                    <input type="checkbox" name="GroupHome" value="Group Home"/>
+                     <label asp-for="Rental">Rental</label>
+                    <input type="checkbox" name="Rental" value="Rental"/>
+                     <label asp-for="OwnHome">Own Home</label>
+                    <input type="checkbox" name="OwnHome" value="Own Home"/>
+                     <label asp-for="Other">Other</label>
+                    <input type="checkbox" name="Other" value="Other"/>
+                </div>
+                <h3>LIVING ARRANGEMENTS</h3>
+                <div class="form-group">
+                     <label asp-for="FriendsOrRelatives">Friends/Relatives</label>
+                    <input type="checkbox" name="FreindsOrRelatives" value="Friends/Relatives"/>
+                     <label asp-for="Alone">Alone</label>
+                    <input type="checkbox" name="Alone" value="Alone"/>
+                     <label asp-for="Temporary">Temporary</label>
+                    <input type="checkbox" name="Temporary" value="Temporary"/>
+                     <label asp-for="Permanent">Permanent</label>
+                    <input type="checkbox" name="Permanent" value="Permanent"/>
+                </div>
+                 <h3>SERVICE NEEDS (Check all that apply)</h3>
+                <div class="form-group">
+                     <label asp-for="BusinessResources">Business Resources</label>
+                    <input type="checkbox" name="BusinessResources" value="Business Resources"/>
+                     <label asp-for="DayCare">Day Care</label>
+                    <input type="checkbox" name="DayCare" value="Day Care"/>
+                     <label asp-for="Housing">Housing</label>
+                    <input type="checkbox" name="Housing" value="Housing"/>
+                     <label asp-for="Clothing">Clothing</label>
+                    <input type="checkbox" name="Clothing" value="Clothing"/>
+                     <label asp-for="DisabilityClaim">Disibility Claim</label>
+                    <input type="checkbox" name="DisabilityClaim" value="Disability Claim"/>
+                     <label asp-for="Legal">Legal</label>
+                    <input type="checkbox" name="Legal" value="Legal"/>
+                     <label asp-for="Counseling">Counseling</label>
+                    <input type="checkbox" name="Counseling" value="Counseling"/>
+                     <label asp-for="EducationalOrVocationalRehab">Education/Vocationaal Rehab</label>
+                    <input type="checkbox" name="EducationalOrVocationalRehab" value="Education/Vocational Rehab"/>
+                     <label asp-for="Utilities">Utilities</label>
+                    <input type="checkbox" name="Utilities" value="Utilities"/>
+                     <label asp-for="Food">Food</label>
+                    <input type="checkbox" name="Food" value="Food"/>
+                     <label asp-for="Employment">Employment</label>
+                    <input type="checkbox" name="Employment" value="Employment"/>
+                     <label asp-for="Transportation">Transportation</label>
+                    <input type="checkbox" name="Transportation" value="Transportation"/>
+                     <label asp-for="Other">Other</label>
+                    <input type="checkbox" name="Other" value="Other"/>
+                </div>    
+            </form>
+        </div>
+    </div>
+
+
+    </body>
+</html>

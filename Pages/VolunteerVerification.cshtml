@@ -1,0 +1,92 @@
+@page
+@model her_care.Models.volunteerVerification
+@{
+    ViewData["Title"] = "Volunteer Verification";
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width"/>
+        <title>VolunteerVerification</title>
+        <link rel="site" href="~/css/site.css" /> 
+    </head>
+    <body>
+        <!-- <nav class="navbar">
+             <a asp-page="/Intake">Click here for check-in page</a> ||
+              <a asp-page="/VolunteerHours">Click here for Volunteer Page</a> ||
+                <a asp-page="/Cohort">Click here for the cohort page</a> || 
+                  <a asp-page="/AdministrationPortal">Click here for Administration Page</a>
+        </nav> -->
+
+<div class="panel panel-success">
+        <div class"panel-heading text-center"> 
+        <div class="panel-body">
+        <br />
+        <br />
+            <h3>Volunteer/Work Verification Form</h3>
+            <br />
+            <br />
+        <form class="p-a-1" asp-action="Intake" method="post">
+                <div asp-validation-summary="All"></div>
+                <div class="form-group">
+                    <label asp-for="FirstNameVV">First Name:</label>
+                    <input class="form-control" asp-for="FirstNameVV"/>                    
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastNameVV">Last Name:</label>
+                    <input class="form-control" asp-for="LastNameVV"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="VolunteerAgency">Volunteer Agency:</label>
+                    <input class="form-control" asp-for="VolunteerAgency"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="AgentPhone">Agency Phone (###)-###-#####:</label>
+                    <input class="form-control" asp-for="AgentPhone"/>                    
+                </div>
+                <div class="form-group">
+                    <label asp-for="VolunteerContact">Volunteer Contact:</label>
+                    <input class="form-control" asp-for="VolunteerContact">
+                </div>
+                <div class="form-group">
+                    <label asp-for="HoursCompleted">Hours Completed:</label>
+                    <input class="form-control" asp-for="HoursCompleted"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="VolunteerDate">Date Of Volunteer Hours (mm/dd/yyyy):</label>
+                    <input class="form-control" asp-for="VolunteerDate"/>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DescriptionService">Description Of Service Provided:</label>
+                    <input class="form-control" asp-for="DescriptionService"/>
+                </div>
+
+                <br />
+                <br />
+                <br />
+
+                <div class="fomr-group">
+                    <label asp-for="VolunteerSignature">Your Signature:</label>
+                    <input class="form-control" asp-for="VolunteerSignature"/>
+
+                    <label asp-for="DateOfSignature">Date (mm/dd/yyyy):</label>
+                    <input class="form-control" asp-for="DateOfSignature"/>
+
+                     <label asp-for="VolunteerContactSig">Volunteer Contact Signature:</label>
+                    <input class="form-control" asp-for="VolunteerContactSig"/>
+
+                    <label asp-for="DateOfSignature2">Date (mm/dd/yyyy):</label>
+                    <input class="form-control" asp-for="DateOfSignature2"/>
+
+                     <label asp-for="VolunteerSignatureBox">By Clicking This Box I Verify that I have Completed The Volunteer Hours As Stated </label>
+                    <input type="checkbox" name="VolunteerSignatureBox" value="VolunteerSignatureBox"/>
+                </div>
+                <button type="submit" class="btn btn-submit">Submit</button>
+            </form>
+            
+            </div>
+        </div>    
+        
+    </body>
+</html>
