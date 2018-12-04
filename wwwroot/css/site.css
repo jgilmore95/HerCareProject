@@ -121,16 +121,45 @@ h2 {
 .form-group {
     margin-bottom: 10px;
     text-align: left;
+    clear: right;
+    float: left;
+
+}
+.form-control{
+    border: 2px solid rgb(28, 8, 117);
+    border-radius: 6px;
+    width: 350px;
+    text-align: left;
+    
+    margin-right: 25px;
+    
+}
+.form-groupright {
+    margin-bottom: 10px;
+    clear: left;
+}
+.form-controlright{
+    border: 2px solid rgb(28, 8, 117);
+    border-radius: 6px;
+    width: 350px;
+    
+    
+    
+
 }
 #wrapper
 {
   border: 1px solid #888;
   display: inline-block;
   padding:20px;
+  border: 2px solid rgb(28, 8, 117);
+  border-radius: 6px;
   
 }
 .panel-body{
     background: rgb(249, 226, 237);
+    border: 2px solid rgb(28, 8, 117);
+    border-radius: 6px;
 
 }
 .panel-success {
@@ -163,6 +192,7 @@ h2 {
   position: relative;
   padding-left: 35px;
   margin-bottom: 12px;
+  padding-right: 25px;
   cursor: pointer;
   font-size: 15px;
   -webkit-user-select: none;
