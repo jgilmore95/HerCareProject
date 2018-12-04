@@ -111,34 +111,155 @@ h3 {
     font-size: small;
     text-decoration: underline;
 }
+h2 {
+    color: #000000;
+    text-align: auto;
+    width: 100%;
+    font-size: small;
+}
 
 .form-group {
     margin-bottom: 10px;
     text-align: left;
+    clear: right;
+    float: left;
+
+}
+.form-control{
+    border: 2px solid rgb(28, 8, 117);
+    border-radius: 6px;
+    width: 350px;
+    text-align: left;
+    
+    margin-right: 25px;
+    
+}
+.form-groupright {
+    margin-bottom: 10px;
+    clear: left;
+}
+.form-controlright{
+    border: 2px solid rgb(28, 8, 117);
+    border-radius: 6px;
+    width: 350px;
+    
+    
+    
+
 }
 #wrapper
 {
   border: 1px solid #888;
   display: inline-block;
   padding:20px;
+  border: 2px solid rgb(28, 8, 117);
+  border-radius: 6px;
   
 }
 .panel-body{
     background: rgb(249, 226, 237);
+    border: 2px solid rgb(28, 8, 117);
+    border-radius: 6px;
 
 }
 .panel-success {
     background: rgb(249, 226, 237);
 
 }
+.button {
+    background-color: rgb(15, 52, 107); 
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 0.4s;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    
+}
+.button:hover {
+    background-color: rgb(100, 156, 240);
+    color: white;
+}
+.buttonCenter{
+    text-align: center;
+    
+}
 
-
-
-
-
-
-
-
+.buttonHome {
+    background-color: rgb(15, 52, 107); 
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 1.25s;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 400px;
+    
+}
+.buttonHome:hover {
+    background-color: rgb(100, 156, 240);
+    color: white;
+}
+.checkboxLeft{
+    text-align: left;
+    display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  padding-right: 25px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.checkboxLeft input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+  .checkboxLeft:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  .checkboxLeft input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  .checkboxLeft input:checked ~ .checkmark:after {
+    display: block;
+  }
+  .checkboxLeft .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
 /* 
@@ -193,12 +314,13 @@ searchbox
     padding-top: 20%
 }
 .box {
-    width:300px;
+    width: 300px;
     height:300px;
     
     position:fixed;
     margin-left:-150px; /* half of width */
     margin-top:-150px;  /* half of height */
     top:30%;
-    left:50%;
+    left: 50%;
+    
 }

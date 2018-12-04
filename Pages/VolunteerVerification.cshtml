@@ -29,35 +29,35 @@
             <br />
         <form class="p-a-1" asp-action="Intake" method="post">
                 <div asp-validation-summary="All"></div>
-                <div class="form-group">
+                <div class="form-groupright">
                     <label asp-for="FirstNameVV">First Name:</label>
                     <input class="form-control" asp-for="FirstNameVV"/>                    
                 </div>
-                <div class="form-group">
+                <div class="form-groupright">
                     <label asp-for="LastNameVV">Last Name:</label>
                     <input class="form-control" asp-for="LastNameVV"/>
                 </div>
-                <div class="form-group">
+                <div class="form-groupright">
                     <label asp-for="VolunteerAgency">Volunteer Agency:</label>
                     <input class="form-control" asp-for="VolunteerAgency"/>
                 </div>
-                <div class="form-group">
+                <div class="form-groupright">
                     <label asp-for="AgentPhone">Agency Phone (###)-###-#####:</label>
                     <input class="form-control" asp-for="AgentPhone"/>                    
                 </div>
-                <div class="form-group">
+                <div class="form-groupright">
                     <label asp-for="VolunteerContact">Volunteer Contact:</label>
                     <input class="form-control" asp-for="VolunteerContact">
                 </div>
-                <div class="form-group">
+                <div class="form-groupright">
                     <label asp-for="HoursCompleted">Hours Completed:</label>
                     <input class="form-control" asp-for="HoursCompleted"/>
                 </div>
-                <div class="form-group">
-                    <label asp-for="VolunteerDate">Date Of Volunteer Hours (mm/dd/yyyy):</label>
+                <div class="form-groupright">
+                    <label asp-for="VolunteerDate">Date Of Volunteer Hours:</label>
                     <input class="form-control" asp-for="VolunteerDate"/>
                 </div>
-                <div class="form-group">
+                <div class="form-groupright">
                     <label asp-for="DescriptionService">Description Of Service Provided:</label>
                     <input class="form-control" asp-for="DescriptionService"/>
                 </div>
@@ -66,7 +66,7 @@
                 <br />
                 <br />
 
-                <div class="fomr-group">
+                <div class="form-groupright">
                     <label asp-for="VolunteerSignature">Your Signature:</label>
                     <input class="form-control" asp-for="VolunteerSignature"/>
 
@@ -82,7 +82,9 @@
                      <label asp-for="VolunteerSignatureBox">By Clicking This Box I Verify that I have Completed The Volunteer Hours As Stated </label>
                     <input type="checkbox" name="VolunteerSignatureBox" value="VolunteerSignatureBox"/>
                 </div>
-                <button type="submit" class="btn btn-submit">Submit</button>
+            <div class="buttonCenter">
+            <a href="https://localhost:5001/" class="button" :hover type="submit" value="S U B M I T">S U B M I T</a>
+            </div>
             </form>
             
             </div>

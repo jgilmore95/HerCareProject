@@ -102,93 +102,168 @@
                     <label asp-for="DisabilityRating">Disibility Rating:</label>
                     <input class="form-control" asp-for="DisabilityRating"/>
                 </div>
-                <div class="form-group">
-                    <label asp-for="ActiveDuty">Were you or are you on Active Duty, in the Reserves or the National Guard?</label>
-                    <label asp-for="ActiveDuty">Active Duty</label>
-                    <input type="checkbox" name="ActiveDuty" value="Active Duty"/>
-                     <label asp-for="ActiveDuty">Reserves</label>
+                <div class="checkboxLeft">
+                    <label class="h4" asp-for="ActiveDuty">Were you or are you on Active Duty, in the Reserves or the National Guard?</label>
+                    <label class="checkboxLeft">Active Duty
+                    <input type="checkbox" name="ActiveDuty" value="ActiveDuty"/>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="ActiveDuty">Reserves
                     <input type="checkbox" name="ActiveDuty" value="Reserves"/>
-                    <label asp-for="ActiveDuty">National Guard</label>
+                    <span class="checkmark"></span>
+                     </label>
+                    <label class="checkboxLeft" asp-for="ActiveDuty">National Guard
                     <input type="checkbox" name="ActiveDuty" value="National Guard"/>
+                     <span class="checkmark"></span>
+                     </label>
                 </div>
                 <h3>CURRENT EMPLOYMENT STATUS (check all that apply)</h3>
-                <div class="form-group">
-                    <label asp-for="Employed">Employed</label>
+                <div class="checkboxLeft">
+                    <label class="checkboxLeft" asp-for="Employed">Employed
                     <input type="checkbox" name="Employed" value="Employed"/>
-                     <label asp-for="Student">Student</label>
-                    <input type="checkbox" name="Student" value="Student"/>
-                     <label asp-for="SelfEmployed">Self Employed</label>
-                    <input type="checkbox" name="SelfEmployed" value="Self-Employed"/>
-                     <label asp-for="Contractor">Contractor</label>
-                    <input type="checkbox" name="Contractor" value="Contractor"/>
-                     <label asp-for="WorkStudy">Word Study</label>
-                    <input type="checkbox" name="WorkStudy" value="Work Study"/>
-                     <label asp-for="Intern">Intern</label>
-                    <input type="checkbox" name="Intern" value="Intern"/>
-                     <label asp-for="Unemployed">Unemployed</label>
+                     <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="Student">Student
+                    <input type="checkboxLeft" name="Student" value="Student"/>
+                     <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="SelfEmployed">Self Employed
+                    <input type="checkboxLeft" name="SelfEmployed" value="Self-Employed"/>
+                     <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="Contractor">Contractor
+                    <input type="checkboxLeft" name="Contractor" value="Contractor"/>
+                     <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="WorkStudy">Word Study
+                    <input type="checkboxLeft" name="WorkStudy" value="Work Study"/>
+                     <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="Intern">Intern
+                    <input type="checkboxLeft" name="Intern" value="Intern"/>
+                     <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="Unemployed">Unemployed
                     <input type="checkbox" name="Unemployed" value="Unemployed"/>
-                     <label asp-for="Other">Other</label>
-                    <input type="checkbox" name="Other" value="Other"/>
+                     <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="Other">Other
+                    <input type="checkboxLeft" name="Other" value="Other"/>
+                     <span class="checkmark"></span>
+                     </label>
                 </div>
                 <h3>LIVING SITUATION</h3>
-                <div class="form-group">
-                     <label asp-for="OnStreet">On Street</label>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" asp-for="OnStreet">On Street
                     <input type="checkbox" name="OnStreet" value="On Street"/>
-                     <label asp-for="SofaSurfing">Sofa Surfing</label>
+                     <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="SofaSurfing">Sofa Surfing
                     <input type="checkbox" name="SofaSurfing" value="Sofa Surfing"/>
-                     <label asp-for="Shelter">Shelter</label>
+                     <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="Shelter">Shelter
                     <input type="checkbox" name="Shelter" value="Shelter"/>
-                     <label asp-for="TransitionalHousing">Transitional Housing</label>
+                     <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="TransitionalHousing">Transitional Housing
                     <input type="checkbox" name="TransitionalHousing" value="Transitional Housing"/>
-                     <label asp-for="GroupHome">Group Home</label>
+                     <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="GroupHome">Group Home
                     <input type="checkbox" name="GroupHome" value="Group Home"/>
-                     <label asp-for="Rental">Rental</label>
+                     <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="Rental">Rental
                     <input type="checkbox" name="Rental" value="Rental"/>
-                     <label asp-for="OwnHome">Own Home</label>
+                     <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="OwnHome">Own Home
                     <input type="checkbox" name="OwnHome" value="Own Home"/>
-                     <label asp-for="Other">Other</label>
+                     <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="Other">Other
                     <input type="checkbox" name="Other" value="Other"/>
+                     <span class="checkmark"></span>
+                     </label>
                 </div>
                 <h3>LIVING ARRANGEMENTS</h3>
-                <div class="form-group">
-                     <label asp-for="FriendsOrRelatives">Friends/Relatives</label>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" asp-for="FriendsOrRelatives">Friends/Relatives
                     <input type="checkbox" name="FreindsOrRelatives" value="Friends/Relatives"/>
-                     <label asp-for="Alone">Alone</label>
+                     <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="Alone">Alone
                     <input type="checkbox" name="Alone" value="Alone"/>
-                     <label asp-for="Temporary">Temporary</label>
+                    <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="Temporary">Temporary
                     <input type="checkbox" name="Temporary" value="Temporary"/>
-                     <label asp-for="Permanent">Permanent</label>
+                    <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="Permanent">Permanent
                     <input type="checkbox" name="Permanent" value="Permanent"/>
+                    <span class="checkmark"></span>
+                     </label>
                 </div>
                  <h3>SERVICE NEEDS (Check all that apply)</h3>
-                <div class="form-group">
-                     <label asp-for="BusinessResources">Business Resources</label>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" asp-for="BusinessResources">Business Resources
                     <input type="checkbox" name="BusinessResources" value="Business Resources"/>
-                     <label asp-for="DayCare">Day Care</label>
-                    <input type="checkbox" name="DayCare" value="Day Care"/>
-                     <label asp-for="Housing">Housing</label>
-                    <input type="checkbox" name="Housing" value="Housing"/>
-                     <label asp-for="Clothing">Clothing</label>
+                    <span class="checkmark"></span>
+                     </label>
+                     <label asp-for="DayCare">Day Care
+                    <input class="checkboxLeft" type="checkbox" name="DayCare" value="Day Care"/>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label asp-for="Housing">Housing
+                    <input class="checkboxLeft" type="checkbox" name="Housing" value="Housing"/>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="Clothing">Clothing
                     <input type="checkbox" name="Clothing" value="Clothing"/>
-                     <label asp-for="DisabilityClaim">Disibility Claim</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="DisabilityClaim">Disibility Claim
                     <input type="checkbox" name="DisabilityClaim" value="Disability Claim"/>
-                     <label asp-for="Legal">Legal</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="Legal">Legal
                     <input type="checkbox" name="Legal" value="Legal"/>
-                     <label asp-for="Counseling">Counseling</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="Counseling">Counseling
                     <input type="checkbox" name="Counseling" value="Counseling"/>
-                     <label asp-for="EducationalOrVocationalRehab">Education/Vocationaal Rehab</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="EducationalOrVocationalRehab">Education/Vocationaal Rehab
                     <input type="checkbox" name="EducationalOrVocationalRehab" value="Education/Vocational Rehab"/>
-                     <label asp-for="Utilities">Utilities</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="Utilities">Utilities
                     <input type="checkbox" name="Utilities" value="Utilities"/>
-                     <label asp-for="Food">Food</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="Food">Food
                     <input type="checkbox" name="Food" value="Food"/>
-                     <label asp-for="Employment">Employment</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="Employment">Employment
                     <input type="checkbox" name="Employment" value="Employment"/>
-                     <label asp-for="Transportation">Transportation</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="Transportation">Transportation
                     <input type="checkbox" name="Transportation" value="Transportation"/>
-                     <label asp-for="Other">Other</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="Other">Other
                     <input type="checkbox" name="Other" value="Other"/>
+                    <span class="checkmark"></span>
+                    </label>
                 </div>    
+            <div class="buttonCenter">
+            <a href="https://localhost:5001/" class="button" :hover type="submit" value="S U B M I T">S U B M I T</a>
+            </div>
             </form>
         </div>
     </div>

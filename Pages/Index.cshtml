@@ -18,11 +18,14 @@
 <div>This is the home page. This will most likely be the landing page for selecting admin, check in, volunteer hours.</div>
 -->
 <div class="col-md-4 text-center buttons" >
-  <table class="box" align="center"  width="100%">
-        <tr><td>    <a asp-page="/Intake"><button type="button" class="btn btn-primary">First time here?</button></a> </br></td></tr>
-        <tr><td>    <a asp-page="/VolunteerVerification"><button type="button" class="btn btn-primary">Are you a volunteer?</button></a> </br></td></tr>
-        <tr><td>    <a asp-page="/Cohort"><button type="button" class="btn btn-primary">HerTotalWellness</button></a>  </br></td></tr>
-        <tr><td>    <a asp-page="/AdministrationPortal"><button type="button" class="btn btn-primary">AdministrationPortal</button></a> </br></td></tr>
+  <table class="box"  width="100%">
+        <tr><td>    <a asp-page="/Intake" type="button" class="buttonHome" :hover>First time here?</a> </br></td></tr>
+        <tr><td>    <a asp-page="/VolunteerVerification" type="button" class="buttonHome" :hover>Are you a volunteer?</button></a> </br></td></tr>
+        <tr><td>    <a asp-page="/Cohort" type="button" class="buttonHome" :hover>HerTotalWellness</button></a>  </br></td></tr>
+        <tr><td>    <a asp-page="/AdministrationPortal"><button type="button" class="buttonHome">AdministrationPortal</button></a> </br></td></tr>
+        <tr><td>    <a asp-page="/MonetaryAssistance"><button type="button" class="buttonHome">Monetary Assistance</button></a> </br></td></tr>
+        <tr><td>    <a asp-page="/EmergencyContact"><button type="button" class="buttonHome">Emergency Contact </button></a> </br></td></tr>
+
 </div>
 </body>
 </html>

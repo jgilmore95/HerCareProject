@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
         <meta name="viewport" content="width-device-width"/>
         <title>
             MonetaryAssistence
@@ -21,129 +22,114 @@
             <h3>DEMOGRAPHICS</h3>
             <form class="p-a-1" asp-action="MonetaryAssistance" method="post">
                 <div asp-validation-summary="All"></div>
-                <div class="form-group">
-                    <label asp-for="FirstNameMA">First Name:</label>
+                <div class="form-groupright">
+                  <label asp-for="FirstNameMA">First Name:</label>
                     <input class="form-control" asp-for="FirstNameMA"/>                    
                 </div>
-                <div class="form-group">
-                    <label asp-for="LastNameMA">Last Name:</label>
+                <div class="form-groupright">
+                  <label asp-for="LastNameMA">Last Name:</label>
                     <input class="form-control" asp-for="LastNameMA"/>
                 </div>
-                <div class="form-group">
-                    <label asp-for="MonetaryDate">Today's Date:</label>
-                    @Html.EditorFor(model => model.MonetaryDate, new { @type = "date" })
+                <div class="form-groupright">
+                  <label asp-for="MonetaryDate">Today's Date:</label>
                     <input class="form-control" asp-for="MonetaryDate"/>
                 </div>
-                <div class="form-group">
-                    <label asp-for="streetNumberMA">Street number: </label>
+                <div class="form-groupright">
+                  <label asp-for="streetNumberMA">Street number: </label>
                     <input class="form-control" asp-for="streetNumberMA"/>                    
                 </div>
-                <div class="form-group">
-                    <label asp-for="StreetNameMA">Street Name: </label>
+                <div class="form-groupright">
+                  <label asp-for="StreetNameMA">Street Name: </label>
                     <input class="form-control" asp-for="StreetNameMA"/>                    
                 </div>
-                <div class="form-group">
-                    <label asp-for="ZipcodeMA">Street Name: </label>
+                <div class="form-groupright">
+                  <label asp-for="ZipcodeMA">Zip Code: </label>
                     <input class="form-control" asp-for="ZipcodeMA"/>                    
                 </div>
-                 <div class="form-group">
-                    <label asp-for="StateMA">Street: </label>
+                 <div class="form-groupright">
+                  <label asp-for="StateMA">State: </label>
                     <input class="form-control" asp-for="StateMA"/>                    
                 </div>
-                <div class="form-group">
-                   @Html.TextBoxFor(m => m.EmailMA, new { @placeholder="E-mail"}) <br />
+                <div class="form-groupright">
+                    <input class="form-control"
+              @Html.TextBoxFor(m => m.EmailMA, new { @placeholder="E-mail"}) <br />
                 @Html.ValidationMessageFor(m => m.EmailMA)
+                </input>
+                </div>
+                <div class="form-groupright">
+                  <label asp-for="PhoneMA">Phone: </label>
+                    <input class="from-control" asp-for="PhoneMA"/>
                 </div>
                 <br />
                 <br />
-                <div class="form-group">
+                <div class="form-groupright">
                     <label asp-for="MoneyMA">Amount Provided: $</label>
                     <input class="form-control" asp-for="MoneyMA"/>   
-                    
-        <br>
-        <table>
-            <br>
-            <tr>
-                <br>
-                <td>Lights and Water Bill </td>
-                <td>
-                    <input type="checkbox" name="departments" value="1" /></td>
-                <br>
-            </tr>
-            <br>
-            <tr>
-                <br>
-                <td>Rental Deposit</td>
-                <td>
-                    <input type="checkbox" name="departments" value="2" /></td>
-                <br>
-            </tr>
-            <br>
-            <tr>
-                <br>
-                <td>OverDue Rent</td>
-                <td>
-                    <input type="checkbox" name="departments" value="3" /></td>
-                <br>
-            </tr>
-            <br>
-            <tr>
-                <br>
-                <td>ID Card</td>
-                <td>
-                    <input type="checkbox" name="departments" value="4" /></td>
-                <br>
-            </tr>
-            <br>
-            <tr>
-                <br>
-                <td>Temporary Housing</td>
-                <td>
-                    <input type="checkbox" name="departments" value="5" /></td>
-                <br>
-            </tr>
-            <br>
-            <tr>
-                <br>
-                <td>Gas</td>
-                <td>
-                    <input type="checkbox" name="departments" value="6" /></td>
-                <br>
-            </tr>
-            <br>
-            <tr>
-                <br>
-                <td>Food Gift Card</td>
-                <td>
-                    <input type="checkbox" name="departments" value="7" /></td>
-                <br>
-            </tr>
-            <br>
-            <tr>
-                <br>
-                <td>Bus Pass</td>
-                <td>
-                    <input type="checkbox" name="departments" value="7" /></td>
-                <br>
-            </tr>
-            <br>
-        </table>
-        <br>  
                 </div>
                 <br />
-                 <div class="form-group">
-                    <label asp-for="ClientSigMA">Street: </label>
+                <div class="form-groupright">
+                <h5>Services Provided</h5>
+                <div class="checkboxLeft">
+                    <label class="checkboxLeft">Lights and Water Bill 
+                    <input type="checkbox" name="departments" value="1">
+                    <span class="checkmark"></span>
+                    </label>
+
+                    <label class="checkboxLeft">Rental Deposit
+                    <input type="checkbox" name="departments" value="2">
+                    <span class="checkmark"></span>
+                    </label>
+
+                    <label class="checkboxLeft">OverDue Rent
+                    <input type="checkbox" name="departments" value="3">
+                    <span class="checkmark"></span>
+                    </label>
+
+                    <label class="checkboxLeft">ID Card
+                    <input type="checkbox" name="departments" value="4">
+                    <span class="checkmark"></span>
+                    </label>
+                      
+
+                    <label class="checkboxLeft">Temporary Housing
+                    <input type="checkbox" name="departments" value="5">
+                    <span class="checkmark"></span>
+                    </label>
+                    
+
+                    <label class="checkboxLeft">Gas
+                    <input type="checkbox" name="departments" value="6">
+                    <span class="checkmark"></span>
+                    </label>
+                    
+
+                    <label class="checkboxLeft">Food Gift Card
+                    <input type="checkbox" name="departments" value="7">
+                    <span class="checkmark"></span>
+                    </label>
+                    
+
+                    <label class="checkboxLeft">Bus Pass
+                    <input type="checkbox" name="departments" value="8">
+                    <span class="checkmark"></span>
+                    </label>
+                    </div>
+                </div>
+                    <br />
+                 <div class="form-groupright">
+                  <label asp-for="ClientSigMA">Volunteer Signature: </label>
                     <input class="form-control" asp-for="ClientSigMA"/>                    
                 </div>
                 <br />
-                 <div class="form-group">
-                    <label asp-for="StaffSigMA">Street: </label>
+                 <div class="form-groupright">
+                  <label asp-for="StaffSigMA">Staff Signature: </label>
                     <input class="form-control" asp-for="StaffSigMA"/>                    
                 </div>
                 <br / >
                 <br />
-               
-                <input type="submit" name="submit" value="submit" /><br>
+            <div class="buttonCenter">
+            <a href="https://localhost:5001/" class="button" :hover type="submit" value="S U B M I T">S U B M I T</a>
+            </div>
             </form>    
         </div>      
     </body>
