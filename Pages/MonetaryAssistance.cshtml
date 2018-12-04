@@ -22,50 +22,52 @@
             <h3>DEMOGRAPHICS</h3>
             <form class="p-a-1" asp-action="MonetaryAssistance" method="post">
                 <div asp-validation-summary="All"></div>
-                <div class="form-right">
-                    <label asp-for="FirstNameMA">First Name:</label>
+                <div class="form-groupright">
+                  <label asp-for="FirstNameMA">First Name:</label>
                     <input class="form-control" asp-for="FirstNameMA"/>                    
                 </div>
-                <div class="form-right">
-                    <label asp-for="LastNameMA">Last Name:</label>
+                <div class="form-groupright">
+                  <label asp-for="LastNameMA">Last Name:</label>
                     <input class="form-control" asp-for="LastNameMA"/>
                 </div>
-                <div class="form-right">
-                    <label asp-for="MonetaryDate">Today's Date:</label>
+                <div class="form-groupright">
+                  <label asp-for="MonetaryDate">Today's Date:</label>
                     <input class="form-control" asp-for="MonetaryDate"/>
                 </div>
-                <div class="form-right">
-                    <label asp-for="streetNumberMA">Street number: </label>
+                <div class="form-groupright">
+                  <label asp-for="streetNumberMA">Street number: </label>
                     <input class="form-control" asp-for="streetNumberMA"/>                    
                 </div>
-                <div class="form-right">
-                    <label asp-for="StreetNameMA">Street Name: </label>
+                <div class="form-groupright">
+                  <label asp-for="StreetNameMA">Street Name: </label>
                     <input class="form-control" asp-for="StreetNameMA"/>                    
                 </div>
-                <div class="form-right">
-                    <label asp-for="ZipcodeMA">Zip Code: </label>
+                <div class="form-groupright">
+                  <label asp-for="ZipcodeMA">Zip Code: </label>
                     <input class="form-control" asp-for="ZipcodeMA"/>                    
                 </div>
-                 <div class="form-right">
-                    <label asp-for="StateMA">State: </label>
+                 <div class="form-groupright">
+                  <label asp-for="StateMA">State: </label>
                     <input class="form-control" asp-for="StateMA"/>                    
                 </div>
-                <div class="form-right">
-                @Html.TextBoxFor(m => m.EmailMA, new { @placeholder="E-mail"}) <br />
+                <div class="form-groupright">
+                    <input class="form-control"
+              @Html.TextBoxFor(m => m.EmailMA, new { @placeholder="E-mail"}) <br />
                 @Html.ValidationMessageFor(m => m.EmailMA)
+                </input>
                 </div>
-                <div class="form-right">
-                    <label asp-for="PhoneMA">Phone: </label>
+                <div class="form-groupright">
+                  <label asp-for="PhoneMA">Phone: </label>
                     <input class="from-control" asp-for="PhoneMA"/>
                 </div>
                 <br />
                 <br />
-                <div class="form-right">
+                <div class="form-groupright">
                     <label asp-for="MoneyMA">Amount Provided: $</label>
                     <input class="form-control" asp-for="MoneyMA"/>   
                 </div>
                 <br />
-                <div class="form-right">
+                <div class="form-groupright">
                 <h5>Services Provided</h5>
                 <div class="checkboxLeft">
                     <label class="checkboxLeft">Lights and Water Bill 
@@ -114,13 +116,13 @@
                     </div>
                 </div>
                     <br />
-                 <div class="form-right">
-                    <label asp-for="ClientSigMA">Volunteer Signature: </label>
+                 <div class="form-groupright">
+                  <label asp-for="ClientSigMA">Volunteer Signature: </label>
                     <input class="form-control" asp-for="ClientSigMA"/>                    
                 </div>
                 <br />
-                 <div class="form-right">
-                    <label asp-for="StaffSigMA">Staff Signature: </label>
+                 <div class="form-groupright">
+                  <label asp-for="StaffSigMA">Staff Signature: </label>
                     <input class="form-control" asp-for="StaffSigMA"/>                    
                 </div>
                 <br / >

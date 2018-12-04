@@ -188,44 +188,78 @@
                      </label>
                 </div>
                 <h3>LIVING ARRANGEMENTS</h3>
-                <div class="form-group">
-                     <label asp-for="FriendsOrRelatives">Friends/Relatives</label>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" asp-for="FriendsOrRelatives">Friends/Relatives
                     <input type="checkbox" name="FreindsOrRelatives" value="Friends/Relatives"/>
-                     <label asp-for="Alone">Alone</label>
+                     <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="Alone">Alone
                     <input type="checkbox" name="Alone" value="Alone"/>
-                     <label asp-for="Temporary">Temporary</label>
+                    <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="Temporary">Temporary
                     <input type="checkbox" name="Temporary" value="Temporary"/>
-                     <label asp-for="Permanent">Permanent</label>
+                    <span class="checkmark"></span>
+                     </label>
+                     <label class="checkboxLeft" asp-for="Permanent">Permanent
                     <input type="checkbox" name="Permanent" value="Permanent"/>
+                    <span class="checkmark"></span>
+                     </label>
                 </div>
                  <h3>SERVICE NEEDS (Check all that apply)</h3>
-                <div class="form-group">
-                     <label asp-for="BusinessResources">Business Resources</label>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" asp-for="BusinessResources">Business Resources
                     <input type="checkbox" name="BusinessResources" value="Business Resources"/>
-                     <label asp-for="DayCare">Day Care</label>
-                    <input type="checkbox" name="DayCare" value="Day Care"/>
-                     <label asp-for="Housing">Housing</label>
-                    <input type="checkbox" name="Housing" value="Housing"/>
-                     <label asp-for="Clothing">Clothing</label>
+                    <span class="checkmark"></span>
+                     </label>
+                     <label asp-for="DayCare">Day Care
+                    <input class="checkboxLeft" type="checkbox" name="DayCare" value="Day Care"/>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label asp-for="Housing">Housing
+                    <input class="checkboxLeft" type="checkbox" name="Housing" value="Housing"/>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="Clothing">Clothing
                     <input type="checkbox" name="Clothing" value="Clothing"/>
-                     <label asp-for="DisabilityClaim">Disibility Claim</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="DisabilityClaim">Disibility Claim
                     <input type="checkbox" name="DisabilityClaim" value="Disability Claim"/>
-                     <label asp-for="Legal">Legal</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="Legal">Legal
                     <input type="checkbox" name="Legal" value="Legal"/>
-                     <label asp-for="Counseling">Counseling</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="Counseling">Counseling
                     <input type="checkbox" name="Counseling" value="Counseling"/>
-                     <label asp-for="EducationalOrVocationalRehab">Education/Vocationaal Rehab</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="EducationalOrVocationalRehab">Education/Vocationaal Rehab
                     <input type="checkbox" name="EducationalOrVocationalRehab" value="Education/Vocational Rehab"/>
-                     <label asp-for="Utilities">Utilities</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="Utilities">Utilities
                     <input type="checkbox" name="Utilities" value="Utilities"/>
-                     <label asp-for="Food">Food</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="Food">Food
                     <input type="checkbox" name="Food" value="Food"/>
-                     <label asp-for="Employment">Employment</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="Employment">Employment
                     <input type="checkbox" name="Employment" value="Employment"/>
-                     <label asp-for="Transportation">Transportation</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="Transportation">Transportation
                     <input type="checkbox" name="Transportation" value="Transportation"/>
-                     <label asp-for="Other">Other</label>
+                    <span class="checkmark"></span>
+                    </label>
+                     <label class="checkboxLeft" asp-for="Other">Other
                     <input type="checkbox" name="Other" value="Other"/>
+                    <span class="checkmark"></span>
+                    </label>
                 </div>    
             <div class="buttonCenter">
             <a href="https://localhost:5001/" class="button" :hover type="submit" value="S U B M I T">S U B M I T</a>

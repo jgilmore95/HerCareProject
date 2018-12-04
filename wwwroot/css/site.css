@@ -185,6 +185,26 @@ h2 {
 }
 .buttonCenter{
     text-align: center;
+    
+}
+
+.buttonHome {
+    background-color: rgb(15, 52, 107); 
+    -webkit-transition-duration: 0.4s; 
+    transition-duration: 1.25s;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 400px;
+    
+}
+.buttonHome:hover {
+    background-color: rgb(100, 156, 240);
+    color: white;
 }
 .checkboxLeft{
     text-align: left;
@@ -294,12 +314,13 @@ searchbox
     padding-top: 20%
 }
 .box {
-    width:300px;
+    width: 300px;
     height:300px;
     
     position:fixed;
     margin-left:-150px; /* half of width */
     margin-top:-150px;  /* half of height */
     top:30%;
-    left:50%;
+    left: 50%;
+    
 }
