@@ -11,31 +11,31 @@ using System.Configuration;
 using System.Configuration.Assemblies;
 using System.Data;
 using her_care.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace her_care.Controllers
 {
-    public class PhotoConsentController : DBBase
+    public class SignInController : DBBase
     {
         private void InsertConsent()
         {
         }
    
-        [Route("PhotoConsent/Index")]
+        [Route("SignIn/Index")]
         [HttpPost]
-        public ActionResult Submit(VolunteerModel model)
+        public ActionResult Submit(CSignInModel model)
         {
             SqlCommand cmd = null;
 
             try
             {
-                cmd = Connect("VolunteerInsert");
+                cmd = Connect("CSignInINSERT");
 
                 cmd.Parameters.Add("@FName", SqlDbType.VarChar, 50).Value = model.FName;
                 cmd.Parameters.Add("@LName", SqlDbType.VarChar, 50).Value = model.LName;
-                cmd.Parameters.Add("@Testimonial", SqlDbType.Bit).Value = model.TestimonialConsent;
-                cmd.Parameters.Add("@Engage", SqlDbType.Bit).Value = model.EngageConsent;
-                cmd.Parameters.Add("@Media", SqlDbType.Bit).Value = model.MediaConsent;
-                cmd.Parameters.Add("@Signature", SqlDbType.VarChar, 50).Value = model.VolunteerSignature;
+                cmd.Parameters.Add("@Organization", SqlDbType.VarChar, 150).Value = model.Organization;
+                cmd.Parameters.Add("@Email", SqlDbType.VarChar, 75).Value = model.Email;
+                cmd.Parameters.Add("@BranchID", SqlDbType.Int).Value = model.BranchofService;
 
                 cmd.ExecuteNonQuery();
             }
@@ -47,9 +47,8 @@ namespace her_care.Controllers
             {
                 CloseConnection(cmd);
             }
- 
- 
-           return View();
+            
+            return RedirectToPage("/ThankYou");
         }
      } 
 }

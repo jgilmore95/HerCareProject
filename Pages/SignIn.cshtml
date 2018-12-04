@@ -1,0 +1,63 @@
+@page
+@model CSignInModel
+@{
+    ViewData["Title"] = "Home page";
+}
+@using(Html.BeginForm("Submit", "SignIn", "", FormMethod.Post, false, ""))
+{
+    <table>
+        <tr>
+            <td>
+                First Name:  @Html.TextBox("FName", "", new { placeholder = "", required="required" })
+            </td>
+            <td>
+                LastName:  @Html.TextBox("LName", "", new { placeholder = "", required="required" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Organization:  @Html.TextBox("Organization", "", new { placeholder = "", required="required" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                E-Mail:  @Html.TextBox("eMail", "", new { placeholder = "", required="required" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Branch of Service:  @{List<SelectListItem> listItems= new List<SelectListItem>();
+                                    listItems.Add(new SelectListItem
+                                    {
+                                        Text = "Air Force",
+                                        Value = "1"
+                                    });
+                                    listItems.Add(new SelectListItem
+                                    {
+                                        Text = "Army",
+                                        Value = "2"
+                                    });
+                                    listItems.Add(new SelectListItem
+                                    {
+                                        Text = "Coast Guard",
+                                        Value = "3"
+                                    });
+                                    listItems.Add(new SelectListItem
+                                    {
+                                        Text = "Marine Corps",
+                                        Value = "4"
+                                    });
+                                    listItems.Add(new SelectListItem
+                                    {
+                                        Text = "Navy",
+                                        Value = "5",
+                                    });
+
+                                    
+                            }
+@Html.DropDownListFor(model => model.BranchofService, listItems, "-- Select Status --")
+        <input type="submit" Value="Submit">
+            </td>
+        </tr>
+    </table>
+}
