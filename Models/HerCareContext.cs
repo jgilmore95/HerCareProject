@@ -11,6 +11,6 @@ namespace her_care.Models
         public HerCareContext(DbContextOptions<HerCareContext> options) : base(options)
         { }
 
-        public DbSet<TestingData> Tests { get; set; }
+        public DbSet<Test> Tests { get; set; }
     }
 }

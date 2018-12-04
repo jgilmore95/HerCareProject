@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,7 +6,7 @@ using her_care.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace her_care.Pages
+    namespace her_care.Pages
 {
     public class IndexModel : PageModel
     {
@@ -34,6 +34,8 @@ namespace her_care.Pages
         // public ActionResult Intake(){
         //     return View();
         // }
+            
+        
 
 
     }
