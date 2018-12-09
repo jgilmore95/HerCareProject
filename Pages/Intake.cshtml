@@ -39,11 +39,11 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="TodaysDate">Today's Date:</label>
-                    <input class="form-control" asp-for="TodaysDate"/>
+                    <input type="date" class="form-control" asp-for="TodaysDate"/>
                 </div>
                 <div class="form-group">
-                    <label asp-for="DateOfBirth">DOB (mm/dd/year):</label>
-                    <input class="form-control" asp-for="DateOfBirth"/>                    
+                    <label asp-for="DateOfBirth">DOB:</label>
+                    <input type="date" class="form-control" asp-for="DateOfBirth"/>                    
                 </div>
                 <div class="form-group">
                     <label asp-for="Phone">Phone:</label>
@@ -83,20 +83,20 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="EntryDate">Entry Date:</label>
-                    <input class="form-control" asp-for="EntryDate"/>
+                    <input type="date" class="form-control" asp-for="EntryDate"/>
                 </div>
                 <div class="form-group">
                     <label asp-for="DischargeDate">Discharge Date:</label>
-                    <input class="form-control" asp-for="DischargeDate"/>
+                    <input type="date" class="form-control" asp-for="DischargeDate"/>
                 </div>
                 <div id="wrapper">
                     <label asp-for="CombatVet">Are You A Combat Vet?</label>
-                    <p>
-                        <input type="radio" name="yes_no">Yes</input>
-                    </p>
-                    <p>
-                        <input type="radio" name="yes_no" checked>No</input>
-                    </p>
+                <p class="btn-switch">					
+                <input type="radio" id="yes" name="switch" class="btn-switch__radio btn-switch__radio_yes" />
+                <input type="radio" checked id="no" name="switch" class="btn-switch__radio btn-switch__radio_no" />		
+                <label for="yes" class="btn-switch__label btn-switch__label_yes"><span class="btn-switch__txt">Yes</span></label>								 
+                <label for="no" class="btn-switch__label btn-switch__label_no"><span class="btn-switch__txt">No</span></label>							
+                </p>        
                 </div>
                 <div class="form-group">
                     <label asp-for="DisabilityRating">Disibility Rating:</label>
