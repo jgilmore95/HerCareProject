@@ -28,9 +28,31 @@ namespace her_care.Controllers
         [HttpGet]
         public ActionResult Search(Test model, string q)
         {
+            SqlCommand cmd = null;
+
+            try
+            {
+                cmd = Connect("ClientSearch");
+
+                cmd.Parameters.Add("@PName", SqlDbType.VarChar, 1).Value = model.PName;
+
+                cmd.ExecuteNonQuery();
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                CloseConnection(cmd);
+            }
            // var model = GetSearchResults(q);
+
+           /*
             var users = context.Tests.Where(x => x.Name == q).OrderBy(x => x.Id);
             var user = context.Tests.FirstOrDefault(x => x.Name == q);
+            */
             return View("Shared/Client");
         }
 
