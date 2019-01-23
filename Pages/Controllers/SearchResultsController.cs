@@ -14,16 +14,16 @@ using her_care.Models;
 
 namespace her_care.Controllers
 {
-    [Route("SearchResult")]
+    [Route("/Shared/SearchResults")]
     public class SearchResultsController : DBBase
     {
         [HttpGet]
-        [Route("Search")]
+      //  [Route("SearchResults")]
         public ActionResult Search()
         {
-            var results = TempData["SearchResults"];
-            return Json(new { cool = true, model = results });
-
+           var results = TempData["SearchResults"];
+          return Json(new { cool = "This is where the database results will populate", model = results });
+        //    return View("/Shared/SearchResults");
 
         }
 

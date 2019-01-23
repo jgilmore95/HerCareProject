@@ -32,7 +32,7 @@ namespace her_care.Controllers
         {
             var sql = $" SELECT PName FROM Test WHERE PName LIKE '%{model.SearchValue}%'";
 
-            using (SqlCommand cmd = Connect("ClientSearch"))
+            using (SqlCommand cmd = Connect(sql))
             {
                 try
                 {
@@ -70,10 +70,10 @@ namespace her_care.Controllers
              */
             var x = new Object();
 
-            TempData.Add("SearchResults", "cool");
+           TempData.Add("test3", "cool");
             return RedirectToAction("Search", "SearchResults");
 
-            // return View("SearchResults");
+           //  return View("SearchResults");
         }
         private static void ReadSingleRow(IDataRecord record)
         {

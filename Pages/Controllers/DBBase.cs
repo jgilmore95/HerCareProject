@@ -24,9 +24,10 @@ namespace her_care.Controllers
         cnx.Open();
 
         SqlCommand cmd = new SqlCommand(storedProcName, cnx);
-        cmd.CommandType = CommandType.StoredProcedure;
+        cmd.CommandType = CommandType.Text;
         return cmd;
     }
+    
          
     //      * This function allows for the user to close the connection to the database 
     //      */

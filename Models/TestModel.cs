@@ -13,4 +13,11 @@ namespace her_care.Models
 
         public string PName {get; set; }
     }
+    /*
+    public class testDBContext : testDBContext{
+        public testDBContext()
+        {}
+        public DbSet<Test>TestDB{get;set;}
+    }
+    */
 }
