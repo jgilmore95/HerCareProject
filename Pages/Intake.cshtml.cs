@@ -47,10 +47,10 @@ namespace her_care.Pages
          public DateTime EntryDate {get; set;}
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-         public DateTime DischargDate {get; set;}
+         public DateTime DischargeDate {get; set;}
          public string DischargeType {get; set;}
          public Boolean CombatVet {get; set;}
-         public string DisabliityRating {get; set;}
+         public int DisabilityRating {get; set;}
          public Boolean ActiveDuty {get; set;} //were you or are you on active duty, reserves, or national guard
     }
 
@@ -78,7 +78,7 @@ namespace her_care.Pages
         public string Other {get; set;}
     }
     
-    public class Livingarrangments
+    public class LivingArrangements
     {
         public Boolean FriendsOrRelatives {get; set;}
         public Boolean Alone {get; set;}
@@ -92,14 +92,14 @@ namespace her_care.Pages
         public Boolean DayCare {get; set;}
         public Boolean Housing {get; set;}
         public Boolean Clothing {get; set;}
-        public Boolean DisablilityClaim {get; set;}
+        public Boolean DisabilityClaim {get; set;}
         public Boolean Legal {get; set;}
         public Boolean Counseling {get; set;}
         public Boolean EducationalOrVocationalRehab {get; set;}
         public Boolean Utilities {get; set;}
         public Boolean Food {get; set;}
         public Boolean Employment {get; set;}
-        public Boolean Tranportation {get; set;}
+        public Boolean Transportation {get; set;}
         public string Other {get; set;}
     }
 

@@ -98,9 +98,31 @@
                 <label for="no" class="btn-switch__label btn-switch__label_no"><span class="btn-switch__txt">No</span></label>							
                 </p>        
                 </div>
+
+                <!-- /*Disaility drop-down*/ -->
                 <div class="form-group">
-                    <label asp-for="DisabilityRating">Disibility Rating:</label>
-                    <input class="form-control" asp-for="DisabilityRating"/>
+                    <label asp-for="DisabilityRating">Disibility Rating (please enter a percentage):</label>
+                    <!--<input type="text" maxlength="10" value="%" class="form-control" asp-for="DisabilityRating"/> -->
+                     @Html.DropDownListFor(m => m.DisabilityRating, Enumerable.Range(0, 101).Select(i => new SelectListItem { Text = i.ToString(), Value = i.ToString() }))
+                     <!-- 
+                   <select id="IntakeDD">
+                    
+                   </select> 
+                    <input   val="0">
+                   <script src="0-100.js">
+                     
+                       var select=''; for(i=0; i<=100; i++){
+                           select+='<option val='+i+'>'+i+'</option>';
+                       }
+                       $('#IntakeDD').html(select);
+                     
+                   </script>
+                    --> 
+                    <label class="checkboxLeft">None
+                    <input type="checkbox" name="DisibilityRating" value="Disibilityrating" />
+                    <span class="checkmark"></span>
+                    </label>
+                
                 </div>
                 <label class="h4" asp-for="ActiveDuty">Were you or are you on Active Duty, in the Reserves or the National Guard?</label>
                 <div class="checkboxLeft">
@@ -270,8 +292,8 @@
                     </label>
                 </div>
                 <div class="checkboxLeft">
-                     <label class="checkboxLeft" >Disibility Claim
-                    <input type="checkbox" name="DisabilityClaim" value="Disability Claim"/>
+                     <label class="checkboxLeft" >Disability Claim
+                    <input type="checkbox" name="DisabilityClaim" value="DisabilityClaim"/>
                     <span class="checkmark"></span>
                     </label>
                 </div>
