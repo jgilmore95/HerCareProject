@@ -27,6 +27,8 @@ namespace her_care.Pages
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime TodaysDate {get; set;}
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DateOfBirth {get; set;}
         public string Phone {get; set;}
         public string EmailAddress {get; set;}
@@ -39,7 +41,12 @@ namespace her_care.Pages
          public string EmergencyContactLast {get; set;}
          public string EmergencyContactPhone {get; set;}
          public string BranchOfService {get; set;}
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
          public DateTime EntryDate {get; set;}
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
          public DateTime DischargDate {get; set;}
          public string DischargeType {get; set;}
          public Boolean CombatVet {get; set;}
