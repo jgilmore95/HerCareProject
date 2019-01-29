@@ -10,6 +10,7 @@ namespace her_care.Pages
 {
     public class IntakeController : Controller
     {
+        /*
         public ActionResult IntakeController.Intake(Demographics; CurrentEmploymentStatus; Livingsituation; LivingArrangements; ServiceNeeds; OfficeUseOnly Models)
         
         private readonly HerCareContext context;
@@ -17,5 +18,5 @@ namespace her_care.Pages
         {
             this.context = context;
         } 
-    }
+  */  } 
 }        
