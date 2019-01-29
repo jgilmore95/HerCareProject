@@ -10,11 +10,14 @@ namespace her_care.Pages
 {
     public class IndexModel : PageModel
     {
+
+        
         private readonly HerCareContext context;
         public IndexModel(HerCareContext context)
         {
             this.context = context;
         }
+        
         public async Task OnGet()
         {
             /*
