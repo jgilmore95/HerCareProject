@@ -1,11 +1,14 @@
 @page
-
+@model her_care.Models.Demographics 
 @{
     ViewData["Title"] = "Home page";
 }
-@model her_care.Models.Demographics
+
 
 <!DOCTYPE html>
+@using (Html.BeginForm("Submit", "Intake", FormMethod.Post, 
+                                                  new { }))
+                                                  {
 <html>
     <head>
         <meta name="viewport" content="width-device-width"/>
@@ -27,11 +30,13 @@
         <div class"panel-heading text-center"> <h1>Intake Form</h1></div>
         <div class="panel-body">
             <h3>DEMOGRAPHICS</h3>
-            <form class="p-a-1" asp-action="Intake" method="post">
+            
+            
                 <div asp-validation-summary="All"></div>
                 <div class="form-group">
                     <label asp-for="FirstName">First Name:</label>
-                    <input class="form-control" asp-for="FirstName"/>                    
+                    @Html.TextBox("FirstName", null, new { @class = "form-control" })
+                   
                 </div>
                 <div class="form-group">
                     <label asp-for="LastName">Last Name:</label>
@@ -133,13 +138,13 @@
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Reserves
-                    <input type="checkbox" name="ActiveDuty" value="Reserves"/>
+                    <input type="checkbox" name="Reserves" value="Reserves"/>
                     <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                     <label class="checkboxLeft">National Guard
-                    <input type="checkbox" name="ActiveDuty" value="National Guard"/>
+                    <input type="checkbox" name="NationalGuard" value="NationalGuard"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
@@ -188,7 +193,7 @@
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Other
-                    <input type="checkboxLeft" name="Other" value="Other"/>
+                    <input type="checkboxLeft" name="OtherEmployed" value="OtherEmployed"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
@@ -237,7 +242,7 @@
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Other
-                    <input type="checkbox" name="Other" value="Other"/>
+                    <input type="checkbox" name="OtherLiving" value="OtherLiving"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
@@ -341,17 +346,19 @@
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Other
-                    <input type="checkbox" name="Other" value="Other"/>
+                    <input type="checkbox" name="OtherService" value="OtherService"/>
                     <span class="checkmark"></span>
                     </label>
                 </div>    
             <div class="buttonCenter">
-            <a href="https://localhost:5001/" class="button" :hover type="submit" value="S U B M I T">S U B M I T</a>
+            <input type="submit" class="button" :hover type="submit" value="S U B M I T"></input>
             </div>
-            </form>
+                                                  
+                                                  
         </div>
     </div>
-
-
     </body>
 </html>
+                                                  }
+}
+
