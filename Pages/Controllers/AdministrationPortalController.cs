@@ -31,7 +31,7 @@ namespace her_care.Controllers
         public ActionResult Search(SearchModel model)
         {
             var sql = $" SELECT PName FROM Test WHERE PName LIKE '%{model.SearchValue}%'";
-
+/*
             using (SqlCommand cmd = Connect(sql))
             {
                 try
@@ -60,15 +60,15 @@ namespace her_care.Controllers
                 }
             };
             Console.WriteLine($"Search Value {model.SearchValue}");
-
+*/
 
             // var model = GetSearchResults(q);
-
+            var firstname = context.Tests.Where(x => x.PName == model.SearchValue).OrderBy(x => x.Id);
             /*
              var users = context.Tests.Where(x => x.Name == q).OrderBy(x => x.Id);
              var user = context.Tests.FirstOrDefault(x => x.Name == q);
              */
-            var x = new Object();
+        //    var x = new Object();
 
          //  TempData.Add("test3", "cool");
             return RedirectToAction("Search", "SearchResults");
@@ -79,31 +79,6 @@ namespace her_care.Controllers
         {
             Console.WriteLine(String.Format("{0}, {1}", record[0], record[1]));
         }
-
-         private static void ReadOrderData(string connectionString)
-    {
-        string queryString =
-            "SELECT OrderID, CustomerID FROM dbo.Orders;";
-
-        using (SqlConnection connection =
-                   new SqlConnection(connectionString))
-        {
-            SqlCommand command =
-                new SqlCommand(queryString, connection);
-            connection.Open();
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            // Call Read before accessing data.
-            while (reader.Read())
-            {
-                ReadSingleRow((IDataRecord)reader);
-            }
-
-            // Call Close when done reading.
-            reader.Close();
-        }
-    }
 
     }
 }
