@@ -31,7 +31,7 @@ namespace her_care.Controllers
         public ActionResult Search(SearchModel model)
         {
             var sql = $" SELECT PName FROM Test WHERE PName LIKE '%{model.SearchValue}%'";
-
+/*
             using (SqlCommand cmd = Connect(sql))
             {
                 try
@@ -60,17 +60,17 @@ namespace her_care.Controllers
                 }
             };
             Console.WriteLine($"Search Value {model.SearchValue}");
-
+*/
 
             // var model = GetSearchResults(q);
-
+            var firstname = context.Tests.Where(x => x.PName == model.SearchValue).OrderBy(x => x.Id);
             /*
              var users = context.Tests.Where(x => x.Name == q).OrderBy(x => x.Id);
              var user = context.Tests.FirstOrDefault(x => x.Name == q);
              */
-            var x = new Object();
+        //    var x = new Object();
 
-           TempData.Add("test3", "cool");
+         //  TempData.Add("test3", "cool");
             return RedirectToAction("Search", "SearchResults");
 
            //  return View("SearchResults");

@@ -8,9 +8,12 @@ namespace her_care.Models
 {
     public class HerCareContext : DbContext
     {
+        
         public HerCareContext(DbContextOptions<HerCareContext> options) : base(options)
         { }
 
         public DbSet<Test> Tests { get; set; }
+        
     }
+    
 }

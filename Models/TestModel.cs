@@ -7,11 +7,11 @@ namespace her_care.Models
     public class Test
     {
         [Key]
-        public string Id { get; set; }
-
-        public string Name { get; set; }
+        public int Id { get; set; }
 
         public string PName {get; set; }
+        public int Age {get; set;}
+        public int num {get; set;}
     }
     /*
     public class testDBContext : testDBContext{
