@@ -70,7 +70,7 @@ namespace her_care.Controllers
              */
             var x = new Object();
 
-           TempData.Add("test3", "cool");
+         //  TempData.Add("test3", "cool");
             return RedirectToAction("Search", "SearchResults");
 
            //  return View("SearchResults");
@@ -79,6 +79,31 @@ namespace her_care.Controllers
         {
             Console.WriteLine(String.Format("{0}, {1}", record[0], record[1]));
         }
+
+         private static void ReadOrderData(string connectionString)
+    {
+        string queryString =
+            "SELECT OrderID, CustomerID FROM dbo.Orders;";
+
+        using (SqlConnection connection =
+                   new SqlConnection(connectionString))
+        {
+            SqlCommand command =
+                new SqlCommand(queryString, connection);
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            // Call Read before accessing data.
+            while (reader.Read())
+            {
+                ReadSingleRow((IDataRecord)reader);
+            }
+
+            // Call Close when done reading.
+            reader.Close();
+        }
+    }
 
     }
 }
