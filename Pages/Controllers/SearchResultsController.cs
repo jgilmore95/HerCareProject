@@ -13,6 +13,7 @@ using System.Data;
 using her_care.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Reflection;
 
 namespace her_care.Controllers
 {
@@ -32,33 +33,58 @@ namespace her_care.Controllers
         [HttpGet]
          [Route("SearchResults")]
          public ActionResult Search()
-         { 
+         { List<Models.Test> result = new List<Models.Test>();
              
              
              string queryString = "Select * from Test";
              string sqlString = Environment.GetEnvironmentVariable("connString");
-
+            try{
             using (SqlConnection connection = new SqlConnection(sqlString))
             using (SqlCommand command = new SqlCommand(queryString, connection))
             {
                 connection.Open();
 
                 using (SqlDataReader reader = command.ExecuteReader())
-                {
+                { 
+
+                    
+                 //   List<T> list = new List<T>();
                     if (reader.HasRows)
                     {
                         while (reader.Read())
                         {
                             Console.WriteLine(String.Format("{0}, {1}", reader[0], reader[1]));
+                            Models.Test item = new Models.Test()
+                            {
+                                Id = (int)reader["ID"],
+                                PName = reader["PName"].ToString(),
+                                Age = (int)reader["Age"],
+                                num = (int)reader["num"]
+                            };
+                            result.Add(item);
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            /*
+                            
+                            list.Add((T)reader.GetValue(index)); index++;
+                            */
                         }
                     }
                     reader.Close();
                 }
             }
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
              
              
-             
-             
+             return View("SearchResults", new List<Models.Test>(result));
              
              /*
              var model = new List<testing>;
@@ -66,7 +92,7 @@ namespace her_care.Controllers
              model.Add(context.Tests.ToList());
                //  var testing = context.Tests.ToList();
              */
-             return View("SearchResults");
+             
 
 /*
              using(var contxt = new HerCareContext())
