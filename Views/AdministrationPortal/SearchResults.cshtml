@@ -1,5 +1,5 @@
 @page
-@using her_care.Models
+
 @model List<her_care.Models.Test>
 
 @{
@@ -36,6 +36,9 @@
                     <td><strong>Age</strong></td>
                     <td><strong>Number</strong></td>
                 </tr>
+               
+                    
+                
                 @foreach (var oppvol in Model)
                 {
                     <tr>
@@ -45,7 +48,7 @@
                         <td>@oppvol.num</td>
                     </tr>
                 }
-
+                
             </table>
         </td>
     </tr>

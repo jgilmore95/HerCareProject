@@ -9,7 +9,7 @@ namespace her_care.Models
     {
         
 
-        
+        [Key]
         public int Id { get; set; }
 
         public string PName {get; set; }
