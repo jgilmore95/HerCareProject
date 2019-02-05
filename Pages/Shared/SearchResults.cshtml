@@ -1,9 +1,9 @@
 @page
-
-@model Models.Test
+@using her_care.Models
+@model List<her_care.Models.Test>
 
 @{
-  //  ViewData["Title"] = "Search Results";
+ 
 }
 <!DOCTYPE html>
 <html>
@@ -18,7 +18,39 @@
 
 
 
+<div>
+  
+    <table width="60%" align="center">
+    <tr align="center">
+        <td>
+            <h1>View Opportunity/Volunteers</h1>
+        </td>
+    </tr>
+    <tr align="center">
+        <td>
 
+            <table border="1" width="100%">
+                <tr>
+                    <td><strong>ID</strong></td>
+                    <td><strong>Name</strong></td>
+                    <td><strong>Age</strong></td>
+                    <td><strong>Number</strong></td>
+                </tr>
+                @foreach (var oppvol in Model)
+                {
+                    <tr>
+                        <td>@oppvol.Id</td>
+                        <td>@oppvol.PName</td>
+                        <td>@oppvol.Age</td>
+                        <td>@oppvol.num</td>
+                    </tr>
+                }
+
+            </table>
+        </td>
+    </tr>
+</table>
+</div>
 
 
     <!--
