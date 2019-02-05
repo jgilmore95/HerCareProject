@@ -92,7 +92,7 @@ namespace her_care.Controllers
             }
  
  
-           return View("");  
+           return View("Index");  
         }
        
        

@@ -6,11 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
 
-namespace her_care.Models
-{
-
-
-
 
     public class Demographics
     {
@@ -142,4 +137,3 @@ namespace her_care.Models
         public string FollowUpNotes {get; set;}
     }
     
-}
