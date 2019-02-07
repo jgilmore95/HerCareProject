@@ -30,10 +30,23 @@ namespace her_care.Controllers
             this.context = context;
         }
 
-        [HttpGet]
-         [Route("SearchResults")]
+        [HttpPost]
+         [Route("Shared/SearchResults")]
          public ActionResult Search()
-         { List<Models.Test> result = new List<Models.Test>();
+         { 
+          //   var firstname = context.Tests.Where(x => x.PName != null && x.PName.ToString().Contains("Jack")).OrderBy(x => x.PName);
+         //  var firstname = context.Tests.ToList();
+
+         var model = her_care.Controllers.DBBaseAdmin.ReturnEntireTable();
+             
+
+             return View("SearchResults", model);
+             
+             
+             
+             /*
+             
+             List<Models.Test> result = new List<Models.Test>();
              
              
              string queryString = "Select * from Test";
@@ -72,7 +85,7 @@ namespace her_care.Controllers
                             /*
                             
                             list.Add((T)reader.GetValue(index)); index++;
-                            */
+                            
                         }
                     }
                     reader.Close();
@@ -86,6 +99,8 @@ namespace her_care.Controllers
              
              return View("SearchResults", new List<Models.Test>(result));
              
+
+             */
              /*
              var model = new List<testing>;
 

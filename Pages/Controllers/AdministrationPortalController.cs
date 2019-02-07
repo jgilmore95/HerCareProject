@@ -28,7 +28,7 @@ namespace her_care.Controllers
         }
         [Route("AdministrationPortal")]
         [HttpPost]
-        public ActionResult Search(SearchModel model)
+        public ActionResult SearchResults(SearchModel model)
         {
             var sql = $" SELECT PName FROM Test WHERE PName LIKE '%{model.SearchValue}%'";
 /*
@@ -63,7 +63,7 @@ namespace her_care.Controllers
 */
 
             // var model = GetSearchResults(q);
-            var firstname = context.Tests.Where(x => x.PName == model.SearchValue).OrderBy(x => x.Id);
+         //   var firstname = context.Tests.Where(x => x.PName == model.SearchValue).OrderBy(x => x.Id);
             /*
              var users = context.Tests.Where(x => x.Name == q).OrderBy(x => x.Id);
              var user = context.Tests.FirstOrDefault(x => x.Name == q);
@@ -71,7 +71,18 @@ namespace her_care.Controllers
         //    var x = new Object();
 
          //  TempData.Add("test3", "cool");
-            return RedirectToAction("Search", "SearchResults");
+
+
+            /*This is the same from the search results controller */
+            var testList = new List<Test>();
+            testList = her_care.Controllers.DBBaseAdmin.ReturnEntireTable();
+            //models = models.ToList();             
+
+             return View(testList);
+
+
+
+         //   return RedirectToAction("Search", "SearchResults");
 
            //  return View("SearchResults");
         }

@@ -1,11 +1,14 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace her_care.Models
 {
-
-    public class Test
+    [Serializable]    
+    public class Test 
     {
+        
+
         [Key]
         public int Id { get; set; }
 
@@ -13,6 +16,7 @@ namespace her_care.Models
         public int Age {get; set;}
         public int num {get; set;}
     }
+   
     /*
     public class testDBContext : testDBContext{
         public testDBContext()

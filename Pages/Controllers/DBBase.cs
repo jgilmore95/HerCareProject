@@ -43,5 +43,17 @@ namespace her_care.Controllers
             }
         }
     }
+
+    protected static SqlCommand openConnection(){
+        String cnxStr = Environment.GetEnvironmentVariable("connString");
+
+        SqlConnection cnx = new SqlConnection(cnxStr);
+
+        cnx.Open();
+
+        SqlCommand cmd = new  SqlCommand();
+        cmd.Connection = cnx;
+        return cmd;
+    }
 }
 }
