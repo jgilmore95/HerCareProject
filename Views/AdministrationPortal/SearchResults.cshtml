@@ -39,7 +39,7 @@
                
                     
                 
-                @foreach (var oppvol in Model)
+                @foreach (var oppvol in Model.Where(x => x !=null))
                 {
                     <tr>
                         <td>@oppvol.Id</td>
