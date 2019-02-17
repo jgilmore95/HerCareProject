@@ -15,7 +15,11 @@ namespace her_care.Models
         public string PName {get; set; }
         public int Age {get; set;}
         public int num {get; set;}
+
+        public IEnumerable<Test> Tester {get; set;}
     }
+
+    
    
     /*
     public class testDBContext : testDBContext{
