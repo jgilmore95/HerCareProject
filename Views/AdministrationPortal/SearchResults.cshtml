@@ -1,6 +1,6 @@
 @page
 
-@model List<her_care.Models.Test>
+@model IEnumerable<her_care.Models.Test>
 
 @{
  
@@ -23,7 +23,7 @@
     <table width="60%" align="center">
     <tr align="center">
         <td>
-            <h1>View Opportunity/Volunteers</h1>
+            <h1>Search Results</h1>
         </td>
     </tr>
     <tr align="center">
@@ -39,14 +39,16 @@
                
                     
                 
-                @foreach (var oppvol in Model)
-                {
+                @foreach (var test in Model)
+                { 
+                   
                     <tr>
-                        <td>@oppvol.Id</td>
-                        <td>@oppvol.PName</td>
-                        <td>@oppvol.Age</td>
-                        <td>@oppvol.num</td>
+                        <td>@test.Id</td>
+                        <td>@test.PName</td>
+                        <td>@test.Age</td>
+                        <td>@test.num</td>
                     </tr>
+                
                 }
                 
             </table>
