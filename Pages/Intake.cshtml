@@ -1,14 +1,13 @@
 @page
-@model her_care.Models.Demographics 
+{
+@model Demographics  
 @{
     ViewData["Title"] = "Home page";
 }
 
 
 <!DOCTYPE html>
-@using (Html.BeginForm("Submit", "Intake", FormMethod.Post, 
-                                                  new { }))
-                                                  {
+
 <html>
     <head>
         <meta name="viewport" content="width-device-width"/>
@@ -16,12 +15,6 @@
         <link rel="site" href="~/css/site.css" /> 
     </head>
     <body>
-        <!-- <nav class="navbar">
-             <a asp-page="/Intake">Click here for check-in page</a> ||
-              <a asp-page="/VolunteerHours">Click here for Volunteer Page</a> ||
-                <a asp-page="/Cohort">Click here for the cohort page</a> || 
-                  <a asp-page="/AdministrationPortal">Click here for Administration Page</a>
-        </nav> -->
         <h2>THE PRIVACY ACT OF 1974.5 U.S.C S.S. 552a ESTABLISHES A CODE OF FAIR INFORMATION PRACTICES THAT GOVERNS
             THE COLLECTION, MAINTENANCE, USE, AND DISSEMINATION OF INFORMATION ABOUT INDIVIDUALS THAT IS 
             MAINTAINED IN SYSTEMS OF RECORDS BY FEDERAL AGENCIES.
@@ -30,8 +23,7 @@
         <div class"panel-heading text-center"> <h1>Intake Form</h1></div>
         <div class="panel-body">
             <h3>DEMOGRAPHICS</h3>
-            
-            
+            @using (Html.BeginForm("submit","Intake", FormMethod.Post, new {})) {
                 <div asp-validation-summary="All"></div>
                 <div class="form-group">
                     <label asp-for="FirstName">First Name:</label>
@@ -40,7 +32,8 @@
                 </div>
                 <div class="form-group">
                     <label asp-for="LastName">Last Name:</label>
-                    <input class="form-control" asp-for="LastName"/>
+                    
+                    @Html.TextBox("LastName", null, new { @class = "form-control" })
                 </div>
                 <div class="form-group">
                     <label asp-for="TodaysDate">Today's Date:</label>
@@ -82,10 +75,16 @@
                     <label asp-for="EmergencyContactLast">Emergency Contact Last Name:</label>
                     <input class="form-control" asp-for="EmergencyContactLast"/>
                 </div>
+                <br>
+                <br>
                 <div class="form-group">
                     <label asp-for="BranchOfService">Branch Of Service:</label>
                     <input class="form-control" asp-for="BranchOfService"/>
+
+                         <label for="ADDBranch">Please specify additional branch here: </label>
+                         <input type="text" id="addBranch" name="which-Branch" class="form-control" >
                 </div>
+                
                 <div class="form-group">
                     <label asp-for="EntryDate">Entry Date:</label>
                     <input type="date" class="form-control" asp-for="EntryDate"/>
@@ -109,27 +108,14 @@
                     <label asp-for="DisabilityRating">Disibility Rating (please enter a percentage):</label>
                     <!--<input type="text" maxlength="10" value="%" class="form-control" asp-for="DisabilityRating"/> -->
                      @Html.DropDownListFor(m => m.DisabilityRating, Enumerable.Range(0, 101).Select(i => new SelectListItem { Text = i.ToString(), Value = i.ToString() }))
-                     <!-- 
-                   <select id="IntakeDD">
                     
-                   </select> 
-                    <input   val="0">
-                   <script src="0-100.js">
-                     
-                       var select=''; for(i=0; i<=100; i++){
-                           select+='<option val='+i+'>'+i+'</option>';
-                       }
-                       $('#IntakeDD').html(select);
-                     
-                   </script>
-                    --> 
                     <label class="checkboxLeft">None
                     <input type="checkbox" name="DisibilityRating" value="Disibilityrating" />
                     <span class="checkmark"></span>
                     </label>
                 
                 </div>
-                <label class="h4" asp-for="ActiveDuty">Were you or are you on Active Duty, in the Reserves or the National Guard?</label>
+                <label class="h6" asp-for="ActiveDuty">Were you or are you on Active Duty, in the Reserves or the National Guard?</label>
                 <div class="checkboxLeft">
                     <label class="checkboxLeft">Active Duty
                     <input type="checkbox" name="ActiveDuty" value="ActiveDuty"/>
@@ -157,31 +143,31 @@
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Student
-                    <input type="checkboxLeft" name="Student" value="Student"/>
+                    <input type="checkbox" name="Student" value="Student"/>
                      <span class="checkmark"></span>
                      </label>
                 </div> 
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Self Employed
-                    <input type="checkboxLeft" name="SelfEmployed" value="Self-Employed"/>
+                    <input type="checkbox" name="SelfEmployed" value="Self-Employed"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Contractor
-                    <input type="checkboxLeft" name="Contractor" value="Contractor"/>
+                    <input type="checkbox" name="Contractor" value="Contractor"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Word Study
-                    <input type="checkboxLeft" name="WorkStudy" value="Work Study"/>
+                    <input type="checkbox" name="WorkStudy" value="Work Study"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Intern
-                    <input type="checkboxLeft" name="Intern" value="Intern"/>
+                    <input type="checkbox" name="Intern" value="Intern"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
@@ -193,7 +179,7 @@
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Other
-                    <input type="checkboxLeft" name="OtherEmployed" value="OtherEmployed"/>
+                    <input type="checkbox" name="OtherEmployed" value="OtherEmployed"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
@@ -353,12 +339,15 @@
             <div class="buttonCenter">
             <input type="submit" class="button" :hover type="submit" value="S U B M I T"></input>
             </div>
-                                                  
+            }                                   
                                                   
         </div>
     </div>
+                        
     </body>
 </html>
-                                                  }
-}
+
+
+                                              
+
 

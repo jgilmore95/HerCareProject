@@ -15,7 +15,7 @@ namespace her_care.Controllers
 {
     public class IntakeController : DBBase
     {
-        [Route("Intake/Index")]
+        [Route("submit")]
         [HttpPost]
         public ActionResult Submit(Demographics model){
                 SqlCommand cmd = null;
@@ -92,7 +92,7 @@ namespace her_care.Controllers
             }
  
  
-           return View("");  
+           return View("/Pages/Index.cshtml");  
         }
        
        
