@@ -26,78 +26,25 @@ namespace her_care.Controllers
         {
             this.context = context;
         }
+        
         [Route("AdministrationPortal")]
         [HttpPost]
         public ActionResult SearchResults(SearchModel model)
         {
-            var sql = $" SELECT PName FROM Test WHERE PName LIKE '%{model.SearchValue}%'";
-/*
-            using (SqlCommand cmd = Connect(sql))
-            {
-                try
-                {
+            var searchList = her_care.Controllers.DBBaseAdmin.UserSearch(model.SearchValue);
+            ViewBag.MyModel = searchList;
 
-                    cmd.CommandText = sql;
+            /*This will return entire table 
+             var testList = her_care.Controllers.DBBaseAdmin.ReturnEntireTable();
+           
 
-                    //    cmd.Parameters.Add("@PName", SqlDbType.VarChar, 1).Value = model.SearchValue;
+                ViewBag.MyModel = testList;
+    */
 
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    // Call Read before accessing data.
-                    while (reader.Read())
-                    {
-                        ReadSingleRow((IDataRecord)reader);
-                    }
-
-                    // Call Close when done reading.
-                    reader.Close();
-
-                }
-
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            };
-            Console.WriteLine($"Search Value {model.SearchValue}");
-*/
-
-            // var model = GetSearchResults(q);
-         //   var firstname = context.Tests.Where(x => x.PName == model.SearchValue).OrderBy(x => x.Id);
-            /*
-             var users = context.Tests.Where(x => x.Name == q).OrderBy(x => x.Id);
-             var user = context.Tests.FirstOrDefault(x => x.Name == q);
-             */
-        //    var x = new Object();
-
-         //  TempData.Add("test3", "cool");
-
-
-            /*This is the same from the search results controller */
-          var  testList = new List<Test>() 
-          { new Test{
-                PName= "Cool",
-                Id = 33
-            }};
-             testList = her_care.Controllers.DBBaseAdmin.ReturnEntireTable().ToList();
-            //models = models.ToList();  
-
-ViewBag.MyModel = testList;
-    //ViewData["SomeVal"] = testList;
-
-             return View(testList);
-        //    return RedirectToAction("SearchResults", "AdministrationPortalContoller", testList);
-
-
-
-         //   return RedirectToAction("Search", "SearchResults");
-
-           //  return View("SearchResults");
+             return View();
+       
         }
-        private static void ReadSingleRow(IDataRecord record)
-        {
-            Console.WriteLine(String.Format("{0}, {1}", record[0], record[1]));
-        }
+       
 
     }
 }
