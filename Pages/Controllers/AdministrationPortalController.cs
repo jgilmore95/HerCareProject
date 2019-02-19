@@ -74,11 +74,18 @@ namespace her_care.Controllers
 
 
             /*This is the same from the search results controller */
-            List<Test> testList = new List<Test>();
-            testList = her_care.Controllers.DBBaseAdmin.ReturnEntireTable().ToList();
-            //models = models.ToList();             
+          var  testList = new List<Test>() 
+          { new Test{
+                PName= "Cool",
+                Id = 33
+            }};
+             testList = her_care.Controllers.DBBaseAdmin.ReturnEntireTable().ToList();
+            //models = models.ToList();  
 
-             return View("SearchResults", testList);
+ViewBag.MyModel = testList;
+    //ViewData["SomeVal"] = testList;
+
+             return View(testList);
         //    return RedirectToAction("SearchResults", "AdministrationPortalContoller", testList);
 
 
