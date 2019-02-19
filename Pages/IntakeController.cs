@@ -11,11 +11,12 @@ using System.Configuration;
 using System.Configuration.Assemblies;
 using System.Data;
 using her_care.Models;
+
 namespace her_care.Controllers
 {
     public class IntakeController : DBBase
     {
-        [Route("submit")]
+        [Route("Submit")]
         [HttpPost]
         public ActionResult Submit(Demographics model){
                 SqlCommand cmd = null;

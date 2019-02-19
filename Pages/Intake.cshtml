@@ -2,7 +2,7 @@
 {
 @model Demographics  
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Intake";
 }
 
 
@@ -23,7 +23,7 @@
         <div class"panel-heading text-center"> <h1>Intake Form</h1></div>
         <div class="panel-body">
             <h3>DEMOGRAPHICS</h3>
-            @using (Html.BeginForm("submit","Intake", FormMethod.Post, new {})) {
+            @using (Html.BeginForm("Submit","Intake", FormMethod.Post, new {})) {
                 <div asp-validation-summary="All"></div>
                 <div class="form-group">
                     <label asp-for="FirstName">First Name:</label>
@@ -113,7 +113,7 @@
                     <input type="checkbox" name="DisibilityRating" value="Disibilityrating" />
                     <span class="checkmark"></span>
                     </label>
-                
+                    
                 </div>
                 <label class="h6" asp-for="ActiveDuty">Were you or are you on Active Duty, in the Reserves or the National Guard?</label>
                 <div class="checkboxLeft">
