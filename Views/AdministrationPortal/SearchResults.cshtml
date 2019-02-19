@@ -3,17 +3,15 @@
 @model IEnumerable<her_care.Models.Test>
 
 @{
- 
+  Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 <!DOCTYPE html>
 <html>
 <head>
         <meta name="viewport" content="width-device-width"/>
-        <title>AdministrationPortal</title>
+        <title>SearchResults</title>
         <link rel="site" href="~/css/site.css" /> 
     </head>
-
-
 
 
 
@@ -39,7 +37,7 @@
                
                     
                 
-                @foreach (var test in Model)
+                @foreach (var test in ViewBag.MyModel)
                 { 
                    
                     <tr>
@@ -54,7 +52,7 @@
             </table>
         </td>
     </tr>
-</table>
+</table><a asp-page="~/Pages/Shared/Client">Click here for client page</a>
 </div>
 
 
