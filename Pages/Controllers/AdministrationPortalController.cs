@@ -40,56 +40,7 @@ namespace her_care.Controllers
 
                 ViewBag.MyModel = testList;
     */
-
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    // Call Read before accessing data.
-                    while (reader.Read())
-                    {
-                        ReadSingleRow((IDataRecord)reader);
-                    }
-
-                    // Call Close when done reading.
-                    reader.Close();
-
-                }
-
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-            };
-            Console.WriteLine($"Search Value {model.SearchValue}");
-*/
-
-            // var model = GetSearchResults(q);
-         //   var firstname = context.Tests.Where(x => x.PName == model.SearchValue).OrderBy(x => x.Id);
-            /*
-             var users = context.Tests.Where(x => x.Name == q).OrderBy(x => x.Id);
-             var user = context.Tests.FirstOrDefault(x => x.Name == q);
-             */
-        //    var x = new Object();
-
-         //  TempData.Add("test3", "cool");
-
-
-            /*This is the same from the search results controller */
-            var testList = new List<Test>();
-            testList = her_care.Controllers.DBBaseAdmin.ReturnEntireTable();
-            //models = models.ToList();             
-
-             return View(testList);
-
-
-
-         //   return RedirectToAction("Search", "SearchResults");
-
-           //  return View("SearchResults");
-        }
-        private static void ReadSingleRow(IDataRecord record)
-        {
-            Console.WriteLine(String.Format("{0}, {1}", record[0], record[1]));
-             return View();
+    return View();
        
         }
        

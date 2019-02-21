@@ -16,7 +16,7 @@ namespace her_care.Controllers
 {
     public class IntakeController : DBBase
     {
-        [Route("Submit")]
+        [Route("submit")]
         [HttpPost]
         public ActionResult Submit(Demographics model){
                 SqlCommand cmd = null;
