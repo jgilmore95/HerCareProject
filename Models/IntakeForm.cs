@@ -6,6 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.ComponentModel.DataAnnotations;
 
+namespace her_care.Models
+{
+
+
+
 
     public class Demographics
     {
@@ -137,3 +142,4 @@ using System.ComponentModel.DataAnnotations;
         public string FollowUpNotes {get; set;}
     }
     
+}

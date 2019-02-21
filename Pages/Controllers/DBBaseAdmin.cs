@@ -17,9 +17,6 @@ namespace her_care.Controllers
 {
     public class DBBaseAdmin : DBBase
     {
-        /*
-        This method returns the entire table
-         */
         public static List<Test> ReturnEntireTable()
         {
             SqlCommand cmd = null;
@@ -29,44 +26,6 @@ namespace her_care.Controllers
                  cmd = openConnection();
 
                 cmd.CommandText = "SELECT [Test].Id, [Test].PName, [Test].Age, [Test].num FROM Test";
-                cmd.CommandType = System.Data.CommandType.Text;
-
-                SqlDataReader rdr = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
-
-                while(rdr.Read() == true)
-                {
-                    Test opp = new Test();
-                    
-                    opp.Id = Convert.ToInt32(rdr["Id"].ToString());
-                    opp.PName = rdr["PName"].ToString();
-                    opp.Age = Convert.ToInt32(rdr["Age"].ToString());
-                    opp.num = Int32.Parse(rdr["num"].ToString());
-
-                    opps.Add(opp);
-                }
-            }
-            catch (Exception e)
-            {
-                throw;
-            }
-            finally{
-                CloseConnection(cmd);
-            }
-            return opps;
-        }
-
-        /*
-        this method is ready for the Client table. Just change from Test table to CLient
-         */
-        public static List<Test> UserSearch(string searchTerm)
-        {
-              SqlCommand cmd = null;
-            List<Test> opps = new List<Test>();
-
-            try{
-                 cmd = openConnection();
-
-                cmd.CommandText = "SELECT * FROM Test WHERE [Test].Pname like '"+ searchTerm + "%'";
                 cmd.CommandType = System.Data.CommandType.Text;
 
                 SqlDataReader rdr = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection);

@@ -26,20 +26,20 @@ namespace her_care.Controllers
         {
             this.context = context;
         }
-        
         [Route("AdministrationPortal")]
         [HttpPost]
         public ActionResult SearchResults(SearchModel model)
         {
-            var searchList = her_care.Controllers.DBBaseAdmin.UserSearch(model.SearchValue);
-            ViewBag.MyModel = searchList;
+            var sql = $" SELECT PName FROM Test WHERE PName LIKE '%{model.SearchValue}%'";
+/*
+            using (SqlCommand cmd = Connect(sql))
+            {
+                try
+                {
 
-            /*This will return entire table 
-             var testList = her_care.Controllers.DBBaseAdmin.ReturnEntireTable();
-           
+                    cmd.CommandText = sql;
 
-                ViewBag.MyModel = testList;
-    */
+                    //    cmd.Parameters.Add("@PName", SqlDbType.VarChar, 1).Value = model.SearchValue;
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
@@ -89,10 +89,7 @@ namespace her_care.Controllers
         private static void ReadSingleRow(IDataRecord record)
         {
             Console.WriteLine(String.Format("{0}, {1}", record[0], record[1]));
-             return View();
-       
         }
-       
 
     }
 }

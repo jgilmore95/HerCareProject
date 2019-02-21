@@ -11,12 +11,11 @@ using System.Configuration;
 using System.Configuration.Assemblies;
 using System.Data;
 using her_care.Models;
-
 namespace her_care.Controllers
 {
     public class IntakeController : DBBase
     {
-        [Route("Submit")]
+        [Route("Intake/Index")]
         [HttpPost]
         public ActionResult Submit(Demographics model){
                 SqlCommand cmd = null;
@@ -93,7 +92,7 @@ namespace her_care.Controllers
             }
  
  
-           return View("/Pages/Index.cshtml");  
+           return View("");  
         }
        
        

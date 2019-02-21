@@ -296,8 +296,6 @@ h2 {
     color: white;
 }
 .checkboxLeft{
-
-   
     text-align: left;
     display: block;
   position: relative;
@@ -435,10 +433,4 @@ iframe{
 
 .div#01 {
     position: bottom;
-}
-
-.h6{
-    font-style: normal;
-    font-size: 12pt;
-
 }
