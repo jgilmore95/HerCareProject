@@ -21,7 +21,7 @@
                                       new { }))
 {
     @Html.ValidationSummary(true)
-
+}
 <!-- <form id="frmsearch" action="~/SearchResults" method="get"> -->
 <div class="wrap">
    <div class="search">
@@ -34,6 +34,30 @@
 </div>
 <!-- </form> -->
 }
+
+
+
+
+
+{
+    @Html.ValidationSummary(true)
+
+<!-- <form id="frmsearch" action="~/SearchResults" method="get"> -->
+<div class="wrap">
+   <div class="search">
+       <br><br><br>
+@Html.TextBox("SearchValue", null, new { @class = "searchTermVolunteer", placeholder = "Enter Volunteer Name" })
+      
+      <input type="submit" class="searchButton" value="Search" />
+       
+   </div>
+</div>
+<!-- </form> -->
+}
+
+
+
+
 
 <div>
     <iframe src="https://calendar.google.com/calendar/embed?src=mlnmv22l6k6gnga0c6tqfmq2ps%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>

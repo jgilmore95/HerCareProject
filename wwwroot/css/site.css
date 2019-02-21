@@ -271,6 +271,8 @@ searchbox
   position: relative
 }
 
+
+
 .searchTerm {
   float: left;
   width: 100%;
@@ -281,6 +283,18 @@ searchbox
   outline: none;
   color: rgb(216, 30, 101);
 }
+
+
+.searchTermVolunteer {
+    float: left;
+    width: 100%;
+    border: 3px solid rgb(9, 6, 161);
+    padding: 5px;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    color: rgb(216, 30, 101);
+  }
 
 .searchTerm:focus{
   color: rgb(204, 58, 0);
