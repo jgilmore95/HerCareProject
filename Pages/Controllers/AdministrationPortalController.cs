@@ -18,13 +18,26 @@ namespace her_care.Controllers
     {
         public void OnGet()
         {
-         //   
+            System.Diagnostics.Debug.WriteLine("Test");
         }
         private readonly HerCareContext context;
         public AdministrationPortalController(HerCareContext context)
         {
             this.context = context;
         }
+/*
+        [HttpGet]
+        [Route("AdministrationPortal")]
+        public ActionResult Index(her_care.Pages.IndexModel model)
+        {
+            if (UserManagement.IsValidAdmin == false)
+            {
+                return RedirectToPage("/Index");
+            }
+
+            return View("/Pages/AdministrationPortal.cshtml", model);
+        }
+*/
         [HttpGet]
         public ActionResult Search(Test model, string q)
         {

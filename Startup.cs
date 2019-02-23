@@ -42,8 +42,9 @@ namespace her_care
             services.AddDbContext<HerCareContext>(options =>
                 options.UseSqlServer(connectionString));
 
-
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,6 +65,7 @@ namespace her_care
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            app.UseSession();
             app.UseMvc();
         }
     }

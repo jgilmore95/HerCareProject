@@ -15,31 +15,31 @@ namespace her_care.Controllers
 {
     public class DBBase : Controller
     {
-    protected static SqlCommand Connect(string storedProcName)
-    {
-        String cnxStr = Environment.GetEnvironmentVariable("connString");
-
-        SqlConnection cnx = new SqlConnection(cnxStr);
-
-        cnx.Open();
-
-        SqlCommand cmd = new SqlCommand(storedProcName, cnx);
-        cmd.CommandType = CommandType.StoredProcedure;
-        return cmd;
-    }
-         
-    //      * This function allows for the user to close the connection to the database 
-    //      */
-    protected static void CloseConnection(SqlCommand cmd)
-    {
-        if (cmd != null)
+        protected static SqlCommand Connect(string storedProcName)
         {
-            if (cmd.Connection.State == System.Data.ConnectionState.Open)
+            String cnxStr = Environment.GetEnvironmentVariable("connString");
+
+            SqlConnection cnx = new SqlConnection(cnxStr);
+
+            cnx.Open();
+
+            SqlCommand cmd = new SqlCommand(storedProcName, cnx);
+            cmd.CommandType = CommandType.StoredProcedure;
+            return cmd;
+        }
+            
+        //      * This function allows for the user to close the connection to the database 
+        //      */
+        protected static void CloseConnection(SqlCommand cmd)
+        {
+            if (cmd != null)
             {
-                cmd.Connection.Close();
-                cmd = null;
+                if (cmd.Connection.State == System.Data.ConnectionState.Open)
+                {
+                    cmd.Connection.Close();
+                    cmd = null;
+                }
             }
         }
     }
-}
 }
