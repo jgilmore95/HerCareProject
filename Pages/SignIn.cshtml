@@ -5,45 +5,28 @@
 }
 @using(Html.BeginForm("Submit", "SignIn", "", FormMethod.Post, false, ""))
 {
-    <table width="60%" align="center">
+    <table>
         <tr>
             <td>
-                First Name: 
+                First Name:  @Html.TextBox("FName", "", new { placeholder = "", required="required" })
             </td>
             <td>
-                @Html.TextBox("FName", "", new { placeholder = "", required="required", autocomplete="off"})
-            </td>    
-                
-            <td>
-                LastName:  
-            </td>
-            <td>
-                @Html.TextBox("LName", "", new { placeholder = "", required="required", autocomplete="off" })
+                LastName:  @Html.TextBox("LName", "", new { placeholder = "", required="required" })
             </td>
         </tr>
         <tr>
             <td>
-                Organization:  
-            </td>
-            <td>
-                @Html.TextBox("Organization", "", new { placeholder = "", required="required", autocomplete="off" })
+                Organization:  @Html.TextBox("Organization", "", new { placeholder = "", required="required" })
             </td>
         </tr>
         <tr>
             <td>
-                E-Mail:
-            </td>
-            <td>
-                @Html.TextBox("eMail", "", new { placeholder = "", required="required", autocomplete="off" })
-                <br>
+                E-Mail:  @Html.TextBox("eMail", "", new { placeholder = "", required="required" })
             </td>
         </tr>
         <tr>
             <td>
-                Branch of Service:  
-            </td>
-            <td>
-                @{List<SelectListItem> listItems= new List<SelectListItem>();
+                Branch of Service:  @{List<SelectListItem> listItems= new List<SelectListItem>();
                                     listItems.Add(new SelectListItem
                                     {
                                         Text = "Air Force",
@@ -72,12 +55,8 @@
 
                                     
                             }
-                @Html.DropDownListFor(model => model.BranchofService, listItems, "-- Select Status --")
-                </td>
-        </tr>
-        <tr>
-            <td colspan="4" align="center">    
-                        <input type="submit" Value="Submit">
+@Html.DropDownListFor(model => model.BranchofService, listItems, "-- Select Status --")
+        <input type="submit" Value="Submit">
             </td>
         </tr>
     </table>

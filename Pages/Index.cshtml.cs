@@ -15,10 +15,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
         {
             this.context = context;
         }
-        /*
         public async Task OnGet()
         {
-            
+            /*
             // How to Search
             var users = context.Tests.Where(x => x.Name == "Sean").OrderBy(x => x.Id);
             var user = context.Tests.FirstOrDefault(x => x.Name == "Sean");
@@ -29,9 +28,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
             var models = context.Tests.Add(m1);
 
             await context.SaveChangesAsync();
-            
+            */
         }
-*/
+
         // public ActionResult Intake(){
         //     return View();
         // }
