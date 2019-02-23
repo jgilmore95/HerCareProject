@@ -48,8 +48,7 @@ namespace her_care.Controllers
                 CloseConnection(cmd);
             }
  
- 
-           return View();
+            return View();
         }
      } 
 }

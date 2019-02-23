@@ -1,0 +1,81 @@
+@page
+@model AdminLoginModel
+@{
+    ViewData["Title"] = "Admin Log In";
+}
+    @using(Html.BeginForm("Submit", "AdminLogin", "", FormMethod.Post, false, ""))
+{
+<table align="center" width="100%" height="100%">
+    <tr >
+        <td colspan="3" height="30%">
+            &nbsp;<br><br><br><br><br>
+        </td>
+    </tr>
+    <tr>
+        <td width="30%">
+            &nbsp;
+        </td>
+        <td>
+            <br>
+            <table frame="box" align="center" width="100%" height="100%">
+                <tr>
+                    <td colspan="2">
+                        @if (@ViewBag.Message != null) {
+                            <div id="popupdiv" style="border: 1px solid red; display: none;">
+                                @ViewBag.Message
+                            </div>
+                        }
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        Username:
+                    </td>
+                    <td align="center">
+                        @Html.TextBox("Username", "", new { placeholder = "", required="required", autocomplete="off" })
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                     <td align="right">
+                        Password:
+                    </td>
+                    <td align="center">
+                        @Html.Password("Password", "", new { placeholder = "", required="required", autocomplete="off" })
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Submit">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        &nbsp;
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td width="30%">
+            &nbsp;
+        </td>
+    </tr>
+    <tr >
+        <td colspan="3" height="30%">
+            &nbsp;
+        </td>
+    </tr>
+</table>
+}
