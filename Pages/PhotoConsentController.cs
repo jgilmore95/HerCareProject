@@ -20,6 +20,18 @@ namespace her_care.Controllers
         {
         }
    
+        [HttpGet]
+        [Route("PhotoConsent")]
+        public IActionResult Index()
+        {
+            if (UserManagement.IsValidAdmin == false)
+            {
+                return RedirectToPage("/AdminLogin");
+            }
+
+            return View("/Pages/PhotoConsent.cshtml");
+        }
+
         [Route("PhotoConsent/Index")]
         [HttpPost]
         public ActionResult Submit(VolunteerModel model)
@@ -48,8 +60,7 @@ namespace her_care.Controllers
                 CloseConnection(cmd);
             }
  
- 
-           return View();
+            return View();
         }
      } 
 }
