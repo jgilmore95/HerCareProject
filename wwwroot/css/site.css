@@ -364,7 +364,7 @@ searchbox
 
 .searchTerm {
   float: left;
-  width: 100%;
+  width: 450px;
   border: 3px solid rgb(204, 0, 61);
   padding: 5px;
   height: 40px;
@@ -380,7 +380,7 @@ searchbox
 .searchButton {
   position: absolute;  
   right: -100px;
-  width: 80px;
+  width: 170px;
   height: 36px;
   border: 1px solid #00B4CC;
   background: rgb(204, 0, 51);
@@ -390,6 +390,36 @@ searchbox
   cursor: pointer;
   font-size: 20px;
 }
+
+/* Mahmood */
+.searchButtonBlue {
+    position: absolute;  
+    right: -100px;
+    width: 170px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: rgb(14, 0, 204);
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  /* Mahmood */
+  .searchTermBlue {
+    float: left;
+    width: 450px;
+    border: 3px solid rgb(33, 30, 216);
+    padding: 5px;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    color: rgb(33, 30, 216);
+  }
+
+
+
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
@@ -414,6 +444,20 @@ searchbox
     top:30%;
     left: 50%;
     
+}
+
+
+/* Mahmood */
+.boxMiddle {
+  width: 300px;
+  height:300px;
+  
+  position:fixed;
+  margin-left:-150px; /* half of width */
+  margin-top:-50px;  /* half of height */
+  top:30%;
+  left: 50%;
+  
 }
 
 .calendar{

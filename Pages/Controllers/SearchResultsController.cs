@@ -157,6 +157,32 @@ namespace her_care.Controllers
 
         }*/
 
+
+
+
+
+    // Mahmood
+    // [HttpPost]
+    //      [Route("Shared/VolunteerSearchResults")]
+    //      public ActionResult VolunteerSearch()
+    //      { 
+    //       //   var firstname = context.Tests.Where(x => x.PName != null && x.PName.ToString().Contains("Jack")).OrderBy(x => x.PName);
+    //      //  var firstname = context.Tests.ToList();
+
+    //      var model = her_care.Controllers.DBBaseAdmin.ReturnEntireTable();
+             
+
+    //          return View("SearchResults", model);
+    //      }
+
+
+
+
+
+
+
+
+
         static void RetrieveMultipleResults(SqlConnection connection)
         {
             using (connection)
