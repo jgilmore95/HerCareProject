@@ -1,7 +1,51 @@
 @page
-@model IndexModel
+@model her_care.Models.VolunteerHoursModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Volunteer Hours";
 }
-<div>This page will hold the volunteer hour tracking</div>
 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width"/>
+        <title>VolunteerVerification</title>
+        <link rel="site" href="~/css/site.css" /> 
+    </head>
+    <body>
+        <div class="panel panel-success">
+            <div class"panel-heading text-center"> 
+                <div class="panel-body">
+                    <br />
+                    <br />
+                    <h3>Volunteer/Add Hours Form</h3>
+                    <br />
+                    <br />
+                    <form class="p-a-1" asp-action="HoursInput" method="post">
+                        <div asp-validation-summary="All"></div>
+
+                        <div class="form-groupright">
+                            <label asp-for="FirstNameVV">First Name:</label>
+                            <input class="form-control" asp-for="FirstNameVV"/>                    
+                        </div>
+                            
+                        <div class="form-groupright">
+                                <label asp-for="LastNameVV">Last Name:</label>
+                                <input class="form-control" asp-for="LastNameVV"/>
+                        </div>
+                                <br />
+                                <br />
+                                <br />
+
+                            
+                        <div class="buttonCenter">
+                                <a href="https://localhost:5001/" class="button" :hover type="submit" value="S U B M I T">S U B M I T</a>
+                        </div>
+
+                     </form>
+                     
+                </div>
+            </div>
+        </div> 
+
+    </body>
+</html>

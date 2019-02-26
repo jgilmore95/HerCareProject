@@ -87,7 +87,7 @@ body {
 header{
     text-align: center;
     font-size: 38pt;
-    padding-bottom: 50px;
+    padding-bottom: 60px;
 }
 
 h1 {
@@ -142,11 +142,100 @@ h2 {
     border: 2px solid rgb(28, 8, 117);
     border-radius: 6px;
     width: 350px;
-    
-    
-    
 
 }
+.btn-switch {
+    font-size: 12pt;
+      position: relative;
+      display: inline-block;		
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+  }
+  .btn-switch__radio {
+      display: none;
+  }
+  .btn-switch__label {
+      display: inline-block;	
+      padding: .75em .5em .75em .75em;
+      vertical-align: top;
+      font-size: 1em;
+      font-weight: 700;
+      line-height: 1.5;
+      color: #666;
+    cursor: pointer;
+      transition: color .2s ease-in-out;
+  }
+  .btn-switch__label + .btn-switch__label {
+    padding-right: .75em;
+      padding-left: 0;
+  }
+  .btn-switch__txt {
+      position: relative;
+      z-index: 2;
+    display: inline-block;
+     min-width: 1.5em;
+      opacity: 1;
+      pointer-events: none;
+      transition: opacity .2s ease-in-out;
+  }
+  .btn-switch__radio_no:checked ~ .btn-switch__label_yes .btn-switch__txt,
+  .btn-switch__radio_yes:checked ~ .btn-switch__label_no .btn-switch__txt {
+      opacity: 0;
+  }
+  .btn-switch__label:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: #f0f0f0;
+      border-radius: 1.5em;
+      box-shadow: inset 0 .0715em .3572em rgba(43,43,43,.05);
+      transition: background .2s ease-in-out;
+  }
+  .btn-switch__radio_yes:checked ~ .btn-switch__label:before {
+      background: #0d0081;
+  }
+  .btn-switch__label_no:after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      top: .5em;
+      bottom: .5em;
+      left: .5em;
+      width: 2em;
+      background: #fff;
+      border-radius: 1em;	
+      pointer-events: none;
+      box-shadow: 0 .1429em .2143em rgba(43,43,43,.2), 0 .3572em .3572em rgba(43,43,43,.1);
+      transition: left .2s ease-in-out, background .2s ease-in-out;
+  }
+  .btn-switch__radio_yes:checked ~ .btn-switch__label_no:after {
+      left: calc(100% - 2.5em);
+      background: #fff;
+  }
+  .btn-switch__radio_no:checked ~ .btn-switch__label_yes:before,
+  .btn-switch__radio_yes:checked ~ .btn-switch__label_no:before {
+      z-index: 1;
+  }
+  .btn-switch__radio_yes:checked ~ .btn-switch__label_yes {
+      color: #fff;
+  }
+
+  [type="date"] {
+    background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+  }
+  [type="date"]::-webkit-inner-spin-button {
+    display: none;
+  }
+  [type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+
 #wrapper
 {
   border: 1px solid #888;
@@ -207,6 +296,8 @@ h2 {
     color: white;
 }
 .checkboxLeft{
+
+   
     text-align: left;
     display: block;
   position: relative;
@@ -273,7 +364,7 @@ searchbox
 
 .searchTerm {
   float: left;
-  width: 100%;
+  width: 450px;
   border: 3px solid rgb(204, 0, 61);
   padding: 5px;
   height: 40px;
@@ -289,7 +380,7 @@ searchbox
 .searchButton {
   position: absolute;  
   right: -100px;
-  width: 80px;
+  width: 170px;
   height: 36px;
   border: 1px solid #00B4CC;
   background: rgb(204, 0, 51);
@@ -299,6 +390,36 @@ searchbox
   cursor: pointer;
   font-size: 20px;
 }
+
+/* Mahmood */
+.searchButtonBlue {
+    position: absolute;  
+    right: -100px;
+    width: 170px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: rgb(14, 0, 204);
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  /* Mahmood */
+  .searchTermBlue {
+    float: left;
+    width: 450px;
+    border: 3px solid rgb(33, 30, 216);
+    padding: 5px;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    color: rgb(33, 30, 216);
+  }
+
+
+
 
 /*Resize the wrap to see the search bar change!*/
 .wrap{
@@ -323,4 +444,45 @@ searchbox
     top:30%;
     left: 50%;
     
+}
+
+
+/* Mahmood */
+.boxMiddle {
+  width: 300px;
+  height:300px;
+  
+  position:fixed;
+  margin-left:-150px; /* half of width */
+  margin-top:-50px;  /* half of height */
+  top:30%;
+  left: 50%;
+  
+}
+
+.calendar{
+    width: 300px;
+    height:300px;
+    text-align: right;
+
+   
+}
+
+iframe{
+    width: 500px;
+    height:400px;
+    position: absolute;
+    top: 400px;
+    
+    text-align: right;
+}
+
+.div#01 {
+    position: bottom;
+}
+
+.h6{
+    font-style: normal;
+    font-size: 12pt;
+
 }

@@ -10,6 +10,7 @@ using System.Collections.Specialized;
 using System.Configuration;
 using System.Configuration.Assemblies;
 using System.Data;
+using System.Reflection;
  
 namespace her_care.Controllers
 {
@@ -27,6 +28,7 @@ namespace her_care.Controllers
         cmd.CommandType = CommandType.StoredProcedure;
         return cmd;
     }
+    
          
     //      * This function allows for the user to close the connection to the database 
     //      */
@@ -40,6 +42,18 @@ namespace her_care.Controllers
                 cmd = null;
             }
         }
+    }
+
+    protected static SqlCommand openConnection(){
+        String cnxStr = Environment.GetEnvironmentVariable("connString");
+
+        SqlConnection cnx = new SqlConnection(cnxStr);
+
+        cnx.Open();
+
+        SqlCommand cmd = new  SqlCommand();
+        cmd.Connection = cnx;
+        return cmd;
     }
 }
 }

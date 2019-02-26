@@ -21,4 +21,5 @@ namespace her_care.Models
         public DateTime DateOfBirth { get; set; }
         public Guid Uuid { get; set; }
     }
+    
 }

@@ -1,5 +1,7 @@
 @page
-@model IndexModel
+
+@model her_care.Models.SearchModel
+
 @{
     ViewData["Title"] = "Administration";
 }
@@ -13,19 +15,67 @@
     lon
 </div>
 -->
+<body>
 <header>Administration Portal</header>
-<form id="frmsearch" action="~/Shared/Client" method="get">
+@using (Html.BeginForm("SearchResults", "AdministrationPortal", FormMethod.Post, 
+                                      new { }))
+{
+    @Html.ValidationSummary(true)
+
+<!-- <form id="frmsearch" action="~/SearchResults" method="get"> -->
 <div class="wrap">
    <div class="search">
        
-      <input type="text" class="searchTerm" placeholder="Enter Client Name">
-      <button type="submit" class="searchButton" >
-        Search
-     </button>
+@Html.TextBox("SearchValue", null, new { @class = "searchTerm", placeholder = "Enter Client Name" })
+      
+      <input type="submit" class="searchButton" value="Client Search" />
+       
    </div>
 </div>
-</form>
-<div align= "center">
+<!-- </form> -->
+}
+
+
+
+
+</br></br>
+<!-- Mahmood -->
+@using (Html.BeginForm("VolunteerSearchResults", "AdministrationPortal", FormMethod.Post, 
+                                      new { }))
+{
+    @Html.ValidationSummary(true)
+
+
+<div class="wrap">
+   <div class="search">
+       
+@Html.TextBox("VolunteerSearchValue", null, new { @class = "searchTermBlue", placeholder = "Enter Volunteer Name" })
+      
+      <input type="submit" class="searchButtonBlue" value="Volunteer Search" />
+       
+   </div>
+</div>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div>
     <iframe src="https://calendar.google.com/calendar/embed?src=mlnmv22l6k6gnga0c6tqfmq2ps%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 </div>
 
@@ -35,4 +85,23 @@
      <input id="submit" name="submit" type="submit" style="font-weight:bold;" value="Search" />
 </form>
 -->
+<div id="01">
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    
 <a asp-page="Shared/Client">Click here for client page</a>
+
+<!-- Mahmood -->
+</br>
+</br>
+<a asp-page="Shared/Volunteer">Click here for Volunteer page</a>
+
+
+
+</div>
+</body>

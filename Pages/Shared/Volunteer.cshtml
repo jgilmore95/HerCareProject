@@ -1,0 +1,48 @@
+@page
+@model her_care.Models.Test
+@{
+    ViewData["Title"] = "Client";
+}
+@{
+
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width"/>
+        <title>Volunteer</title>
+        <link rel="site" href="~/css/site.css" /> 
+    </head>
+    
+    
+    <body>
+       <header>Volunteer Name: Volunteer</header>
+       <div class="boxMiddle"> 
+           
+        </div>
+
+       <div>
+           <table class="boxMiddle" width="100%">
+           <tr><td><a asp-page="/PhotoConsent" type="button" class="buttonHome">Photo Consent Form</></a></td></tr>
+           <tr><td>From: <input type="date" name="startsearch"> To : <input type="date" name="endsearch"></td></tr>
+           <tr><td><table border="1" width="100%">
+                <tr>
+                    <td><strong>Volunteer ID</strong></td>
+                    <td><strong>First Name</strong></td>
+                    <td><strong>Last Name</strong></td>
+                    <td><strong>Hours Worked</strong></td>
+                    <td><strong>Date Worked</strong></td>
+                </tr>
+                </table>
+            </td></tr>
+           </table>
+
+            
+        </div>
+   
+   <div>
+
+   </div>
+    </body>
+</html>

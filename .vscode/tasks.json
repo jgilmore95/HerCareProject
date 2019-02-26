@@ -10,16 +10,7 @@
                 "${workspaceFolder}/her-care.csproj"
             ],
             "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "build",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/her-care.csproj"
-            ],
-            "problemMatcher": "$msCompile"
+
         }
     ]
 }

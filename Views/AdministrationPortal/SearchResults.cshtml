@@ -1,0 +1,83 @@
+@page
+
+@model IEnumerable<her_care.Models.Test>
+
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+        <meta name="viewport" content="width-device-width"/>
+        <title>SearchResults</title>
+        <link rel="site" href="~/css/site.css" /> 
+    </head>
+
+
+
+
+<div>
+  
+    <table width="60%" align="center">
+    <tr align="center">
+        <td>
+            <h1>View Opportunity/Volunteers</h1>
+            <h1>Search Results</h1>
+        </td>
+    </tr>
+    <tr align="center">
+        <td>
+
+            <table border="1" width="100%">
+                <tr>
+                    <td><strong>ID</strong></td>
+                    <td><strong>Name</strong></td>
+                    <td><strong>Age</strong></td>
+                    <td><strong>Number</strong></td>
+                </tr>
+               
+                    
+                
+                @foreach (var test in ViewBag.MyModel)
+                { 
+                   
+                    <tr>
+                        <td>@test.Id</td>
+                        <td>@test.PName</td>
+                        <td>@test.Age</td>
+                        <td>@test.num</td>
+                    </tr>
+                
+                }
+                
+        </td>
+    </tr>
+</table>
+</table><a asp-page="~/Pages/Shared/Client">Click here for client page</a>
+</div>
+
+
+    <!--
+<body>
+    <div>
+        db search results here
+    </div>
+
+    <table>
+        <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        </tr>
+        <tr>
+            <td>Williams</td>
+            <td>Bill</td>
+        </tr>
+
+    </table>
+    <div>
+<a asp-page="Shared/Client">Click here for client page</a>
+</div>
+
+</body>
+-->
+</html>

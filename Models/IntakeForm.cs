@@ -1,35 +1,45 @@
 using System;
 using System.Collections.Generic;
-
-namespace her_care.Models
-{
-
-
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel.DataAnnotations;
 
 
     public class Demographics
     {
         public string FirstName {get; set;}
         public string LastName {get; set;}
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime TodaysDate {get; set;}
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DateOfBirth {get; set;}
-        public string Phone {get; set;}
+        public int Phone {get; set;}
         public string EmailAddress {get; set;}
         public string AddressOne { get; set; }
          public string AddressTwo { get; set; }
          public string City { get; set; }
          public string State { get; set; }
-         public string Zip { get; set; }
+         public int Zip { get; set; }
          public string EmergencyContactFirst {get; set;}
          public string EmergencyContactLast {get; set;}
-         public string EmergencyContactPhone {get; set;}
+         public int EmergencyContactPhone {get; set;}
          public string BranchOfService {get; set;}
+         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
          public DateTime EntryDate {get; set;}
+         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
          public DateTime DischargeDate {get; set;}
          public string DischargeType {get; set;}
          public Boolean CombatVet {get; set;}
-         public string DisabilityRating {get; set;}
+         public int DisabilityRating {get; set;}
          public Boolean ActiveDuty {get; set;} //were you or are you on active duty, reserves, or national guard
+        public Boolean Reserves {get; set;} 
+        public Boolean NationalGuard {get; set;} 
           public Boolean Employed {get; set;}
         public Boolean Student {get; set;}
         public Boolean SelfEmployed {get; set;}
@@ -37,7 +47,7 @@ namespace her_care.Models
         public Boolean WorkStudy {get; set;}
         public Boolean Intern {get; set;}
         public Boolean Unemployed {get; set;}
-        public string Other {get; set;}
+        public string OtherEmployed {get; set;}
          public Boolean OnStreet {get; set;}
         public Boolean SofaSurfing {get; set;}
         public Boolean Shelter {get; set;}
@@ -45,6 +55,7 @@ namespace her_care.Models
         public Boolean GroupHome {get; set;}
         public Boolean Rental {get; set;}
         public Boolean OwnHome {get; set;}
+        public string OtherLiving {get; set;}
          public Boolean FriendsOrRelatives {get; set;}
         public Boolean Alone {get; set;}
         public Boolean Temporary {get; set;}
@@ -61,6 +72,8 @@ namespace her_care.Models
         public Boolean Food {get; set;}
         public Boolean Employment {get; set;}
         public Boolean Transportation {get; set;}
+        public string OtherService {get; set;}
+
         
     }
 
@@ -124,4 +137,3 @@ namespace her_care.Models
         public string FollowUpNotes {get; set;}
     }
     
-}
