@@ -1,5 +1,5 @@
 @page
-{
+
 @model Demographics  
 @{
     ViewData["Title"] = "Intake";
@@ -62,16 +62,16 @@
                     <label asp-for="State">State:</label>
                    <select name="state" class="form-control">
                         <option selected="selected">Select State</option>
-                        <option value="1">Alabama</option>
-                        <option value="2">Alaska</option>
-                        <option value="3">Arizona</option>
-                        <option value="4">Arkansas</option>
-                        <option value="5">California</option>
-                        <option value="6">Colorado</option>
-                        <option value="7">Connecticut</option>
-                        <option value="8">Delaware</option>
-                        <option value="9">District of Columbia</option>
-                        <option value="10">Florida</option>
+                        <option value="2">Alabama</option>
+                        <option value="3">Alaska</option>
+                        <option value="4">Arizona</option>
+                        <option value="5">Arkansas</option>
+                        <option value="6">California</option>
+                        <option value="7">Colorado</option>
+                        <option value="8">Connecticut</option>
+                        <option value="9">Delaware</option>
+                        <option value="10">District of Columbia</option>
+                        <option value="1">Florida</option>
                         <option value="11">Georgia</option>
                         <option value="12">Hawaii</option>
                         <option value="13">Idaho</option>
@@ -89,30 +89,30 @@
                         <option value="25">Mississippi</option>
                         <option value="26">Missouri</option>
                         <option value="27">Montana</option>
-                        <option value="28">Nebraska</option>
-                        <option value="29">Nevada</option>
-                        <option value="30">New Hampshire</option>
-                        <option value="31">New Jersey</option>
-                        <option value="32">New Mexico</option>
-                        <option value="33">New York</option>
-                        <option value="34">North Carolina</option>
-                        <option value="35">North Dakota</option>
-                        <option value="36">Ohio</option>
-                        <option value="37">Oklahoma</option>
-                        <option value="38">Oregon</option>
-                        <option value="39">Pennsylvania</option>
-                        <option value="40">Rhode Island</option>
-                        <option value="41">South Carolina</option>
-                        <option value="42">South Dakota</option>
-                        <option value="43">Tennessee</option>
-                        <option value="44">Texas</option>
-                        <option value="45">Utah</option>
-                        <option value="46">Vermont</option>
-                        <option value="47">Virginia</option>
-                        <option value="48">Washington</option>
-                        <option value="49">West Virginia</option>
-                        <option value="50">Wisconsin</option>
-                        <option value="51">Wyoming</option>
+                        <option value="29">Nebraska</option>
+                        <option value="30">Nevada</option>
+                        <option value="31">New Hampshire</option>
+                        <option value="32">New Jersey</option>
+                        <option value="33">New Mexico</option>
+                        <option value="34">New York</option>
+                        <option value="35">North Carolina</option>
+                        <option value="36">North Dakota</option>
+                        <option value="37">Ohio</option>
+                        <option value="38">Oklahoma</option>
+                        <option value="39">Oregon</option>
+                        <option value="40">Pennsylvania</option>
+                        <option value="41">Rhode Island</option>
+                        <option value="42">South Carolina</option>
+                        <option value="43">South Dakota</option>
+                        <option value="44">Tennessee</option>
+                        <option value="45">Texas</option>
+                        <option value="46">Utah</option>
+                        <option value="47">Vermont</option>
+                        <option value="48">Virginia</option>
+                        <option value="49">Washington</option>
+                        <option value="50">West Virginia</option>
+                        <option value="51">Wisconsin</option>
+                        <option value="52">Wyoming</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -132,10 +132,11 @@
                 <div class="form-group">
                     <label asp-for="BranchOfService">Branch Of Service:</label>
                     <input class="form-control" asp-for="BranchOfService"/>
-
-                         <label for="ADDBranch">Please specify additional branch here: </label>
-                         <input type="text" id="addBranch" name="which-Branch" class="form-control" >
                 </div>
+                <div class="form-group">
+                 <label for="ADDBranch">Please specify additional branch here: </label>
+                 <input type="text" value="Leave Blank If Does Not Apply" id="addBranch" name="which-Branch" class="form-control" >
+                 </div>   
                 
                 <div class="form-group">
                     <label asp-for="EntryDate">Entry Date:</label>
@@ -145,246 +146,248 @@
                     <label asp-for="DischargeDate">Discharge Date:</label>
                     <input type="date" class="form-control" asp-for="DischargeDate"/>
                 </div>
-                <div id="wrapper">
+                <div class="form-group" style="padding-top: 20px;">
                     <label asp-for="CombatVet">Are You A Combat Vet?</label>
-                <p class="btn-switch">					
+                  </div>   
+                  <div class="form-group" style="padding-left: 15px;">
+                <div class="btn-switch">					
                 <input type="radio" id="yes" name="switch" class="btn-switch__radio btn-switch__radio_yes" />
                 <input type="radio" checked id="no" name="switch" class="btn-switch__radio btn-switch__radio_no" />		
                 <label for="yes" class="btn-switch__label btn-switch__label_yes"><span class="btn-switch__txt">Yes</span></label>								 
                 <label for="no" class="btn-switch__label btn-switch__label_no"><span class="btn-switch__txt">No</span></label>							
-                </p>        
                 </div>
+                </div>        
+               
 
                 <!-- /*Disaility drop-down*/ -->
-                <div class="form-group">
+                <div class="form-group" style="padding-top: 20px; padding-left: 120px;">
                     <label asp-for="DisabilityRating">Disibility Rating (please enter a percentage):</label>
-                    <!--<input type="text" maxlength="10" value="%" class="form-control" asp-for="DisabilityRating"/> -->
                      @Html.DropDownListFor(m => m.DisabilityRating, Enumerable.Range(0, 101).Select(i => new SelectListItem { Text = i.ToString(), Value = i.ToString()  }))
-                    
+                </div>
+                <div class="form-group" style="padding: 10px; padding-top: 10px;" >  
                     <label class="checkboxLeft">None
-                    <input type="checkbox" name="DisibilityRating" value="Disibilityrating" />
+                    <input type="checkbox" value="true" name="DisibilityRating" value="Disibilityrating" />
                     <span class="checkmark"></span>
                     </label>
-                    
                 </div>
                 <label class="h6" asp-for="ActiveDuty">Were you or are you on Active Duty, in the Reserves or the National Guard?</label>
                 <div class="checkboxLeft">
                     <label class="checkboxLeft">Active Duty
-                    <input type="checkbox" name="ActiveDuty" value="ActiveDuty"/>
+                    <input type="checkbox" value="true" name="ActiveDuty" value="ActiveDuty"/>
                     <span class="checkmark"></span>
                     </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Reserves
-                    <input type="checkbox" name="Reserves" value="Reserves"/>
+                    <input type="checkbox"  value="true" name="Reserves" value="Reserves"/>
                     <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                     <label class="checkboxLeft">National Guard
-                    <input type="checkbox" name="NationalGuard" value="NationalGuard"/>
+                    <input type="checkbox" value="true" name="NationalGuard" value="NationalGuard"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <h3>CURRENT EMPLOYMENT STATUS (check all that apply)</h3>
                 <div class="checkboxLeft">
                     <label class="checkboxLeft">Employed
-                    <input type="checkbox" name="Employed" value="Employed"/>
+                    <input type="checkbox"  value="true" name="Employed" value="Employed"/>
                      <span class="checkmark"></span>
                     </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Student
-                    <input type="checkbox" name="Student" value="Student"/>
+                    <input type="checkbox"  value="true" name="Student" value="Student"/>
                      <span class="checkmark"></span>
                      </label>
                 </div> 
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Self Employed
-                    <input type="checkbox" name="SelfEmployed" value="Self-Employed"/>
+                    <input type="checkbox"  value="true" name="SelfEmployed" value="Self-Employed"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Contractor
-                    <input type="checkbox" name="Contractor" value="Contractor"/>
+                    <input type="checkbox" value="true" name="Contractor" value="Contractor"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Word Study
-                    <input type="checkbox" name="WorkStudy" value="Work Study"/>
+                    <input type="checkbox" value="true" name="WorkStudy" value="Work Study"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Intern
-                    <input type="checkbox" name="Intern" value="Intern"/>
+                    <input type="checkbox" value="true" name="Intern" value="Intern"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Unemployed
-                    <input type="checkbox" name="Unemployed" value="Unemployed"/>
+                    <input type="checkbox" value="true" name="Unemployed" value="Unemployed"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Other
-                    <input type="checkbox" name="OtherEmployed" value="OtherEmployed"/>
+                    <input type="checkbox" value="true" name="OtherEmployed" value="OtherEmployed"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <h3>LIVING SITUATION</h3>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">On Street
-                    <input type="checkbox" name="OnStreet" value="On Street"/>
+                    <input type="checkbox" value="true" name="OnStreet" value="On Street"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Sofa Surfing
-                    <input type="checkbox" name="SofaSurfing" value="Sofa Surfing"/>
+                    <input type="checkbox" value="true" name="SofaSurfing" value="Sofa Surfing"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Shelter
-                    <input type="checkbox" name="Shelter" value="Shelter"/>
+                    <input type="checkbox" value="true" name="Shelter" value="Shelter"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Transitional Housing
-                    <input type="checkbox" name="TransitionalHousing" value="Transitional Housing"/>
+                    <input type="checkbox" value="true" name="TransitionalHousing" value="Transitional Housing"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Group Home
-                    <input type="checkbox" name="GroupHome" value="Group Home"/>
+                    <input type="checkbox" value="true" name="GroupHome" value="Group Home"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Rental
-                    <input type="checkbox" name="Rental" value="Rental"/>
+                    <input type="checkbox" value="true" name="Rental" value="Rental"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Own Home
-                    <input type="checkbox" name="OwnHome" value="Own Home"/>
+                    <input type="checkbox" value="true" name="OwnHome" value="Own Home"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Other
-                    <input type="checkbox" name="OtherLiving" value="OtherLiving"/>
+                    <input type="checkbox" value="true" name="OtherLiving" value="OtherLiving"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <h3>LIVING ARRANGEMENTS</h3>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Friends/Relatives
-                    <input type="checkbox" name="FreindsOrRelatives" value="FriendsOrRelatives"/>
+                    <input type="checkbox" value="true" name="FreindsOrRelatives" value="FriendsOrRelatives"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Alone
-                    <input type="checkbox" name="Alone" value="Alone"/>
+                    <input type="checkbox" value="true" name="Alone" value="Alone"/>
                     <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Temporary
-                    <input type="checkbox" name="Temporary" value="Temporary"/>
+                    <input type="checkbox" value="true" name="Temporary" value="Temporary"/>
                     <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Permanent
-                    <input type="checkbox" name="Permanent" value="Permanent"/>
+                    <input type="checkbox" value="true" name="Permanent" value="Permanent"/>
                     <span class="checkmark"></span>
                      </label>
                 </div>
                  <h3>SERVICE NEEDS (Check all that apply)</h3>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Business Resources
-                    <input type="checkbox" name="BusinessResources" value="Business Resources"/>
+                    <input type="checkbox"  value="true" name="BusinessResources" value="Business Resources"/>
                     <span class="checkmark"></span>
                      </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Day Care
-                    <input type="checkbox" name="DayCare" value="Day Care"/>
+                    <input type="checkbox" value="true" name="DayCare" value="Day Care"/>
                     <span class="checkmark"></span>
                     </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Housing
-                    <input type="checkbox" name="Housing" value="Housing"/>
+                    <input type="checkbox" value="true" name="Housing" value="Housing"/>
                     <span class="checkmark"></span>
                     </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Clothing
-                    <input type="checkbox" name="Clothing" value="Clothing"/>
+                    <input type="checkbox" value="true" name="Clothing" value="Clothing"/>
                     <span class="checkmark"></span>
                     </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Disability Claim
-                    <input type="checkbox" name="DisabilityClaim" value="DisabilityClaim"/>
+                    <input type="checkbox" value="true" name="DisabilityClaim" value="DisabilityClaim"/>
                     <span class="checkmark"></span>
                     </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Legal
-                    <input type="checkbox" name="Legal" value="Legal"/>
+                    <input type="checkbox" value="true" name="Legal" value="Legal"/>
                     <span class="checkmark"></span>
                     </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Counseling
-                    <input type="checkbox" name="Counseling" value="Counseling"/>
+                    <input type="checkbox" value="true" name="Counseling" value="Counseling"/>
                     <span class="checkmark"></span>
                     </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Education/Vocationaal Rehab
-                    <input type="checkbox" name="EducationalOrVocationalRehab" value="Education/Vocational Rehab"/>
+                    <input type="checkbox" value="true" name="EducationalOrVocationalRehab" value="Education/Vocational Rehab"/>
                     <span class="checkmark"></span>
                     </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Utilities
-                    <input type="checkbox" name="Utilities" value="Utilities"/>
+                    <input type="checkbox" value="true" name="Utilities" value="Utilities"/>
                     <span class="checkmark"></span>
                     </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Food
-                    <input type="checkbox" name="Food" value="Food"/>
+                    <input type="checkbox"  value="true"name="Food" value="Food"/>
                     <span class="checkmark"></span>
                     </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Employment
-                    <input type="checkbox" name="Employment" value="Employment"/>
+                    <input type="checkbox" value="true" name="Employment" value="Employment"/>
                     <span class="checkmark"></span>
                     </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Transportation
-                    <input type="checkbox" name="Transportation" value="Transportation"/>
+                    <input type="checkbox"  value="true"name="Transportation" value="Transportation"/>
                     <span class="checkmark"></span>
                     </label>
                 </div>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Other
-                    <input type="checkbox" name="OtherService" value="OtherService"/>
+                    <input type="checkbox" value="true" name="OtherService" value="OtherService"/>
                     <span class="checkmark"></span>
                     </label>
                 </div>    
