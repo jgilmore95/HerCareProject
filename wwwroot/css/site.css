@@ -369,6 +369,11 @@ h2 {
 searchbox
 */
 
+.tableCenter{
+
+}
+
+
 .search {
   width: 100%;
   position: relative
@@ -452,5 +457,4 @@ iframe{
 .h6{
     font-style: normal;
     font-size: 12pt;
-
-}
+    margin: 1em auto;
