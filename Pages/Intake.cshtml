@@ -174,73 +174,106 @@
                     </label>
                 </div>
                 <label class="h6" asp-for="ActiveDuty">Were you or are you on Active Duty, in the Reserves or the National Guard?</label>
-                <div class="checkboxLeft">
+                <table style="margin:1em auto;">
+                <tr>
+                <td>
+                <div class="">
                     <label class="checkboxLeft">Active Duty
                     <input type="checkbox" value="true" name="ActiveDuty" value="ActiveDuty"/>
                     <span class="checkmark"></span>
                     </label>
                 </div>
-                <div class="checkboxLeft">
+                 </td>
+                 <td>
+                <div class="">
                      <label class="checkboxLeft">Reserves
                     <input type="checkbox"  value="true" name="Reserves" value="Reserves"/>
                     <span class="checkmark"></span>
                      </label>
                 </div>
-                <div class="checkboxLeft">
+                 </td>
+                 <td>
+                    <div class="">
                     <label class="checkboxLeft">National Guard
                     <input type="checkbox" value="true" name="NationalGuard" value="NationalGuard"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
+                </td>
+                </tr>
+                </table>
+                
                 <h3>CURRENT EMPLOYMENT STATUS (check all that apply)</h3>
+                <table style="margin:1em auto;">
+                <tr>
+                <td>
                 <div class="checkboxLeft">
                     <label class="checkboxLeft">Employed
                     <input type="checkbox"  value="true" name="Employed" value="Employed"/>
                      <span class="checkmark"></span>
                     </label>
                 </div>
+                </td>
+                <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Student
                     <input type="checkbox"  value="true" name="Student" value="Student"/>
                      <span class="checkmark"></span>
                      </label>
-                </div> 
+                </div>
+                </td>
+                <td> 
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Self Employed
                     <input type="checkbox"  value="true" name="SelfEmployed" value="Self-Employed"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
+                </td>
+                <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Contractor
                     <input type="checkbox" value="true" name="Contractor" value="Contractor"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
+                </td>
+                </tr>
+                <tr>
+                <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Word Study
                     <input type="checkbox" value="true" name="WorkStudy" value="Work Study"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
+                </td>
+                <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Intern
                     <input type="checkbox" value="true" name="Intern" value="Intern"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
+                </td>
+                <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Unemployed
                     <input type="checkbox" value="true" name="Unemployed" value="Unemployed"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
+                </td>
+                <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Other
                     <input type="checkbox" value="true" name="OtherEmployed" value="OtherEmployed"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
+                </td>
+                </tr>
+                </table>
                 <h3>LIVING SITUATION</h3>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">On Street
