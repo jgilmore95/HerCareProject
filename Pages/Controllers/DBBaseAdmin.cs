@@ -93,6 +93,51 @@ namespace her_care.Controllers
             return opps;
         }
 
+
+        // Mahmood
+        public static List<Volunteer> VolunteerSearch(string searchTerm)
+        {
+              SqlCommand cmd = null;
+            List<Volunteer> opps = new List<Volunteer>();
+
+            try{
+                 cmd = openConnection();
+
+                cmd.CommandText = "SELECT * FROM Volunteer WHERE [Volunteer].FName like '"+ searchTerm + "%'";
+                cmd.CommandType = System.Data.CommandType.Text;
+
+                SqlDataReader rdr = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+
+                while(rdr.Read() == true)
+                {
+                    Volunteer opp = new Volunteer();
+
+                    opp.VolunteerFisrtname = rdr["FName"].ToString();
+                    opp.VolunteerLastname = rdr["LName"].ToString();
+                    
+
+                    opps.Add(opp);
+                }
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
+            finally{
+                CloseConnection(cmd);
+            }
+            return opps;
+        }
+
+
+
+
+
+
+
+
+
+
         
     }
 }
