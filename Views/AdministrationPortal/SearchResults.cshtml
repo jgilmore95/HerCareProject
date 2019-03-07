@@ -9,7 +9,7 @@
 <html>
 <head>
         <meta name="viewport" content="width-device-width"/>
-        <title>SearchResults</title>
+        <title>VolunteerSearchResults</title>
         <link rel="site" href="~/css/site.css" /> 
     </head>
 
@@ -21,33 +21,31 @@
     <table width="60%" align="center">
     <tr align="center">
         <td>
-            <h1>View Opportunity/Volunteers</h1>
-            <h1>Search Results</h1>
+            <h1>View Volunteers</h1>
+            <h1>Volunteer Search Results</h1>
         </td>
     </tr>
     <tr align="center">
         <td>
 
+           </br></br></br>
             <table border="1" width="100%">
                 <tr>
-                    <td><strong>ID</strong></td>
-                    <td><strong>Name</strong></td>
-                    <td><strong>Age</strong></td>
-                    <td><strong>Number</strong></td>
+                    <td><strong>First Name</strong></td>
+                    <td><strong>Last Name</strong></td>
+                    <td><strong>Hours Worked</strong></td>
                 </tr>
                
                     
                 
                 @foreach (var test in ViewBag.MyModel)
                 { 
-                   
                     <tr>
-                        <td>@test.Id</td>
-                        <td>@test.PName</td>
-                        <td>@test.Age</td>
-                        <td>@test.num</td>
+                        <td><a asp-page="~/Pages/Shared/Volunteer">@test.VolunteerFirstName</a></td>
+                        <td><a asp-page="~/Pages/Shared/Client">@test.VolunteerLastName</a></td>
+                        <td></td>
+                        <td></td>
                     </tr>
-                
                 }
                 
         </td>
@@ -55,29 +53,4 @@
 </table>
 </table><a asp-page="~/Pages/Shared/Client">Click here for client page</a>
 </div>
-
-
-    <!--
-<body>
-    <div>
-        db search results here
-    </div>
-
-    <table>
-        <tr>
-        <th>Last Name</th>
-        <th>First Name</th>
-        </tr>
-        <tr>
-            <td>Williams</td>
-            <td>Bill</td>
-        </tr>
-
-    </table>
-    <div>
-<a asp-page="Shared/Client">Click here for client page</a>
-</div>
-
-</body>
--->
 </html>

@@ -27,23 +27,14 @@ namespace her_care.Controllers
             this.context = context;
         }
         
+
         [Route("AdministrationPortal")]
         [HttpPost]
         public ActionResult SearchResults(SearchModel model)
         {
             var searchList = her_care.Controllers.DBBaseAdmin.UserSearch(model.SearchValue);
             ViewBag.MyModel = searchList;
-
-            /*This will return entire table 
-             var testList = her_care.Controllers.DBBaseAdmin.ReturnEntireTable();
-           
-
-                ViewBag.MyModel = testList;
-    */
     return View();
-       
         }
-       
-
     }
 }

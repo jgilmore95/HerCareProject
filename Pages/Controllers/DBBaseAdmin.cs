@@ -58,44 +58,44 @@ namespace her_care.Controllers
         /*
         this method is ready for the Client table. Just change from Test table to CLient
          */
-        public static List<Test> UserSearch(string searchTerm)
-        {
-              SqlCommand cmd = null;
-            List<Test> opps = new List<Test>();
+        // public static List<Test> UserSearch(string searchTerm)
+        // {
+        //       SqlCommand cmd = null;
+        //     List<Test> opps = new List<Test>();
 
-            try{
-                 cmd = openConnection();
+        //     try{
+        //          cmd = openConnection();
 
-                cmd.CommandText = "SELECT * FROM Test WHERE [Test].Pname like '"+ searchTerm + "%'";
-                cmd.CommandType = System.Data.CommandType.Text;
+        //         cmd.CommandText = "SELECT * FROM Test WHERE [Test].Pname like '"+ searchTerm + "%'";
+        //         cmd.CommandType = System.Data.CommandType.Text;
 
-                SqlDataReader rdr = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
+        //         SqlDataReader rdr = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection);
 
-                while(rdr.Read() == true)
-                {
-                    Test opp = new Test();
+        //         while(rdr.Read() == true)
+        //         {
+        //             Test opp = new Test();
 
-                    opp.Id = Convert.ToInt32(rdr["Id"].ToString());
-                    opp.PName = rdr["PName"].ToString();
-                    opp.Age = Convert.ToInt32(rdr["Age"].ToString());
-                    opp.num = Int32.Parse(rdr["num"].ToString());
+        //             opp.Id = Convert.ToInt32(rdr["Id"].ToString());
+        //             opp.PName = rdr["PName"].ToString();
+        //             opp.Age = Convert.ToInt32(rdr["Age"].ToString());
+        //             opp.num = Int32.Parse(rdr["num"].ToString());
 
-                    opps.Add(opp);
-                }
-            }
-            catch (Exception e)
-            {
-                throw;
-            }
-            finally{
-                CloseConnection(cmd);
-            }
-            return opps;
-        }
+        //             opps.Add(opp);
+        //         }
+        //     }
+        //     catch (Exception e)
+        //     {
+        //         throw;
+        //     }
+        //     finally{
+        //         CloseConnection(cmd);
+        //     }
+        //     return opps;
+        // }
 
 
         // Mahmood
-        public static List<Volunteer> VolunteerSearch(string searchTerm)
+        public static List<Volunteer> UserSearch(string searchTerm)
         {
               SqlCommand cmd = null;
             List<Volunteer> opps = new List<Volunteer>();
@@ -112,8 +112,8 @@ namespace her_care.Controllers
                 {
                     Volunteer opp = new Volunteer();
 
-                    opp.VolunteerFisrtname = rdr["FName"].ToString();
-                    opp.VolunteerLastname = rdr["LName"].ToString();
+                    opp.VolunteerFirstName = rdr["FName"].ToString();
+                    opp.VolunteerLastName = rdr["LName"].ToString();
                     
 
                     opps.Add(opp);
@@ -128,16 +128,6 @@ namespace her_care.Controllers
             }
             return opps;
         }
-
-
-
-
-
-
-
-
-
-
         
     }
 }
