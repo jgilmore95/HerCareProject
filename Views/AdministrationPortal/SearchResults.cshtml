@@ -35,22 +35,22 @@
                     <td><strong>Last Name</strong></td>
                     <td><strong>Hours Worked</strong></td>
                 </tr>
-               
-                    
                 
                 @foreach (var test in ViewBag.MyModel)
                 { 
                     <tr>
-                        <td><a asp-page="~/Pages/Shared/Volunteer">@test.VolunteerFirstName</a></td>
-                        <td><a asp-page="~/Pages/Shared/Client">@test.VolunteerLastName</a></td>
+                        <td><a asp-page="Shared/Volunteer">@test.VolunteerFirstName</a></td>
+                        <td><a asp-page="Shared/Volunteer">@test.VolunteerLastName </a></td>
                         <td></td>
                         <td></td>
                     </tr>
                 }
-                
         </td>
     </tr>
 </table>
-</table><a asp-page="~/Pages/Shared/Client">Click here for client page</a>
+</div>
+
+</div>
+<a asp-page="Shared/Volunteer">Click here for Volunteer page</a>
 </div>
 </html>
