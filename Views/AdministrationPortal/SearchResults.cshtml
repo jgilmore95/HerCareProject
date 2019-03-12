@@ -21,7 +21,7 @@
     <table width="60%" align="center">
     <tr align="center">
         <td>
-            <h1>View Opportunity/Volunteers</h1>
+            <h1>Client and Volunteer Search</h1>
             <h1>Search Results</h1>
         </td>
     </tr>
@@ -31,21 +31,19 @@
             <table border="1" width="100%">
                 <tr>
                     <td><strong>ID</strong></td>
-                    <td><strong>Name</strong></td>
-                    <td><strong>Age</strong></td>
-                    <td><strong>Number</strong></td>
+                    <td><strong>First Name</strong></td>
+                    <td><strong>Last Name</strong></td>
                 </tr>
                
                     
                 
-                @foreach (var test in ViewBag.MyModel)
+                @foreach (var result in ViewBag.MyModel)
                 { 
                    
                     <tr>
-                        <td>@test.Id</td>
-                        <td>@test.PName</td>
-                        <td>@test.Age</td>
-                        <td>@test.num</td>
+                        <td>@result.Id</td>
+                        <td>@result.FName</td>
+                        <td>@result.LName</td>                        
                     </tr>
                 
                 }

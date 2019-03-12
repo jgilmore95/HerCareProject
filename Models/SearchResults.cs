@@ -7,9 +7,7 @@ namespace her_care.Models
     public class SearchModel
     {
         
-        public string SearchValue
-        {
-            get; set;
-        }
+        public string SearchValue{get; set;}
+        public string WhichTable {get; set;}
     }
 }

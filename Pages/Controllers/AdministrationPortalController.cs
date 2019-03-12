@@ -31,8 +31,16 @@ namespace her_care.Controllers
         [HttpPost]
         public ActionResult SearchResults(SearchModel model)
         {
-            var searchList = her_care.Controllers.DBBaseAdmin.UserSearch(model.SearchValue);
+
+            if(model.WhichTable == "Client"){
+            var searchList = her_care.Controllers.DBBaseAdmin.ClientSearch(model.SearchValue);
             ViewBag.MyModel = searchList;
+            }
+
+            if(model.WhichTable == "Volunteer"){
+            var searchList = her_care.Controllers.DBBaseAdmin.VolunteerSearch(model.SearchValue);
+            ViewBag.MyModel = searchList;
+            }
 
             /*This will return entire table 
              var testList = her_care.Controllers.DBBaseAdmin.ReturnEntireTable();

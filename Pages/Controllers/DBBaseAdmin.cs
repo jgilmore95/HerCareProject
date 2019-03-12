@@ -93,6 +93,78 @@ namespace her_care.Controllers
             return opps;
         }
 
+        /* Actual working client search */
+        public static List<SearchBox> ClientSearch(string searchTerm)
+        {
+            SqlCommand cmd = null; //initialize command
+            List<SearchBox> Terms = new List<SearchBox>(); //Create List based on SearchBox Model
+
+            try{
+                 cmd = openConnection(); //Opens SQL connection
+
+                cmd.CommandText = "SELECT * FROM Client WHERE [Client].Fname like '"+ searchTerm + "%'"; //SQL statement
+                cmd.CommandType = System.Data.CommandType.Text; //Execute statement
+
+                SqlDataReader rdr = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection); //Create reader based on statement
+
+                while(rdr.Read() == true) //While there are things left in the reader
+                {
+                    SearchBox Term = new SearchBox(); //Create Term object
+
+                    Term.Id = Convert.ToInt32(rdr["ClientId"].ToString()); //add clientID
+                    Term.FName = rdr["FName"].ToString(); //Add first name
+                    Term.LName = rdr["LName"].ToString(); //Add Last Name
+                    
+
+                    Terms.Add(Term); //Add object to list
+                }
+            }
+            catch (Exception e) //catch any exceptions
+            {
+                throw;
+            }
+            finally{
+                CloseConnection(cmd); // close DB connection
+            }
+            return Terms; //return list
+        }
+
+
+        public static List<SearchBox> VolunteerSearch(string searchTerm)
+        {
+            SqlCommand cmd = null; //initialize command
+            List<SearchBox> Terms = new List<SearchBox>(); //Create List based on SearchBox Model
+
+            try{
+                 cmd = openConnection(); //Opens SQL connection
+
+                cmd.CommandText = "SELECT * FROM Volunteer WHERE [Volunteer].Fname like '"+ searchTerm + "%'"; //SQL statement
+                cmd.CommandType = System.Data.CommandType.Text; //Execute statement
+
+                SqlDataReader rdr = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection); //Create reader based on statement
+
+                while(rdr.Read() == true) //While there are things left in the reader
+                {
+                    SearchBox Term = new SearchBox(); //Create Term object
+
+                    Term.Id = Convert.ToInt32(rdr["VolunteerId"].ToString()); //add clientID
+                    Term.FName = rdr["FName"].ToString(); //Add first name
+                    Term.LName = rdr["LName"].ToString(); //Add Last Name
+                    
+
+                    Terms.Add(Term); //Add object to list
+                }
+            }
+            catch (Exception e) //catch any exceptions
+            {
+                throw;
+            }
+            finally{
+                CloseConnection(cmd); // close DB connection
+            }
+            return Terms; //return list
+        }
+
         
     }
 }
