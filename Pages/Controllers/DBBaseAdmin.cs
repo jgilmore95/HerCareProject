@@ -111,10 +111,8 @@ namespace her_care.Controllers
                 while(rdr.Read() == true)
                 {
                     Volunteer opp = new Volunteer();
-
                     opp.VolunteerFirstName = rdr["FName"].ToString();
                     opp.VolunteerLastName = rdr["LName"].ToString();
-                    
 
                     opps.Add(opp);
                 }

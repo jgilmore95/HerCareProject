@@ -39,9 +39,8 @@
                 @foreach (var test in ViewBag.MyModel)
                 { 
                     <tr>
-                        <td><a asp-page="Shared/Volunteer">@test.VolunteerFirstName</a></td>
-                        <td><a asp-page="Shared/Volunteer">@test.VolunteerLastName </a></td>
-                        <td></td>
+                        <td><a asp-page="/Pages/Volunteer">@test.VolunteerFirstName</a></td>
+                        <td><a asp-page="/Pages/Volunteer">@test.VolunteerLastName </a></td>
                         <td></td>
                     </tr>
                 }
