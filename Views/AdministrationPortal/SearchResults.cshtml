@@ -1,6 +1,6 @@
 @page
 
-
+@model her_care.Models.SearchModel
 
 @{
     Layout = "~/Pages/Shared/_Layout.cshtml";
@@ -45,7 +45,7 @@
                         <td>@result.FName</td>
                         <td>@result.LName</td>  
                         <td>            
-                             @Html.ActionLink("Details", "Details", new { id=result.Id })
+                             @Html.ActionLink("Details", "Details", "AdministrationPortalController", new { id=result.Id })
             
                          </td>                      
                     </tr>

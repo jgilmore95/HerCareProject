@@ -51,6 +51,21 @@ namespace her_care.Controllers
     return View();
        
         }
+
+        public ActionResult Details(SearchModel model){
+           
+           var testvar = model.Id;
+           
+           
+           
+           
+           
+           
+           
+           
+           
+            return View();
+        }
        
 
     }
