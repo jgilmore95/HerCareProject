@@ -14,6 +14,7 @@ body {
    
 }
 
+
 /* Carousel */
 .carousel-caption p {
     font-size: 20px;
@@ -250,6 +251,8 @@ h2 {
     border: 2px solid rgb(28, 8, 117);
     border-radius: 6px;
 
+
+
 }
 .panel-success {
     background: rgb(249, 226, 237);
@@ -274,6 +277,7 @@ h2 {
 }
 .buttonCenter{
     text-align: center;
+    padding-top: 20px;
     
 }
 
