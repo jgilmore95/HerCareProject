@@ -15,7 +15,7 @@ using System.Dynamic;
 
 namespace her_care.Controllers
 {
-    public class AdministrationPortalController : DBBase
+    public class AdministrationPortalController : Controller
     {
         public void OnGet()
         {
@@ -26,7 +26,7 @@ namespace her_care.Controllers
         {
             this.context = context;
         }
-        
+        /*
         [Route("AdministrationPortal")]
         [HttpPost]
         public ActionResult SearchResults(SearchModel model)
@@ -34,16 +34,15 @@ namespace her_care.Controllers
             var searchList = her_care.Controllers.DBBaseAdmin.UserSearch(model.SearchValue);
             ViewBag.MyModel = searchList;
 
-            /*This will return entire table 
+            ///This will return entire table 
              var testList = her_care.Controllers.DBBaseAdmin.ReturnEntireTable();
            
 
                 ViewBag.MyModel = testList;
-    */
-    return View();
+    //return View();
        
         }
-       
+       */
 
     }
 }

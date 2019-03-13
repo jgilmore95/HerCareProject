@@ -15,7 +15,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace her_care.Controllers
 {
-    public class SignInController : DBBase
+    public class SignInController : Controller
     {
         private void InsertConsent()
         {
@@ -25,29 +25,8 @@ namespace her_care.Controllers
         [HttpPost]
         public ActionResult Submit(CSignInModel model)
         {
-            SqlCommand cmd = null;
+            CSignInModel.UserSignin(model);
 
-            try
-            {
-                cmd = Connect("CSignInINSERT");
-
-                cmd.Parameters.Add("@FName", SqlDbType.VarChar, 50).Value = model.FName;
-                cmd.Parameters.Add("@LName", SqlDbType.VarChar, 50).Value = model.LName;
-                cmd.Parameters.Add("@Organization", SqlDbType.VarChar, 150).Value = model.Organization;
-                cmd.Parameters.Add("@Email", SqlDbType.VarChar, 75).Value = model.Email;
-                cmd.Parameters.Add("@BranchID", SqlDbType.Int).Value = model.BranchofService;
-
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                CloseConnection(cmd);
-            }
-            
             return RedirectToPage("/ThankYou");
         }
      } 

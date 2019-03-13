@@ -16,7 +16,7 @@ using her_care.Models;
 
 namespace her_care.Controllers
 {
-    public class AdminLoginController : DBBase
+    public class AdminLoginController : Controller
     {
         [HttpGet]
         [Route("AdminLogin")]
@@ -32,42 +32,18 @@ namespace her_care.Controllers
         { 
             //HttpContext.Session.Remove("UserName");
 
-            SqlCommand cmd = null;
-
-            try
+            if (AdminLoginModel.AdminLogin(model) == true)
             {
-                cmd = Connect("AdminLogin");
+                UserManagement.Username = model.Username;
 
-                cmd.Parameters.Add("@Username", SqlDbType.VarChar, 50).Value = model.Username;
-                cmd.Parameters.Add("@Password", SqlDbType.VarChar, 50).Value = model.Password;
-
-                SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-
-                if (rdr.HasRows == true) {
-                    //HttpContext.Session.SetString("UserName", model.Username);
-
-                    UserManagement.Username = model.Username;
-
-                         return RedirectToPage("/Index");
-                    
-
-                    //System.Diagnostics.Debug.WriteLine("Found Record");
-                }
-                else if (rdr.HasRows == false) {
-                    //HttpContext.Session.SetString("LoginErrorMessage", "Login / Password Is Incorrect");
-                    return View("/Pages/InvalidLogin.cshtml");
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                CloseConnection(cmd);
+                return RedirectToPage("/Index");
             }
 
-           return View("/Pages/AdminLogin.cshtml", model);
+        model.ErrorMsg = "Invalid Login - Please Try Again";
+        
+        return View("/Pages/AdminLogin.cshtml", model);
+
+            //return View("/Pages/InvalidLogin.cshtml");
         }
      } 
 }

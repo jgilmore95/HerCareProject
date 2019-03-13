@@ -15,11 +15,12 @@ using her_care.Models;
  
 namespace her_care.Controllers
 {
-    public class DBBaseAdmin : DBBase
+    public class DBBaseAdmin : Controller
     {
         /*
         This method returns the entire table
          */
+         /*
         public static List<Test> ReturnEntireTable()
         {
             SqlCommand cmd = null;
@@ -54,10 +55,11 @@ namespace her_care.Controllers
             }
             return opps;
         }
-
+*/
         /*
         this method is ready for the Client table. Just change from Test table to CLient
          */
+         /*
         public static List<Test> UserSearch(string searchTerm)
         {
               SqlCommand cmd = null;
@@ -93,6 +95,6 @@ namespace her_care.Controllers
             return opps;
         }
 
-        
+        */
     }
 }

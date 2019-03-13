@@ -16,7 +16,7 @@ using her_care.Models;
 
 namespace her_care.Controllers
 {
-    public class InvalidLoginController : DBBase
+    public class InvalidLoginController : Controller
     {
         public ActionResult Submit() 
         {

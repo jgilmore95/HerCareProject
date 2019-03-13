@@ -12,9 +12,9 @@ using System.Configuration.Assemblies;
 using System.Data;
 using System.Reflection;
  
-namespace her_care.Controllers
+namespace her_care.Models
 {
-    public class DBBase : Controller
+    public class DBBase
     {
     protected static SqlCommand Connect(string storedProcName)
     {

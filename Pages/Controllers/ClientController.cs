@@ -14,7 +14,7 @@ using her_care.Models;
 
 namespace her_care.Controllers
 {
-    public class ClientController : DBBase
+    public class ClientController : Controller
     {
         public void OnGet()
         {

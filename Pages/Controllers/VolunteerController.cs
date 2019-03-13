@@ -14,7 +14,7 @@ using her_care.Models;
 
 namespace her_care.Controllers
 {
-    public class VolunteerController : DBBase
+    public class VolunteerController : Controller
     {
          private void InsertVolunteerHours()
         {
@@ -24,27 +24,7 @@ namespace her_care.Controllers
         [HttpPost]
         public ActionResult Submit(VolunteerModel model)
         {
-            SqlCommand cmd = null;
-
-            try
-            {
-                cmd = Connect("VolunteerHoursInsert");
-
-                cmd.Parameters.Add("@FName", SqlDbType.VarChar, 50).Value = model.FName;
-                cmd.Parameters.Add("@LName", SqlDbType.VarChar, 50).Value = model.LName;
-                cmd.Parameters.Add("@Testimonial", SqlDbType.Bit).Value = model.TestimonialConsent;
-
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            finally
-            {
-                CloseConnection(cmd);
-            }
- 
+            VolunteerModel.AddVolunteerHours(model);
  
            return View();
         }

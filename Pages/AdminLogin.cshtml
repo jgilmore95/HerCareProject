@@ -1,5 +1,8 @@
 @page
-@model AdminLoginModel
+@{
+    //ViewData["Title"] = "Admin Login";
+}
+@model her_care.Models.AdminLoginModel
     @using(Html.BeginForm("AdminLogin", "AdminLogin", "", FormMethod.Post, false, ""))
 {
 <table align="center" width="100%" height="100%">

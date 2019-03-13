@@ -30,17 +30,17 @@ namespace her_care.Controllers
             this.context = context;
         }
 
-        [HttpPost]
-         [Route("Shared/SearchResults")]
-         public ActionResult Search()
-         { 
+        //[HttpPost]
+         //[Route("Shared/SearchResults")]
+         //public ActionResult Search()
+         //{ 
           //   var firstname = context.Tests.Where(x => x.PName != null && x.PName.ToString().Contains("Jack")).OrderBy(x => x.PName);
          //  var firstname = context.Tests.ToList();
 
-         var model = her_care.Controllers.DBBaseAdmin.ReturnEntireTable();
+        // var model = her_care.Controllers.DBBaseAdmin.ReturnEntireTable();
              
 
-             return View("SearchResults", model);
+             //return View("SearchResults", model);
              
              
              
@@ -182,7 +182,7 @@ namespace her_care.Controllers
 
 
 
-
+/*
         static void RetrieveMultipleResults(SqlConnection connection)
         {
             using (connection)
@@ -205,11 +205,10 @@ namespace her_care.Controllers
                         Console.WriteLine("\t{0}\t{1}", reader.GetSqlValue(0),
                             reader.GetSqlValue(1));
                     }
-                    */
+                    
                     reader.NextResult();
                 }
             }
         }
-
+*/
     }
-}

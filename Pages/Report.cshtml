@@ -1,0 +1,11 @@
+@page
+@model ReportModel
+@{
+    //ViewData["Title"] = "Invalid Credentials";
+}
+ <div class="form-group">
+     Select Report Type
+    <div class="col-md-5">
+        @Html.DropDownListFor(x => Model.SelectedHelpItem, new SelectList(Model.HelpType, "Value", "Text"))
+    </div>
+</div>
