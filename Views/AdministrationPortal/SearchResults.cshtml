@@ -1,6 +1,6 @@
 @page
 
-@model IEnumerable<her_care.Models.Test>
+
 
 @{
     Layout = "~/Pages/Shared/_Layout.cshtml";
@@ -43,7 +43,11 @@
                     <tr>
                         <td>@result.Id</td>
                         <td>@result.FName</td>
-                        <td>@result.LName</td>                        
+                        <td>@result.LName</td>  
+                        <td>            
+                             @Html.ActionLink("Details", "Details", new { id=result.Id })
+            
+                         </td>                      
                     </tr>
                 
                 }
@@ -55,27 +59,6 @@
 </div>
 
 
-    <!--
-<body>
-    <div>
-        db search results here
-    </div>
+   
 
-    <table>
-        <tr>
-        <th>Last Name</th>
-        <th>First Name</th>
-        </tr>
-        <tr>
-            <td>Williams</td>
-            <td>Bill</td>
-        </tr>
-
-    </table>
-    <div>
-<a asp-page="Shared/Client">Click here for client page</a>
-</div>
-
-</body>
--->
 </html>
