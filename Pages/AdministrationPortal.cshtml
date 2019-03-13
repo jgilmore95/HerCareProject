@@ -24,6 +24,9 @@
 <!-- <form id="frmsearch" action="~/SearchResults" method="get"> -->
 <div class="wrap">
    <div class="search">
+
+       Client: @Html.RadioButton("WhichTable", "Client")
+       Volunteer: @Html.RadioButton("WhichTable", "Volunteer")
        
 @Html.TextBox("SearchValue", null, new { @class = "searchTermBlue", placeholder = "Enter Volunteer Name" })
       <input type="submit" class="searchButtonBlue" value="Volunteer Search" />       
@@ -32,11 +35,35 @@
 <!-- </form> -->
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <div>
     <iframe src="https://calendar.google.com/calendar/embed?src=mlnmv22l6k6gnga0c6tqfmq2ps%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 </div>
 
-<!--
+
 <form id="frmsearch" action="~/Shared/Client" method="get">
      <input id="q" name="q" value="@User" style="width:275px;"/>
      <input id="submit" name="submit" type="submit" style="font-weight:bold;" value="Search" />

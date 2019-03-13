@@ -1,6 +1,6 @@
 @page
 
-@model IEnumerable<her_care.Models.Test>
+
 
 @{
     Layout = "~/Pages/Shared/_Layout.cshtml";
@@ -21,8 +21,8 @@
     <table width="60%" align="center">
     <tr align="center">
         <td>
-            <h1>View Volunteers</h1>
-            <h1>Volunteer Search Results</h1>
+            <h1>Client and Volunteer Search</h1>
+            <h1>Search Results</h1>
         </td>
     </tr>
     <tr align="center">
@@ -31,17 +31,24 @@
            </br></br></br>
             <table border="1" width="100%">
                 <tr>
+                    <td><strong>ID</strong></td>
                     <td><strong>First Name</strong></td>
                     <td><strong>Last Name</strong></td>
-                    <td><strong>Hours Worked</strong></td>
                 </tr>
                 
-                @foreach (var test in ViewBag.MyModel)
+                @foreach (var result in ViewBag.MyModel)
                 { 
                     <tr>
                         <td><a asp-page="/Pages/Volunteer">@test.VolunteerFirstName</a></td>
                         <td><a asp-page="/Pages/Volunteer">@test.VolunteerLastName </a></td>
                         <td></td>
+                        <td>@result.Id</td>
+                        <td>@result.FName</td>
+                        <td>@result.LName</td>  
+                        <td>            
+                             @Html.ActionLink("Details", "Details", new { id=result.Id })
+            
+                         </td>                      
                     </tr>
                 }
         </td>
@@ -49,7 +56,7 @@
 </table>
 </div>
 
-</div>
-<a asp-page="Shared/Volunteer">Click here for Volunteer page</a>
-</div>
+
+   
+
 </html>
