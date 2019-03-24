@@ -18,10 +18,10 @@ namespace her_care.Controllers
 {
     public class InvalidLoginController : Controller
     {
-        public ActionResult Submit() 
-        {
+        //  public ActionResult Submit() 
+        //  {
 
-            return View("/Pages/AdminLogin.cshtml");
-        }
+        //      return View("/Pages/AdminLogin.cshtml");
+        //  }
     }
 }

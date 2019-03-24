@@ -39,9 +39,9 @@ namespace her_care.Controllers
                 return RedirectToPage("/Index");
             }
 
-        model.ErrorMsg = "Invalid Login - Please Try Again";
+        //model.ErrorMsg = "Invalid Login - Please Try Again";
         
-        return View("/Pages/AdminLogin.cshtml", model);
+        return View("/Pages/InvalidLogin.cshtml");
 
             //return View("/Pages/InvalidLogin.cshtml");
         }
