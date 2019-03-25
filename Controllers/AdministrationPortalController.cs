@@ -27,7 +27,7 @@ namespace her_care.Controllers
             this.context = context;
         }
         
-        [Route("AdministrationPortal")]
+        [Route("AdministrationPortal/SearchResults")]
         [HttpPost]
         public ActionResult SearchResults(SearchModel model)
         {
@@ -52,12 +52,14 @@ namespace her_care.Controllers
        
         }
 
-        public ActionResult Details(SearchModel model){
+        [HttpPost]
+      // [Route("AdministrationPortal/ClientProfile")]
+        public ActionResult ClientProfile(String id){
            
-           var testvar = model.Id;
+          // var testvar = model.Id;
            
            
-           
+           var input = id;
            
            
            

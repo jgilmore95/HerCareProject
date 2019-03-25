@@ -1,0 +1,24 @@
+@page
+
+@model her_care.Models.SearchModel
+
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<html>
+<body>
+        <div>
+            <header>Client Name: client</header>
+        </div>
+
+       <div>
+
+           <table class="boxMiddle" width="100%">
+               <tr><td><a asp-page="/MonetaryAssistance" type="button" class="buttonHome">Monetary Assistance</></a> </br></td></tr>
+               <tr><td><a asp-page="/EmergencyContact" type="button" class="buttonHome">Emergency Contact </></a> </br></td></tr>
+               <tr><td><a asp-page="/PhotoConsent" type="button" class="buttonHome">Photo Consent Form</></a> </br></td></tr>
+            </table>
+    </div>
+
+    </body>
+</html>
