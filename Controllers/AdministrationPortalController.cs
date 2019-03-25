@@ -15,7 +15,7 @@ using System.Dynamic;
 
 namespace her_care.Controllers
 {
-    public class AdministrationPortalController : DBBase
+    public class AdministrationPortalController : Controller
     {
         public void OnGet()
         {
@@ -52,8 +52,8 @@ namespace her_care.Controllers
        
         }
 
-        [HttpPost]
-      // [Route("AdministrationPortal/ClientProfile")]
+        
+       [Route("AdministrationPortal/ClientProfile")]
         public ActionResult ClientProfile(String id){
            
           // var testvar = model.Id;
@@ -61,7 +61,8 @@ namespace her_care.Controllers
            
            var input = id;
            
-           
+           var searchList = her_care.Controllers.DBBaseAdmin.ClientDetails(id);
+            ViewBag.MyModel = searchList;
            
            
            

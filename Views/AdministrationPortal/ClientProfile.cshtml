@@ -8,7 +8,7 @@
 <html>
 <body>
         <div>
-            <header>Client Name: client</header>
+            <header>Client Name: @foreach (var result in ViewBag.MyModel){@result.FName}</header>
         </div>
 
        <div>

@@ -166,5 +166,41 @@ namespace her_care.Controllers
         }
 
         
+        public static List<SearchBox> ClientDetails(string id)
+        {
+            SqlCommand cmd = null; //initialize command
+            List<SearchBox> Terms = new List<SearchBox>(); //Create List based on SearchBox Model
+
+            try{
+                 cmd = openConnection(); //Opens SQL connection
+
+                cmd.CommandText = "SELECT * FROM Client WHERE [Client].ClientID = '"+ id + "'"; //SQL statement
+                cmd.CommandType = System.Data.CommandType.Text; //Execute statement
+
+                SqlDataReader rdr = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection); //Create reader based on statement
+
+                while(rdr.Read() == true) //While there are things left in the reader
+                {
+                    SearchBox Term = new SearchBox(); //Create Term object
+
+                    Term.Id = Convert.ToInt32(rdr["ClientId"].ToString()); //add clientID
+                    Term.FName = rdr["FName"].ToString(); //Add first name
+                    Term.LName = rdr["LName"].ToString(); //Add Last Name
+                    
+
+                    Terms.Add(Term); //Add object to list
+                }
+            }
+            catch (Exception e) //catch any exceptions
+            {
+                throw;
+            }
+            finally{
+                CloseConnection(cmd); // close DB connection
+            }
+            return Terms; //return list
+        }
+
+        
     }
 }
