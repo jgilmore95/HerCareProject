@@ -8,7 +8,7 @@ namespace her_care.Models
     {
         
         public string SearchValue{get; set;}
-        public string WhichTable {get; set;}
+        public bool isClient {get; set;}
         public int Id {get; set;}
     }
 }

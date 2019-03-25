@@ -17,6 +17,7 @@ namespace her_care.Controllers
 {
     public class AdministrationPortalController : Controller
     {
+        
         public void OnGet()
         {
             //   
@@ -31,17 +32,23 @@ namespace her_care.Controllers
         [HttpPost]
         public ActionResult SearchResults(SearchModel model)
         {
+            ViewBag.MyModel = her_care.Controllers.DBBaseAdmin.CombinedSearch(model.SearchValue);
 
-            if(model.WhichTable == "Client"){
+            /*
+            if(model.isClient)
+            {
+               
             var searchList = her_care.Controllers.DBBaseAdmin.ClientSearch(model.SearchValue);
             ViewBag.MyModel = searchList;
             }
 
-            if(model.WhichTable == "Volunteer"){
+            if(!model.isClient)
+            {
+                
             var searchList = her_care.Controllers.DBBaseAdmin.VolunteerSearch(model.SearchValue);
             ViewBag.MyModel = searchList;
             }
-
+*/
             /*This will return entire table 
              var testList = her_care.Controllers.DBBaseAdmin.ReturnEntireTable();
            
@@ -54,18 +61,51 @@ namespace her_care.Controllers
 
         
        [Route("AdministrationPortal/ClientProfile")]
-        public ActionResult ClientProfile(String id){
+        public ActionResult ClientProfile(String id)
+        {
            
           // var testvar = model.Id;
+           /*
+            if(isClient)
+            {
+
+            
+
+            }
+            if(!isClient)
+            {
+            var searchList = her_care.Controllers.DBBaseAdmin.VolunteerDetails(id);
+            ViewBag.MyModel = searchList;
+            }
            
-           
-           var input = id;
-           
+           */
            var searchList = her_care.Controllers.DBBaseAdmin.ClientDetails(id);
             ViewBag.MyModel = searchList;
            
+            return View();
+        }
+
+        [Route("AdministrationPortal/VolunteerProfile")]
+        public ActionResult volunteerProfile(String id)
+        {
            
+          // var testvar = model.Id;
+           /*
+            if(isClient)
+            {
+
+            
+
+            }
+            if(!isClient)
+            {
+            var searchList = her_care.Controllers.DBBaseAdmin.VolunteerDetails(id);
+            ViewBag.MyModel = searchList;
+            }
            
+           */
+           var searchList = her_care.Controllers.DBBaseAdmin.VolunteerDetails(id);
+            ViewBag.MyModel = searchList;
            
             return View();
         }

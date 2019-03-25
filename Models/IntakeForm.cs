@@ -74,6 +74,12 @@ using System.ComponentModel.DataAnnotations;
         public Boolean Transportation {get; set;}
         public string OtherService {get; set;}
 
+
+
+//-------------------------------------
+        public int Id {get; set;}
+        public bool isClient {get; set;}
+
         
     }
 

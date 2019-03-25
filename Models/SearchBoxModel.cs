@@ -14,6 +14,9 @@ namespace her_care.Models
 
         public string FName {get; set; }
         public String LName {get; set;}
+
+        public bool isClient {get; set;}
+
         
     }
 

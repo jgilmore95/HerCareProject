@@ -41,11 +41,19 @@
                 { 
                    
                     <tr>
-                        <td>@result.Id</td>
+                        <td>@result.Id
+                            @if(result.isClient){@Html.Label("[Client]")}
+                            @if(!result.isClient){@Html.Label("[Volunteer]")}
+                        </td>
                         <td>@result.FName</td>
                         <td>@result.LName</td>  
-                        <td>            
+                        <td>    
+                            @if(result.isClient){        
                              @Html.ActionLink("Details", "ClientProfile", new {id=result.Id })
+                            }
+                            @if(!result.isClient){
+                                @Html.ActionLink("Details", "VolunteerProfile", new {id=result.Id })
+                            }
             
                          </td>                      
                     </tr>
