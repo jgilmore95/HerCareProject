@@ -14,6 +14,7 @@ body {
    
 }
 
+
 /* Carousel */
 .carousel-caption p {
     font-size: 20px;
@@ -131,7 +132,7 @@ h2 {
 .form-control{
     border: 2px solid rgb(28, 8, 117);
     border-radius: 6px;
-    width: 350px;
+    width: 450px;
     text-align: left;
     
     margin-right: 25px;
@@ -253,6 +254,8 @@ h2 {
     border: 2px solid rgb(28, 8, 117);
     border-radius: 6px;
 
+
+
 }
 .panel-success {
     background: rgb(249, 226, 237);
@@ -277,6 +280,7 @@ h2 {
 }
 .buttonCenter{
     text-align: center;
+    padding-top: 20px;
     
 }
 
@@ -284,23 +288,33 @@ h2 {
     background-color: rgb(15, 52, 107); 
     -webkit-transition-duration: 0.4s; 
     transition-duration: 1.25s;
-    border: none;
+    border-radius: 30px 75px 50px;
+    border-width: 10px;
+    border-top-color:darkred;
+    border-left-color: darkred;
+    border-right-color:  darkred;
+    border-bottom-color: darkred;
     color: white;
-    padding: 15px 32px;
-    text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    width: 400px;
+    font-size: 26px;
+    width: 210px;
+    height: 210px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bolder;
+    text-shadow: -1px 0 rgb(0, 101, 184), 0 1.5px rgb(0, 101, 184), 1.5px 0 rg(0, 101, 184), 0 -1px rgb(0, 101, 184);
     
 }
 .buttonHome:hover {
     background-color: rgb(100, 156, 240);
     color: white;
 }
+.homeGrid{
+    display: grid;
+    grid-gap: 25px 25px;;
+    grid-template-columns: auto auto auto;
+}
 .checkboxLeft{
 
-   
     text-align: left;
     display: block;
   position: relative;
@@ -320,6 +334,7 @@ h2 {
     cursor: pointer;
     height: 0;
     width: 0;
+    
   }
   .checkmark {
     position: absolute;
@@ -328,6 +343,7 @@ h2 {
     height: 25px;
     width: 25px;
     background-color: #eee;
+   
   }
   .checkboxLeft:hover input ~ .checkmark {
     background-color: #ccc;
@@ -359,6 +375,11 @@ h2 {
 /* 
 searchbox
 */
+
+.tableCenter{
+
+}
+
 
 .search {
   width: 100%;
@@ -487,5 +508,4 @@ iframe{
 .h6{
     font-style: normal;
     font-size: 12pt;
-
-}
+    margin: 1em auto;
