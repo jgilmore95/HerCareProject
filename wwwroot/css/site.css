@@ -39,7 +39,7 @@ body {
     }
 }
 .navbar-header {
-    height: 75px;
+    height: auto;
     background-color: rgb(83, 81, 81);
 
 }
@@ -141,6 +141,15 @@ h2 {
 .form-groupright {
     margin-bottom: 10px;
     clear: left;
+}
+.form-grouprightMon {
+    margin-bottom: 10px;
+    display: flex;
+  justify-content: center;
+ padding-left: 20px;
+ padding-right: 20px;
+  /* margin-left: 20%;
+   position: relative; */
 }
 .form-controlright{
     border: 2px solid rgb(28, 8, 117);
@@ -290,10 +299,10 @@ h2 {
     transition-duration: 1.25s;
     border-radius: 30px 75px 50px;
     border-width: 10px;
-    border-top-color:darkred;
-    border-left-color: darkred;
-    border-right-color:  darkred;
-    border-bottom-color: darkred;
+    border-top-color:rgb(190, 190, 190);
+    border-left-color: rgb(190, 190, 190);
+    border-right-color:  rgb(134, 134, 134);
+    border-bottom-color: rgb(134, 134, 134);
     color: white;
     text-decoration: none;
     font-size: 26px;
@@ -509,3 +518,4 @@ iframe{
     font-style: normal;
     font-size: 12pt;
     margin: 1em auto;
+}

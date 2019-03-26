@@ -81,6 +81,8 @@ using System.ComponentModel.DataAnnotations;
         public bool isClient {get; set;}
 
         
+        public int ID {get; set;}
+    
     }
 
     public class CurrentEmploymentStatus

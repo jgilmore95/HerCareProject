@@ -1,13 +1,15 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace her_care.Models{
 
-public class MonetaryAssistance
+public class MonetaryModel
 {
     
     [Required(ErrorMessage = "Please Select A Service")]
