@@ -21,7 +21,20 @@ namespace her_care.Controllers
         public void OnGet()
         {
             //   
+            
         }
+        [HttpGet]
+        [Route("AdministrationPortal")]
+        public IActionResult Index(){
+             if (UserManagement.IsValidAdmin == false)
+            {
+                return RedirectToPage("/AdminLogin");
+            }
+
+            return View("/Pages/AdministrationPortal.cshtml");
+        }
+
+        
         private readonly HerCareContext context;
         public AdministrationPortalController(HerCareContext context)
         {
