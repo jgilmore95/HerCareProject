@@ -16,9 +16,9 @@ using her_care.Models;
 
      public class MonetaryController : DBBase
     {
-        [Route("submit")]
+        [Route("submitMonetary")]
         [HttpPost]
-        public ActionResult Submit(MonetaryAssistance model){
+        public ActionResult Submit(MonetaryModel model){
                 SqlCommand cmd = null;
 
               try

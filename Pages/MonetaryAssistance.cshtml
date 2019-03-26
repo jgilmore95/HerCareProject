@@ -1,9 +1,12 @@
 @page 
+
+@model her_care.Models.MonetaryModel
+
 @{
     ViewData["Title"] = "MonetaryAssistance";
 }
 
-@model her_care.Models.MonetaryAssistance
+
 
 <!DOCTYPE html>
 <html>
@@ -11,7 +14,7 @@
         
         <meta name="viewport" content="width-device-width"/>
         <title>
-            MonetaryAssistence
+            MonetaryAssistance
         </title>
         <link rel="site" href="~/css/site.css" />
     </head>
@@ -23,13 +26,13 @@
         </div>
         <div class="panel-body">
             <h3>DEMOGRAPHICS</h3>
-            <form class="p-a-1" asp-action="MonetaryAssistance" method="post">
+            @using (Html.BeginForm("submitMonetary","Monetary", FormMethod.Post, new {})) {
                 <br />
                
                 <div class="form-groupright">
                 <br />
-                 <div class="form-group">
-                    <label asp-for="Services">Services Provided:</label>
+                 <div class="form-grouprightMon">
+                    <label style="margin-right: 20px;" asp-for="Services">Services Provided:</label>
                    <select name="Services" class="form-control">
                         <option selected="selected">Select Service</option>
                         <option value="2">Bus Pass</option>
@@ -93,25 +96,30 @@
                     </label>
                     </div>
                 </div>-->
-                <br />
-                <br />
-                 <div class="form-groupright">
-                  <label asp-for="StaffSigMA">Staff Signature: </label>
-                    <input class="form-control" asp-for="StaffSigMA"/>                    
+               
+                
+               
+                 <div class="form-grouprightMon">
+                  <label style="margin-right: 20px;" asp-for="StaffSigMA">Staff Signature: </label>
+                    <input style="margin-left: 20px;" class="form-control" asp-for="StaffSigMA"/>                    
                 </div>
+               
+                
+               
                  <br />
-                <div class="form-groupright">
-                    <label asp-for="MoneyMA">Amount Provided: $</label>
-                    <input class="form-control" asp-for="MoneyMA"/>   
+                <div class="form-grouprightMon">
+                    <label style="margin-right: 20px;" asp-for="MoneyMA">Amount Provided: </label>
+                    <input class="form-control" value="$" asp-for="MoneyMA"/>   
                 </div> 
                 
                 <br />
-                <br />
-                <br />
             <div class="buttonCenter">
-            <a href="https://localhost:5001/" class="button" :hover type="submit" value="S U B M I T">S U B M I T</a>
+            <a href="https://localhost:5001/" class="button" :hover type="submit" value="S U B M I T" >S U B M I T</a>
             </div>
-            </form>    
-        </div>      
+                </div>
+             
+            }
+        </div>
+           
     </body>
 </html>

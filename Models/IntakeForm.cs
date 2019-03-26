@@ -75,6 +75,8 @@ using System.ComponentModel.DataAnnotations;
         public Boolean OtherService {get; set;}
 
         
+        public int ID {get; set;}
+    
     }
 
     public class CurrentEmploymentStatus
