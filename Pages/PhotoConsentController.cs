@@ -10,6 +10,8 @@ using System.Collections.Specialized;
 using System.Configuration;
 using System.Configuration.Assemblies;
 using System.Data;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Session;
 using her_care.Models;
 
 namespace her_care.Controllers
@@ -24,7 +26,7 @@ namespace her_care.Controllers
         [Route("PhotoConsent")]
         public IActionResult Index()
         {
-            if (UserManagement.IsValidAdmin == false)
+            if (HttpContext.Session.GetString("UserName") == null)
             {
                 return RedirectToPage("/AdminLogin");
             }

@@ -5,7 +5,17 @@
 }
 @using(Html.BeginForm("Submit", "SignIn", "", FormMethod.Post, false, ""))
 {
-    <table align="center" >
+    <table align="center">
+        <tr>
+            <td colspan="4" align="center">
+                <h1>Sign In</h1>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <hr style="border-color: black;">
+            </td>
+        </tr>
         <tr >
             <td style="padding: 10px;">
                 First Name:  
@@ -28,10 +38,10 @@
                 @Html.TextBox("Organization", "", new { placeholder = "", required="required" })
             </td>      
             <td style="padding: 10px;">
-                E-Mail:  
+                Email:  
             </td>
             <td style="padding: 10px;">
-                @Html.TextBox("eMail", "", new { placeholder = "", required="required" })
+                @Html.TextBox("eMail", "", new { type = "email", placeholder = "", required="required" })
             </td>
         </tr>
         <tr>

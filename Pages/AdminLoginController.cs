@@ -30,11 +30,12 @@ namespace her_care.Controllers
         [HttpPost]
         public ActionResult AdminLogin(AdminLoginModel model)
         { 
-            //HttpContext.Session.Remove("UserName");
+            HttpContext.Session.Remove("UserName");
 
             if (AdminLoginModel.AdminLogin(model) == true)
             {
-                UserManagement.Username = model.Username;
+                HttpContext.Session.SetString("UserName", model.Username);
+                //UserManagement.Username = model.Username;
 
                 return RedirectToPage("/Index");
             }
