@@ -6,6 +6,7 @@
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 <html>
+    
 <body>
         <div>
             <header>Client Name: @foreach (var result in ViewBag.MyModel){@result.FirstName}</header>
@@ -13,11 +14,9 @@
 
        <div>
 
-           <table class="boxMiddle" width="100%">
-               <tr><td><a asp-page="/MonetaryAssistance" type="button" class="buttonHome">Monetary Assistance</></a> </br></td></tr>
-               <tr><td><a asp-page="/EmergencyContact" type="button" class="buttonHome">Emergency Contact </></a> </br></td></tr>
-               <tr><td><a asp-page="/PhotoConsent" type="button" class="buttonHome">Photo Consent Form</></a> </br></td></tr>
-            </table>
+              <a asp-page="/MonetaryAssistance" type="button" class="buttonHome">Monetary Assistance</a> </br>
+              <a asp-page="/EmergencyContact" type="button" class="buttonHome">Emergency Contact </a> </br>
+              <a asp-page="/PhotoConsent" type="button" class="buttonHome">Photo Consent Form</a> </br>
     </div>
 
     </body>
