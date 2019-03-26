@@ -13,7 +13,8 @@
     
     
     <body>
-       <header>Volunteer Name: @foreach (var result in ViewBag.MyModel){@result.FName}</header>
+       <header>Volunteer Name: @foreach (var result in ViewBag.MyModel){@result.FName}
+                               @foreach (var result in ViewBag.MyModel){@result.LName}</header>
        <div class="boxMiddle"> 
            
         </div>
@@ -22,15 +23,26 @@
            <table class="boxMiddle" width="100%">
            <tr><td><a asp-page="/PhotoConsent" type="button" class="buttonHome">Photo Consent Form</></a></td></tr>
            <tr><td>From: <input type="date" name="startsearch"> To : <input type="date" name="endsearch"></td></tr>
-           <tr><td><table border="1" width="100%">
-                <tr>
+           <tr><td>
+               <table border="1" width="100%">
+                 <tr>
                     <td><strong>Volunteer ID</strong></td>
-                    <td><strong>First Name</strong></td>
-                    <td><strong>Last Name</strong></td>
                     <td><strong>Hours Worked</strong></td>
                     <td><strong>Date Worked</strong></td>
                 </tr>
-                </table>
+                <tr>
+                    <td>
+                        @foreach (var result in ViewBag.MyModel){@result.VolunteerId}
+                    </td>
+                    <td>
+                        Display worked hours
+                    </td>
+                    <td>
+                        Display worked days
+                    </td>
+                </tr>
+
+               </table>
             </td></tr>
            </table>
 
