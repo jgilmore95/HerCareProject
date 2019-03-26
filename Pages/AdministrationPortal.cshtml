@@ -16,7 +16,7 @@
 </div>
 -->
 <body>
-<header>Administration Portal</header>
+<header id="header1">Administration Portal</header>
 @using (Html.BeginForm("SearchResults", "AdministrationPortal", FormMethod.Post, 
                                       new { }))
 {
@@ -31,7 +31,7 @@
        
 @Html.TextBox("SearchValue", null, new { @class = "searchTerm", placeholder = "Enter Client Name" })
       
-      <input type="submit" class="searchButton" value="Client Search" />
+      <input type="submit" class="searchButton" value="Search" />
        
    </div>
 </div>
@@ -72,23 +72,5 @@
      <input id="submit" name="submit" type="submit" style="font-weight:bold;" value="Search" />
 </form>
 -->
-<div id="01">
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    
-<a asp-page="Shared/Client">Click here for client page</a>
 
-<!-- Mahmood -->
-</br>
-</br>
-<a asp-page="Shared/Volunteer">Click here for Volunteer page</a>
-
-
-
-</div>
 </body>
