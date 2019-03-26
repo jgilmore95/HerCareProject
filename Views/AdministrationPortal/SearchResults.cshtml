@@ -1,6 +1,6 @@
 @page
 
-@model IEnumerable<her_care.Models.Test>
+@model her_care.Models.SearchModel
 
 @{
     Layout = "~/Pages/Shared/_Layout.cshtml";
@@ -21,8 +21,8 @@
     <table width="60%" align="center">
     <tr align="center">
         <td>
-            <h1>View Opportunity/Volunteers</h1>
-            <h1>Search Results</h1>
+            <h1>Client and Volunteer Search</h1>
+            
         </td>
     </tr>
     <tr align="center">
@@ -31,21 +31,32 @@
             <table border="1" width="100%">
                 <tr>
                     <td><strong>ID</strong></td>
-                    <td><strong>Name</strong></td>
-                    <td><strong>Age</strong></td>
-                    <td><strong>Number</strong></td>
+                    <td><strong>First Name</strong></td>
+                    <td><strong>Last Name</strong></td>
+                    <td><strong>Details</strong></td>
                 </tr>
                
                     
                 
-                @foreach (var test in ViewBag.MyModel)
+                @foreach (var result in ViewBag.MyModel)
                 { 
                    
                     <tr>
-                        <td>@test.Id</td>
-                        <td>@test.PName</td>
-                        <td>@test.Age</td>
-                        <td>@test.num</td>
+                        <td>@result.Id
+                            @if(result.isClient){@Html.Label("[Client]")}
+                            @if(!result.isClient){@Html.Label("[Volunteer]")}
+                        </td>
+                        <td>@result.FName</td>
+                        <td>@result.LName</td>  
+                        <td>    
+                            @if(result.isClient){        
+                             @Html.ActionLink("Details", "ClientProfile", new {id=result.Id })
+                            }
+                            @if(!result.isClient){
+                                @Html.ActionLink("Details", "VolunteerProfile", new {id=result.Id })
+                            }
+            
+                         </td>                      
                     </tr>
                 
                 }
@@ -53,31 +64,10 @@
         </td>
     </tr>
 </table>
-</table><a asp-page="~/Pages/Shared/Client">Click here for client page</a>
+
 </div>
 
 
-    <!--
-<body>
-    <div>
-        db search results here
-    </div>
+   
 
-    <table>
-        <tr>
-        <th>Last Name</th>
-        <th>First Name</th>
-        </tr>
-        <tr>
-            <td>Williams</td>
-            <td>Bill</td>
-        </tr>
-
-    </table>
-    <div>
-<a asp-page="Shared/Client">Click here for client page</a>
-</div>
-
-</body>
--->
 </html>

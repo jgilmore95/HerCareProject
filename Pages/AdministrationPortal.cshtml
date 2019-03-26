@@ -16,7 +16,7 @@
 </div>
 -->
 <body>
-<header>Administration Portal</header>
+<header id="header1">Administration Portal</header>
 @using (Html.BeginForm("SearchResults", "AdministrationPortal", FormMethod.Post, 
                                       new { }))
 {
@@ -25,10 +25,13 @@
 <!-- <form id="frmsearch" action="~/SearchResults" method="get"> -->
 <div class="wrap">
    <div class="search">
+
+
+      
        
 @Html.TextBox("SearchValue", null, new { @class = "searchTerm", placeholder = "Enter Client Name" })
       
-      <input type="submit" class="searchButton" value="Client Search" />
+      <input type="submit" class="searchButton" value="Search" />
        
    </div>
 </div>
@@ -38,25 +41,15 @@
 
 
 
-</br></br>
-<!-- Mahmood -->
-@using (Html.BeginForm("VolunteerSearchResults", "AdministrationPortal", FormMethod.Post, 
-                                      new { }))
-{
-    @Html.ValidationSummary(true)
 
 
-<div class="wrap">
-   <div class="search">
-       
-@Html.TextBox("VolunteerSearchValue", null, new { @class = "searchTermBlue", placeholder = "Enter Volunteer Name" })
-      
-      <input type="submit" class="searchButtonBlue" value="Volunteer Search" />
-       
-   </div>
+
+
+<div style="margin-top:50px;">
+<!--<a asp-page="/VolunteerVerification"><button type="button" class="buttonHome" :hover>Volunteer Hours</button></a>-->
+<a asp-page="/MonetaryAssistance" ><button type="button" class="buttonHome" :hover>Monetary Assistance</button></a> 
 </div>
 
-}
 
 
 
@@ -68,40 +61,16 @@
 
 
 
-
-
-
-
-
-
-
+<!--
 <div>
     <iframe src="https://calendar.google.com/calendar/embed?src=mlnmv22l6k6gnga0c6tqfmq2ps%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
 </div>
 
-<!--
+
 <form id="frmsearch" action="~/Shared/Client" method="get">
      <input id="q" name="q" value="@User" style="width:275px;"/>
      <input id="submit" name="submit" type="submit" style="font-weight:bold;" value="Search" />
 </form>
 -->
-<div id="01">
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    
-<a asp-page="Shared/Client">Click here for client page</a>
 
-<!-- Mahmood -->
-</br>
-</br>
-<a asp-page="Shared/Volunteer">Click here for Volunteer page</a>
-
-
-
-</div>
 </body>

@@ -1,9 +1,12 @@
 @page 
+
+@model her_care.Models.MonetaryModel
+
 @{
     ViewData["Title"] = "MonetaryAssistance";
 }
 
-@model her_care.Models.MonetaryAssistance
+
 
 <!DOCTYPE html>
 <html>
@@ -11,65 +14,39 @@
         
         <meta name="viewport" content="width-device-width"/>
         <title>
-            MonetaryAssistence
+            MonetaryAssistance
         </title>
         <link rel="site" href="~/css/site.css" />
     </head>
     <body>
         <div class="panel panel-success">
         <div class"panel-heading text-center"> <h1>MONETARY ASSISTANCE FORM</h1></div>
+        <div style="float: right; padding-top: 10px; padding-right: 10px;">
+             <input type="image" src="~/images/printer.png" onclick="window.print()" width="20" height="20">
+        </div>
         <div class="panel-body">
             <h3>DEMOGRAPHICS</h3>
-            <form class="p-a-1" asp-action="MonetaryAssistance" method="post">
-                <div asp-validation-summary="All"></div>
+            @using (Html.BeginForm("submitMonetary","Monetary", FormMethod.Post, new {})) {
+                <br />
+               
                 <div class="form-groupright">
-                  <label asp-for="FirstNameMA">First Name:</label>
-                    <input class="form-control" asp-for="FirstNameMA"/>                    
-                </div>
-                <div class="form-groupright">
-                  <label asp-for="LastNameMA">Last Name:</label>
-                    <input class="form-control" asp-for="LastNameMA"/>
-                </div>
-                <div class="form-groupright">
-                  <label asp-for="MonetaryDate">Today's Date:</label>
-                    <input type="date" class="form-control" asp-for="MonetaryDate"/>
-                </div>
-                <div class="form-groupright">
-                  <label asp-for="streetNumberMA">Street number: </label>
-                    <input class="form-control" asp-for="streetNumberMA"/>                    
-                </div>
-                <div class="form-groupright">
-                  <label asp-for="StreetNameMA">Street Name: </label>
-                    <input class="form-control" asp-for="StreetNameMA"/>                    
-                </div>
-                <div class="form-groupright">
-                  <label asp-for="ZipcodeMA">Zip Code: </label>
-                    <input class="form-control" asp-for="ZipcodeMA"/>                    
-                </div>
-                 <div class="form-groupright">
-                  <label asp-for="StateMA">State: </label>
-                    <input class="form-control" asp-for="StateMA"/>                    
-                </div>
-                <div class="form-groupright">
-                    <input class="form-control"
-              @Html.TextBoxFor(m => m.EmailMA, new { @placeholder="E-mail"}) <br />
-                @Html.ValidationMessageFor(m => m.EmailMA)
-                </input>
-                </div>
-                <div class="form-groupright">
-                  <label asp-for="PhoneMA">Phone: </label>
-                    <input class="from-control" asp-for="PhoneMA"/>
+                <br />
+                 <div class="form-grouprightMon">
+                    <label style="margin-right: 20px;" asp-for="Services">Services Provided:</label>
+                   <select name="Services" class="form-control">
+                        <option selected="selected">Select Service</option>
+                        <option value="2">Bus Pass</option>
+                        <option value="3">Light and Water Bill</option>
+                        <option value="4">Rental Deposit</option>
+                        <option value="5">OverDue Rent</option>
+                        <option value="6">ID CArd</option>
+                        <option value="7">Gas Card</option>
+                        <option value="8">Food Gift Card</option>
+                    </select>
                 </div>
                 <br />
-                <br />
-                <div class="form-groupright">
-                    <label asp-for="MoneyMA">Amount Provided: $</label>
-                    <input class="form-control" asp-for="MoneyMA"/>   
-                </div>
-                <br />
-                <div class="form-groupright">
-                <h5>Services Provided</h5>
-                <div class="checkboxLeft">
+                
+                <!-- <div class="checkboxLeft">
                     <label class="checkboxLeft">Lights and Water Bill 
                     <input type="checkbox" name="departments" value="1">
                     <span class="checkmark"></span>
@@ -118,23 +95,31 @@
                     <span class="checkmark"></span>
                     </label>
                     </div>
+                </div>-->
+               
+                
+               
+                 <div class="form-grouprightMon">
+                  <label style="margin-right: 20px;" asp-for="StaffSigMA">Staff Signature: </label>
+                    <input style="margin-left: 20px;" class="form-control" asp-for="StaffSigMA"/>                    
                 </div>
-                    <br />
-                 <div class="form-groupright">
-                  <label asp-for="ClientSigMA">Volunteer Signature: </label>
-                    <input class="form-control" asp-for="ClientSigMA"/>                    
-                </div>
-                <br />
-                 <div class="form-groupright">
-                  <label asp-for="StaffSigMA">Staff Signature: </label>
-                    <input class="form-control" asp-for="StaffSigMA"/>                    
-                </div>
-                <br / >
+               
+                
+               
+                 <br />
+                <div class="form-grouprightMon">
+                    <label style="margin-right: 20px;" asp-for="MoneyMA">Amount Provided: </label>
+                    <input class="form-control" value="$" asp-for="MoneyMA"/>   
+                </div> 
+                
                 <br />
             <div class="buttonCenter">
-            <a href="https://localhost:5001/" class="button" :hover type="submit" value="S U B M I T">S U B M I T</a>
+            <a href="https://localhost:5001/" class="button" :hover type="submit" value="S U B M I T" >S U B M I T</a>
             </div>
-            </form>    
-        </div>      
+                </div>
+             
+            }
+        </div>
+           
     </body>
 </html>

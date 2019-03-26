@@ -15,4 +15,8 @@ public class VolunteerModel
     public string VolunteerSignature { get; set; }
 
     public string DateCreated { get; set; }
+
+
+    //-------------------
+    public bool isClient {get; set;}
 }

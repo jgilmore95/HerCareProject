@@ -22,7 +22,7 @@ using System.ComponentModel.DataAnnotations;
         public string AddressOne { get; set; }
          public string AddressTwo { get; set; }
          public string City { get; set; }
-         public string State { get; set; }
+         public int State { get; set; }
          public int Zip { get; set; }
          public string EmergencyContactFirst {get; set;}
          public string EmergencyContactLast {get; set;}
@@ -47,7 +47,7 @@ using System.ComponentModel.DataAnnotations;
         public Boolean WorkStudy {get; set;}
         public Boolean Intern {get; set;}
         public Boolean Unemployed {get; set;}
-        public string OtherEmployed {get; set;}
+        public Boolean OtherEmployed {get; set;}
          public Boolean OnStreet {get; set;}
         public Boolean SofaSurfing {get; set;}
         public Boolean Shelter {get; set;}
@@ -55,7 +55,7 @@ using System.ComponentModel.DataAnnotations;
         public Boolean GroupHome {get; set;}
         public Boolean Rental {get; set;}
         public Boolean OwnHome {get; set;}
-        public string OtherLiving {get; set;}
+        public Boolean OtherLiving {get; set;}
          public Boolean FriendsOrRelatives {get; set;}
         public Boolean Alone {get; set;}
         public Boolean Temporary {get; set;}
@@ -72,9 +72,17 @@ using System.ComponentModel.DataAnnotations;
         public Boolean Food {get; set;}
         public Boolean Employment {get; set;}
         public Boolean Transportation {get; set;}
-        public string OtherService {get; set;}
+        public Boolean OtherService {get; set;}
+
+
+
+//-------------------------------------
+        public int Id {get; set;}
+        public bool isClient {get; set;}
 
         
+        public int ID {get; set;}
+    
     }
 
     public class CurrentEmploymentStatus

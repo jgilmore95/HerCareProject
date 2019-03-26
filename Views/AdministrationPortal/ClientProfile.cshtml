@@ -1,0 +1,23 @@
+@page
+
+@model her_care.Models.SearchModel
+
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<html>
+    
+<body>
+        <div>
+            <header>Client Name: @foreach (var result in ViewBag.MyModel){@result.FirstName}</header>
+        </div>
+
+       <div>
+
+              <a asp-page="/MonetaryAssistance" type="button" class="buttonHome">Monetary Assistance</a> </br>
+              <a asp-page="/EmergencyContact" type="button" class="buttonHome">Emergency Contact </a> </br>
+              <a asp-page="/PhotoConsent" type="button" class="buttonHome">Photo Consent Form</a> </br>
+    </div>
+
+    </body>
+</html>

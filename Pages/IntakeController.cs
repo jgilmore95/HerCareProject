@@ -62,7 +62,7 @@ namespace her_care.Controllers
                 cmd.Parameters.Add("@Rental", SqlDbType.Bit).Value = model.Rental;
                 cmd.Parameters.Add("@OwnHome", SqlDbType.Bit).Value = model.OwnHome;
                 cmd.Parameters.Add("@OtherLiving", SqlDbType.Bit).Value = model.OtherLiving;
-                cmd.Parameters.Add("@FirendsOrRelatives", SqlDbType.Bit).Value = model.FriendsOrRelatives;
+                cmd.Parameters.Add("@FriendsOrRelatives", SqlDbType.Bit).Value = model.FriendsOrRelatives;
                 cmd.Parameters.Add("@Alone", SqlDbType.Bit).Value = model.Alone;
                 cmd.Parameters.Add("@Temporary", SqlDbType.Bit).Value = model.Temporary;
                 cmd.Parameters.Add("@Permanent", SqlDbType.Bit).Value = model.Permanent;

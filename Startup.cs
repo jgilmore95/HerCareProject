@@ -65,6 +65,7 @@ namespace her_care
             app.UseCookiePolicy();
 
             app.UseMvc();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }
