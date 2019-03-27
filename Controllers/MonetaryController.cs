@@ -15,10 +15,22 @@ using her_care.Models;
  namespace her_care.Controllers {
 
      public class MonetaryController : DBBase
-    {
-        [Route("submitMonetary")]
+
+     {
+public void OnGet()
+        {
+            //   
+        }
+
+    [HttpGet]
+    public IActionResult Index()
+        {            
+            return View();
+        }
+
+        [Route("AdministrationPortal/MonetaryAssistance")]
         [HttpPost]
-        public ActionResult Submit(MonetaryModel model){
+        public ActionResult SubmitMonetary(MonetaryModel model){
                 SqlCommand cmd = null;
 
               try
@@ -28,6 +40,7 @@ using her_care.Models;
                 cmd.Parameters.Add("@Services", SqlDbType.Int).Value = model.Services;
                 cmd.Parameters.Add("@StaffSigMA", SqlDbType.VarChar, 50).Value = model.StaffSigMA;
                 cmd.Parameters.Add("@MoneyMA", SqlDbType.Decimal).Value = model.MoneyMA;
+                cmd.Parameters.Add("@ClientID", SqlDbType.Int).Value = 6;
 
 
                 cmd.ExecuteNonQuery();

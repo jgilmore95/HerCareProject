@@ -17,21 +17,21 @@
  <!--   
 <div>This is the home page. This will most likely be the landing page for selecting admin, check in, volunteer hours.</div>
 -->
-<div class="homeGrid" style="padding-top: 45px;">
-            <a asp-page="/Intake"><button type="button" class="buttonHome" :hover>First Time Client Visit</button></a>
-            <a asp-page="/VolunteerVerification"><button type="button" class="buttonHome" :hover>Volunteer Hours</button></a> 
-     <!--       <a asp-page="/Cohort" ><button type="button" class="buttonHome" :hover>HerTotal Wellness</button></a> -->
-            <a asp-page="/SignIn" ><button type="button" class="buttonHome" :hover>Sign In</button></a> 
-            <a asp-page="/AdministrationPortal" ><button type="button" class="buttonHome" :hover>Admin Portal</button></a>
-            
-   <!--         <a asp-page="/MonetaryAssistance" ><button type="button" class="buttonHome" :hover>Monetary Assistance</button></a> 
-            <a asp-page="/EmergencyContact" ><button type="button" class="buttonHome" :hover>Emergency Contact </button></a> 
-            <a asp-page="/PhotoConsent" ><button type="button" class="buttonHome": hover>Photo Consent</button></a> 
-            <a asp-page="/Shared/Client" ><button type="button" class="buttonHome": hover>Client Search Result</button></a> 
+<div class="homeGrid">
+           <button onclick="location.href = '/Intake';" type="button" class="buttonHome" :hover>First Time Client Visit</button>
+           <button onclick="location.href = '/VolunteerVerification';" type="button" class="buttonHome" :hover>Volunteer Hours</button>
+     <!--       <a asp-page="/Cohort" ><button type="button" class="buttonHome" :hover>HerTotal Wellness</button>-->
+            <button onclick="location.href = '/SignIn';" type="button" class="buttonHome" :hover>Sign In</button>
+            <button onclick="location.href = '/AdministrationPortal';" type="button" class="buttonHome" :hover>Admin Portal</button>
+          <!--    
+          <a asp-page="/MonetaryAssistance" ><button type="button" class="buttonHome" :hover>Monetary Assistance</button>
+            <a asp-page="/EmergencyContact" ><button type="button" class="buttonHome" :hover>Emergency Contact </button>
+            <a asp-page="/PhotoConsent" ><button type="button" class="buttonHome": hover>Photo Consent</button>
+            <a asp-page="/Shared/Client" ><button type="button" class="buttonHome": hover>Client Search Result</button>
             <a asp-page="/Shared/Client" ><button type="button" class="buttonHome": hover>Place Holder Button</button></a>
 
  
-        <tr><td>    <a asp-page="/Shared/Volunteer"><button type="button" class="buttonHome">Volunteer Search Result</button></a> </br></td></tr>
+        <tr><td>    <a asp-page="/Shared/Volunteer"><button type="button" class="buttonHome">Volunteer Search Result</button></br></td></tr>
 
        -->
 </div>
