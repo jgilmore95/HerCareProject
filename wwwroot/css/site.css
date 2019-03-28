@@ -146,6 +146,11 @@ h2 {
     margin-bottom: 10px;
     clear: left;
 }
+.form-grouprightVol {
+  display: inline;
+  justify-content: center; 
+  
+}
 .form-grouprightMon {
     margin-bottom: 10px;
     display: flex;
