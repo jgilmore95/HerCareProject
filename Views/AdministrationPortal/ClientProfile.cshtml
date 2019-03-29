@@ -14,13 +14,13 @@
 
        <div>
 
-              <a asp-page="/MonetaryAssistance" type="button" class="buttonHome">Monetary Assistance</a> </br>
+              
               <a asp-page="/EmergencyContact" type="button" class="buttonHome">Emergency Contact </a> </br>
               <a asp-page="/PhotoConsent" type="button" class="buttonHome">Photo Consent Form</a> </br>
     </div>
     <div>
         @foreach (var client in ViewBag.MyModel){
-        @Html.ActionLink("Monetary Assistance", "viewMonetary")
+       <a href="/MonetaryAssistance?id=@client.Id"> Monetary assistance </a>
         
         }
     </div>

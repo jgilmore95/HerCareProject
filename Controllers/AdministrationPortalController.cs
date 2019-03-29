@@ -124,11 +124,11 @@ namespace her_care.Controllers
             return View();
         }
 
-        [Route("MonetaryAssistance")]
-        public ActionResult viewMonetary()
-        {
-            return View("MonetaryAssistance");
-        }
+  //      [Route("MonetaryAssistance")]
+        // public ActionResult viewMonetary()
+        // {
+        //     return RedirectToAction("MonetaryAssistance.cshtml", "Monetary");
+        // }
        
 
     }
