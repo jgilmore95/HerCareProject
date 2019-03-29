@@ -189,13 +189,15 @@ namespace her_care.Controllers
                     Term.AddressOne = rdr["HomeAddress"].ToString();
                     Term.City = rdr["City"].ToString();
                     Term.State = Convert.ToInt32(rdr["StateID"].ToString());
-                    Term.Zip = Convert.ToInt32(rdr["ZipCode"].ToString());
-                    //TODO: DOB, DATE ENTERED
+                    Term.Zip = Convert.ToInt32(rdr["ZipCode"].ToString());                    
                     Term.EmailAddress = rdr["EmailAddress"].ToString();
                     Term.EmergencyContactFirst = rdr["EmergencyContactFirst"].ToString();
                     Term.EmergencyContactLast = rdr["EmergencyContactLast"].ToString();
                     Term.EmergencyContactPhone = Convert.ToInt32(rdr["EmergencyContactPhone"].ToString());
-                    
+                    Term.BranchOfService = rdr["BranchOfService"].ToString();
+                    Term.DisabilityRating = Convert.ToInt32(rdr["DisabilityRating"].ToString());
+                    Term.Employed = (bool) rdr["Employed"];
+                    Term.Contractor = (bool) rdr["Contractor"];
 
                     Terms.Add(Term); //Add object to list
                 }

@@ -32,6 +32,10 @@
             <td>@client.FirstName @client.LastName </td>
         </tr>
         <tr>
+            <td>Date of Birth</td>
+            <td></td>
+        </tr>
+        <tr>
             <td>Address </td>
             <td>@client.AddressOne</td>
         </tr>
@@ -59,6 +63,46 @@
             <td>Emergency Contact Phone</td>
             <td>@client.EmergencyContactPhone</td>
         </tr>
+        <tr>
+            <td>Branch of Service</td>
+            <td>@client.BranchOfService</td>
+        </tr>
+        <tr>
+            <td>Entry Date</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Discharge Date</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Disability Rating</td>
+            <td>@client.DisabilityRating</td>
+        </tr>
+        <tr>
+            <td>Employed</td>
+            <td>@if (@client.Employed == true)
+                {
+                    <input type="checkbox" checked="checked">
+                }else
+                {
+                    <input type="checkbox">
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Contractor</td>
+            <td>@if (@client.Contractor == true)
+                {
+                    <input type="checkbox" checked="checked">
+                }else
+                {
+                    
+                    <input type="checkbox">
+                }
+            </td>
+        </tr>
+        
     </table>
     }
 
