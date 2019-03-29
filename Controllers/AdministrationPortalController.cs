@@ -13,6 +13,7 @@ using System.Data;
 using her_care.Models;
 using System.Dynamic;
 
+
 namespace her_care.Controllers
 {
     public class AdministrationPortalController : Controller
@@ -121,6 +122,12 @@ namespace her_care.Controllers
             ViewBag.MyModel = searchList;
            
             return View();
+        }
+
+        [Route("MonetaryAssistance")]
+        public ActionResult viewMonetary()
+        {
+            return View("MonetaryAssistance");
         }
        
 

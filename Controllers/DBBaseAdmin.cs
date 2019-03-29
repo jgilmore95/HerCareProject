@@ -186,6 +186,15 @@ namespace her_care.Controllers
                     Term.Id = Convert.ToInt32(rdr["ClientId"].ToString()); //add clientID
                     Term.FirstName = rdr["FName"].ToString(); //Add first name
                     Term.LastName = rdr["LName"].ToString(); //Add Last Name
+                    Term.AddressOne = rdr["HomeAddress"].ToString();
+                    Term.City = rdr["City"].ToString();
+                    Term.State = Convert.ToInt32(rdr["StateID"].ToString());
+                    Term.Zip = Convert.ToInt32(rdr["ZipCode"].ToString());
+                    //TODO: DOB, DATE ENTERED
+                    Term.EmailAddress = rdr["EmailAddress"].ToString();
+                    Term.EmergencyContactFirst = rdr["EmergencyContactFirst"].ToString();
+                    Term.EmergencyContactLast = rdr["EmergencyContactLast"].ToString();
+                    Term.EmergencyContactPhone = Convert.ToInt32(rdr["EmergencyContactPhone"].ToString());
                     
 
                     Terms.Add(Term); //Add object to list
@@ -395,6 +404,8 @@ namespace her_care.Controllers
             
             
         }
+        
+       
 
         
     }

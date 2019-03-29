@@ -18,6 +18,49 @@
               <a asp-page="/EmergencyContact" type="button" class="buttonHome">Emergency Contact </a> </br>
               <a asp-page="/PhotoConsent" type="button" class="buttonHome">Photo Consent Form</a> </br>
     </div>
+    <div>
+        @foreach (var client in ViewBag.MyModel){
+        @Html.ActionLink("Monetary Assistance", "viewMonetary")
+        
+        }
+    </div>
+    @foreach (var client in ViewBag.MyModel){
+    <table border="1">
+      <tr><th></th><th></th></tr>
+        <tr>
+            <td>Name </td>
+            <td>@client.FirstName @client.LastName </td>
+        </tr>
+        <tr>
+            <td>Address </td>
+            <td>@client.AddressOne</td>
+        </tr>
+        <tr>
+            <td>City </td>
+            <td>@client.City</td>
+        </tr>
+        <tr>
+            <td>State </td>
+            <td>@client.State</td>
+        </tr>
+        <tr>
+            <td>Zip </td>
+            <td>@client.Zip</td>
+        </tr>
+        <tr>
+            <td>Email Address</td>
+            <td>@client.EmailAddress</td>
+        </tr>
+        <tr>
+            <td>Emergency Contact</td>
+            <td>@client.EmergencyContactFirst @client.EmergencyContactLast</td>
+        </tr>
+        <tr>
+            <td>Emergency Contact Phone</td>
+            <td>@client.EmergencyContactPhone</td>
+        </tr>
+    </table>
+    }
 
     </body>
 </html>

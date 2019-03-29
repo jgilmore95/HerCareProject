@@ -27,7 +27,7 @@ public void OnGet()
         {            
             return View();
         }
-
+/* */
         [Route("AdministrationPortal/MonetaryAssistance")]
         [HttpPost]
         public ActionResult SubmitMonetary(MonetaryModel model){
@@ -40,7 +40,7 @@ public void OnGet()
                 cmd.Parameters.Add("@Services", SqlDbType.Int).Value = model.Services;
                 cmd.Parameters.Add("@StaffSigMA", SqlDbType.VarChar, 50).Value = model.StaffSigMA;
                 cmd.Parameters.Add("@MoneyMA", SqlDbType.Decimal).Value = model.MoneyMA;
-                cmd.Parameters.Add("@ClientID", SqlDbType.Int).Value = 6;
+                cmd.Parameters.Add("@ClientID", SqlDbType.Int).Value = 7;
 
 
                 cmd.ExecuteNonQuery();

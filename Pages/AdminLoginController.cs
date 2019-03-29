@@ -48,7 +48,7 @@ namespace her_care.Controllers
 
                     UserManagement.Username = model.Username;
 
-                         return RedirectToPage("/Index");
+                         return RedirectToPage("/AdministrationPortal");
                     
 
                     //System.Diagnostics.Debug.WriteLine("Found Record");
