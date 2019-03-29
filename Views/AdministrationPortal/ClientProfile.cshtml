@@ -12,36 +12,53 @@
              <input type="image" src="~/images/printer.png" onclick="window.print()" width="20" height="20">
         </div>
         <br />
-        <div>
-            <header>@foreach (var result in ViewBag.MyModel){@result.FirstName @result.LastName}'s Client Profile</header>
+        <div class="borderTOP" >
+            <br />
+            <br />
+            <header >@foreach (var result in ViewBag.MyModel){@result.FirstName @result.LastName}'s Client Profile</header>
         </div>
-        
+        <br />
+        <br />
       
     
     @foreach (var client in ViewBag.MyModel){
 
         <div class="clientGrid">
-            <div class="clientText">Client Name: @client.FirstName @client.LastName</div>
-            <div class="clientText">Date of Birth: </div>
-            <div class="clientText">Address: @client.AddressOne</div>
+            <div class="clientText"><label class="triangle-right"></label>
+                Client Name: @client.FirstName @client.LastName</div>
+            <div class="clientText"><label class="triangle-right"></label>
+            Date of Birth: </div>
+            <div class="clientText"><label class="triangle-right"></label>
+            Address: @client.AddressOne</div>
 
-            <div class="clientText">Branch of Service: @client.BranchOfService</div>
-            <div class="clientText">Entry Date: </div>
-            <div class="clientText">City: @client.City</div>
+            <div class="clientText"><label class="triangle-right"></label>
+                Branch of Service: @client.BranchOfService</div>
+            <div class="clientText"><label class="triangle-right"></label>
+            Entry Date: </div>
+            <div class="clientText"><label class="triangle-right"></label>
+            City: @client.City</div>
 
-            <div class="clientText">Disability Rating: @client.DisabilityRating</div>
-            <div class="clientText">Email Address: @client.EmailAddress</div>
-            <div class="clientText">State: @client.State</div>
+            <div class="clientText"><label class="triangle-right"></label>
+            Disability Rating: @client.DisabilityRating</div>
+            <div class="clientText"><label class="triangle-right"></label>
+            Email Address: @client.EmailAddress</div>
+            <div class="clientText"><label class="triangle-right"></label>
+            State: @client.State</div>
             
             
-            <div class="clientText">Phone Nunber: @client.Phone</div>
-            <div class="clientText">Discharge Date: </div>
-            <div class="clientText">Zip: @client.Zip</div>
+            <div class="clientText"><label class="triangle-right"></label>
+            Phone Nunber: @client.Phone</div>
+            <div class="clientText"><label class="triangle-right"></label>
+            Discharge Date: </div>
+            <div class="clientText"><label class="triangle-right"></label>
+            Zip: @client.Zip</div>
 
-            <div class="clientText">Emergecy Contact: @client.EmergencyContactFirst @client.EmergencyContactLast</div>
+            <div class="clientText"><label class="triangle-right"></label>
+            Emergecy Contact: @client.EmergencyContactFirst @client.EmergencyContactLast</div>
             <div class="clientText"></div>
             <div class="clientText"></div>
-            <div class="clientText">Emergency Contact Phone: @client.EmergencyContactPhone</div>
+            <div class="clientText"><label class="triangle-right"></label>
+            Emergency Contact Phone: @client.EmergencyContactPhone</div>
         </div>
         <br />
         <br />

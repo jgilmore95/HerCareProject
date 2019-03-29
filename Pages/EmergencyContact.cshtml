@@ -54,6 +54,63 @@
             <div class="form-groupright">
             <label asp-for="StateEC">State:</label>
             <input class="form-control" asp-for="StateEC"/>
+            <div class="form-group">
+                   <label asp-for="StateEC">State:</label>
+                   <select name="stateEC" asp-for="StateEC" class="form-control">
+                        <option selected="selected">Select State</option>
+                        <option value="2">Alabama</option>
+                        <option value="3">Alaska</option>
+                        <option value="4">Arizona</option>
+                        <option value="5">Arkansas</option>
+                        <option value="6">California</option>
+                        <option value="7">Colorado</option>
+                        <option value="8">Connecticut</option>
+                        <option value="9">Delaware</option>
+                        <option value="10">District of Columbia</option>
+                        <option value="1">Florida</option>
+                        <option value="11">Georgia</option>
+                        <option value="12">Hawaii</option>
+                        <option value="13">Idaho</option>
+                        <option value="14">Illinois</option>
+                        <option value="15">Indiana</option>
+                        <option value="16">Iowa</option>
+                        <option value="17">Kansas</option>
+                        <option value="18">Kentucky</option>
+                        <option value="19">Louisiana</option>
+                        <option value="20">Maine</option>
+                        <option value="21">Maryland</option>
+                        <option value="22">Massachusetts</option>
+                        <option value="23">Michigan</option>
+                        <option value="24">Minnesota</option>
+                        <option value="25">Mississippi</option>
+                        <option value="26">Missouri</option>
+                        <option value="27">Montana</option>
+                        <option value="29">Nebraska</option>
+                        <option value="30">Nevada</option>
+                        <option value="31">New Hampshire</option>
+                        <option value="32">New Jersey</option>
+                        <option value="33">New Mexico</option>
+                        <option value="34">New York</option>
+                        <option value="35">North Carolina</option>
+                        <option value="36">North Dakota</option>
+                        <option value="37">Ohio</option>
+                        <option value="38">Oklahoma</option>
+                        <option value="39">Oregon</option>
+                        <option value="40">Pennsylvania</option>
+                        <option value="41">Rhode Island</option>
+                        <option value="42">South Carolina</option>
+                        <option value="43">South Dakota</option>
+                        <option value="44">Tennessee</option>
+                        <option value="45">Texas</option>
+                        <option value="46">Utah</option>
+                        <option value="47">Vermont</option>
+                        <option value="48">Virginia</option>
+                        <option value="49">Washington</option>
+                        <option value="50">West Virginia</option>
+                        <option value="51">Wisconsin</option>
+                        <option value="52">Wyoming</option>
+                    </select>
+               
             </div>
             <div class="form-groupright">
             <label asp-for="ZipcodeEC">ZipCode:</label>
@@ -61,11 +118,11 @@
             </div>
             <div class="form-groupright">
             <label asp-for="MainPhoneEC">Main Phone Number: </label>
-            <input class="from-control" asp-for="MainPhoneEC"/>
+            <input class="from-control" placeholder="0000000000" asp-for="MainPhoneEC"/>
             </div>
             <div class="form-groupright">
             <label asp-for="SecondaryPhoneEC">Secondary Phone Number: </label>
-            <input class="from-control" asp-for="SecondaryPhoneEC"/>
+            <input class="from-control" placeholder="0000000000" asp-for="SecondaryPhoneEC"/>
             </div>
             <br />
             <br />
@@ -95,7 +152,60 @@
             </div>
             <div class="form-groupright">
             <label asp-for="StateEC2">State:</label>
-            <input class="form-control" asp-for="StateEC2"/>
+                   <select name="stateEC2" asp-for="StateEC2" class="form-control">
+                        <option selected="selected">Select State</option>
+                        <option value="2">Alabama</option>
+                        <option value="3">Alaska</option>
+                        <option value="4">Arizona</option>
+                        <option value="5">Arkansas</option>
+                        <option value="6">California</option>
+                        <option value="7">Colorado</option>
+                        <option value="8">Connecticut</option>
+                        <option value="9">Delaware</option>
+                        <option value="10">District of Columbia</option>
+                        <option value="1">Florida</option>
+                        <option value="11">Georgia</option>
+                        <option value="12">Hawaii</option>
+                        <option value="13">Idaho</option>
+                        <option value="14">Illinois</option>
+                        <option value="15">Indiana</option>
+                        <option value="16">Iowa</option>
+                        <option value="17">Kansas</option>
+                        <option value="18">Kentucky</option>
+                        <option value="19">Louisiana</option>
+                        <option value="20">Maine</option>
+                        <option value="21">Maryland</option>
+                        <option value="22">Massachusetts</option>
+                        <option value="23">Michigan</option>
+                        <option value="24">Minnesota</option>
+                        <option value="25">Mississippi</option>
+                        <option value="26">Missouri</option>
+                        <option value="27">Montana</option>
+                        <option value="29">Nebraska</option>
+                        <option value="30">Nevada</option>
+                        <option value="31">New Hampshire</option>
+                        <option value="32">New Jersey</option>
+                        <option value="33">New Mexico</option>
+                        <option value="34">New York</option>
+                        <option value="35">North Carolina</option>
+                        <option value="36">North Dakota</option>
+                        <option value="37">Ohio</option>
+                        <option value="38">Oklahoma</option>
+                        <option value="39">Oregon</option>
+                        <option value="40">Pennsylvania</option>
+                        <option value="41">Rhode Island</option>
+                        <option value="42">South Carolina</option>
+                        <option value="43">South Dakota</option>
+                        <option value="44">Tennessee</option>
+                        <option value="45">Texas</option>
+                        <option value="46">Utah</option>
+                        <option value="47">Vermont</option>
+                        <option value="48">Virginia</option>
+                        <option value="49">Washington</option>
+                        <option value="50">West Virginia</option>
+                        <option value="51">Wisconsin</option>
+                        <option value="52">Wyoming</option>
+                    </select>
             </div>
             <div class="form-groupright">
             <label asp-for="ZipcodeEC2">ZipCode:</label>
@@ -103,11 +213,11 @@
             </div>
             <div class="form-groupright"> 
             <label asp-for="MainPhoneEC2">Main Phone Number: </label>
-            <input class="from-control" asp-for="MainPhoneEC2"/>
+            <input class="from-control" placeholder="0000000000" asp-for="MainPhoneEC2"/>
             </div>
             <div class="form-groupright">
             <label asp-for="SecondaryPhoneEC2">Secondary Phone Number: </label>
-            <input class="from-control" asp-for="SecondaryPhoneEC2"/>
+            <input class="from-control" placeholder="0000000000" asp-for="SecondaryPhoneEC2"/>
             </div>
             </form>
             <div class="buttonCenter">

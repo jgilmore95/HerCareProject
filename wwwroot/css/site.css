@@ -364,6 +364,19 @@ h2 {
   
 
 }
+.borderTOP{
+  background: rgb(249, 226, 237);
+  border: 2px solid rgb(28, 8, 117);
+  border-radius: 6px;
+  width: 90%;
+  text-align: center;
+  text-decoration-style: wavy;
+  text-decoration: rgb(28, 8, 117);
+  text-decoration: transparent;
+  text-decoration: underline;
+
+ 
+}
 .clientText{
   font-family: DejaVu Sans Mono, monospace;
   font-weight: bold;
@@ -372,8 +385,16 @@ h2 {
   display: grid;
   grid-gap: 10px 20px;
   grid-template-columns: 1fr 1fr 1fr;
+ 
 }
-
+.triangle-right {
+  width: 0;
+  height: 0;
+  
+  border-top: 4px solid transparent;
+  border-left: 8px solid rgb(28, 8, 117);
+  border-bottom: 4px solid transparent;
+}
 .homeGrid{
     display: grid;
     grid-gap: 30% 0%;
