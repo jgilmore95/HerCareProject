@@ -3,7 +3,7 @@
 @model her_care.Models.SearchModel
 
 @{
-    ViewData["Title"] = "Administration";
+   
 }
 <head>
         <meta name="viewport" content="width-device-width"/>
@@ -46,6 +46,7 @@
 
 
 <div style="margin-top:50px;">
+    <a asp-page="/PhotoConsent" type="button" class="buttonHome">Photo Consent Form</></a>
 <!--<a asp-page="/VolunteerVerification"><button type="button" class="buttonHome" :hover>Volunteer Hours</button></a>-->
 <button onclick="location.href = '/MonetaryAssistance';" type="button" class="MAButton" :hover>Monetary Assistance</button>
 </div>
