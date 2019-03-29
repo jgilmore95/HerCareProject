@@ -1,9 +1,8 @@
 @page
-@model her_care.Models.volunteerVerification
+@model her_care.Models.VolunteerVerification
 @{
     ViewData["Title"] = "Volunteer Verification";
 }
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,14 +11,7 @@
         <link rel="site" href="~/css/site.css" /> 
     </head>
     <body>
-        <!-- <nav class="navbar">
-             <a asp-page="/Intake">Click here for check-in page</a> ||
-              <a asp-page="/VolunteerHours">Click here for Volunteer Page</a> ||
-                <a asp-page="/Cohort">Click here for the cohort page</a> || 
-                  <a asp-page="/AdministrationPortal">Click here for Administration Page</a>
-        </nav> -->
-
-<div class="panel panel-success">
+    <div class="panel panel-success">
         <div class"panel-heading text-center"> 
         <div class="panel-body">
             <div style="float: right; padding-top: 10px; padding-right: 10px;">
@@ -31,68 +23,37 @@
             <h3>Volunteer/Work Verification Form</h3>
             <br />
             <br />
-        <form class="p-a-1" asp-action="Intake" method="post">
+        @using (Html.BeginForm("SubmitHours","VolunteerVerification", FormMethod.Post, new {})) {
+            <div class="form-grouprightVol">
                 <div asp-validation-summary="All"></div>
-                <div class="form-groupright">
+               <br />
                     <label asp-for="FirstNameVV">First Name:</label>
                     <input class="form-control" asp-for="FirstNameVV"/>                    
-                </div>
-                <div class="form-groupright">
+                <br />
                     <label asp-for="LastNameVV">Last Name:</label>
                     <input class="form-control" asp-for="LastNameVV"/>
-                </div>
-                <div class="form-groupright">
-                    <label asp-for="VolunteerAgency">Volunteer Agency:</label>
+                <br />
+                    <label asp-for="VolunteerAgency">Event Attended (Other Please specify):</label>
                     <input class="form-control" asp-for="VolunteerAgency"/>
-                </div>
-                <div class="form-groupright">
-                    <label asp-for="AgentPhone">Agency Phone (###)-###-#####:</label>
-                    <input class="form-control" asp-for="AgentPhone"/>                    
-                </div>
-                <div class="form-groupright">
-                    <label asp-for="VolunteerContact">Volunteer Contact:</label>
-                    <input class="form-control" asp-for="VolunteerContact">
-                </div>
-                <div class="form-groupright">
+                <br />
                     <label asp-for="HoursCompleted">Hours Completed:</label>
-                    <input class="form-control" asp-for="HoursCompleted"/>
-                </div>
-                <div class="form-groupright">
+                    <input style="width: 25%" placeholder="0 or 0.0"class="form-control" asp-for="HoursCompleted"/>
+                <br />
                     <label asp-for="VolunteerDate">Date Of Volunteer Hours:</label>
                     <input type="date" class="form-control" asp-for="VolunteerDate"/>
-                </div>
-                <div class="form-groupright">
+               <br />
                     <label asp-for="DescriptionService">Description Of Service Provided:</label>
                     <input class="form-control" asp-for="DescriptionService"/>
-                </div>
-
                 <br />
                 <br />
+                    <label asp-for="VolunteerSignature">Sign Your Full Name:</label>
+                    <input class="form-control" asp-for="VolunteerSignature"/>          
+                <br /> 
                 <br />
-
-                <div class="form-groupright">
-                    <label asp-for="VolunteerSignature">Your Signature:</label>
-                    <input class="form-control" asp-for="VolunteerSignature"/>
-
-                    <label asp-for="DateOfSignature">Date (mm/dd/yyyy):</label>
-                    <input type="date" class="form-control" asp-for="DateOfSignature"/>
-
-                     <label asp-for="VolunteerContactSig">Volunteer Contact Signature:</label>
-                    <input class="form-control" asp-for="VolunteerContactSig"/>
-
-                    <label asp-for="DateOfSignature2">Date (mm/dd/yyyy):</label>
-                    <input type="date" class="form-control" asp-for="DateOfSignature2"/>
-
-                     <label asp-for="VolunteerSignatureBox">By Clicking This Box I Verify that I have Completed The Volunteer Hours As Stated </label>
-                    <input type="checkbox" name="VolunteerSignatureBox" value="VolunteerSignatureBox"/>
-                </div>
-            <div class="buttonCenter">
-            <a href="https://localhost:5001/" class="button" :hover type="submit" value="S U B M I T">S U B M I T</a>
             </div>
-            </form>
-            
-            </div>
-</div>    
-        
+                <div class="buttonCenter">
+                    <input type="submit" class="button" :hover type="submit" value="S U B M I T"></input>          
+                </div>
+            }
     </body>
 </html>

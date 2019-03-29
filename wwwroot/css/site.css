@@ -146,12 +146,22 @@ h2 {
     margin-bottom: 10px;
     clear: left;
 }
+.form-grouprightVol {
+  display: inline-block;
+  text-align: left;
+  clear: right;
+  margin: 0 auto;
+  position: relative;
+  left: 30%;
+  
+}
 .form-grouprightMon {
     margin-bottom: 10px;
     display: flex;
   justify-content: center;
  padding-left: 20px;
  padding-right: 20px;
+ left: 20%;
   /* margin-left: 20%;
    position: relative; */
 }
