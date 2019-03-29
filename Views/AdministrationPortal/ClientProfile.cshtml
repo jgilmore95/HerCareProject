@@ -6,26 +6,48 @@
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 <html>
-    
 <body>
-        <div>
-            <header>Client Name: @foreach (var result in ViewBag.MyModel){@result.FirstName}</header>
+        <div style="float: right; padding-top: 10px; padding-right: 10px;">
+            <label style="font-family: Georgia;" onclick="window.print()">Print</label>
+             <input type="image" src="~/images/printer.png" onclick="window.print()" width="20" height="20">
         </div>
-
-       <div>
-
-              
-              <a asp-page="/EmergencyContact" type="button" class="buttonHome">Emergency Contact </a> </br>
-              <a asp-page="/PhotoConsent" type="button" class="buttonHome">Photo Consent Form</a> </br>
-    </div>
-    <div>
-        @foreach (var client in ViewBag.MyModel){
-       <a href="/MonetaryAssistance?id=@client.Id"> Monetary assistance </a>
+        <br />
+        <div>
+            <header>@foreach (var result in ViewBag.MyModel){@result.FirstName @result.LastName}'s Client Profile</header>
+        </div>
         
-        }
-    </div>
+      
+    
     @foreach (var client in ViewBag.MyModel){
-    <table border="1">
+
+        <div class="clientGrid">
+            <div class="clientText">Client Name: @client.FirstName @client.LastName</div>
+            <div class="clientText">Date of Birth: </div>
+            <div class="clientText">Address: @client.AddressOne</div>
+
+            <div class="clientText">Branch of Service: @client.BranchOfService</div>
+            <div class="clientText">Entry Date: </div>
+            <div class="clientText">City: @client.City</div>
+
+            <div class="clientText">Disability Rating: @client.DisabilityRating</div>
+            <div class="clientText">Email Address: @client.EmailAddress</div>
+            <div class="clientText">State: @client.State</div>
+            
+            
+            <div class="clientText">Phone Nunber: @client.Phone</div>
+            <div class="clientText">Discharge Date: </div>
+            <div class="clientText">Zip: @client.Zip</div>
+
+            <div class="clientText">Emergecy Contact: @client.EmergencyContactFirst @client.EmergencyContactLast</div>
+            <div class="clientText"></div>
+            <div class="clientText"></div>
+            <div class="clientText">Emergency Contact Phone: @client.EmergencyContactPhone</div>
+        </div>
+        <br />
+        <br />
+       
+    /*
+    <!-- <table border="1">
       <tr><th></th><th></th></tr>
         <tr>
             <td>Name </td>
@@ -103,8 +125,16 @@
             </td>
         </tr>
         
-    </table>
-    }
-
+    </table> -->
+    */
+    }    
+         <div class="CPGrid"> 
+              <button onclick="location.href = '/EmergencyContact';" type="button" class="buttonHome" :hover>Emergency Contact</button> 
+              <button onclick="location.href = '/PhotoConsent';" type="button" class="buttonHome" :hover>Photo Consent Form</button> 
+              @foreach (var client in ViewBag.MyModel){
+              <button onclick="location.href = '/MonetaryAssistance?id=@client.Id';"  type="button" class="buttonHome" :hover> Monetary assistance</button>
+                }
+        </div>
+    
     </body>
 </html>

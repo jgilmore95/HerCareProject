@@ -355,6 +355,24 @@ h2 {
     font-weight: bolder;
     text-shadow: -1px 0 rgb(0, 101, 184), 0 1.5px rgb(0, 101, 184), 1.5px 0 rg(0, 101, 184), 0 -1px rgb(0, 101, 184);
 }
+.CPGrid{
+  display: grid;
+  align-items: center; 
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0% 10pxpx;
+  
+
+}
+.clientText{
+  font-family: DejaVu Sans Mono, monospace;
+  font-weight: bold;
+}
+.clientGrid{
+  display: grid;
+  grid-gap: 10px 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
 .homeGrid{
     display: grid;
@@ -363,6 +381,8 @@ h2 {
     padding-top: 10%;
     grid-template-columns: auto auto;
 }
+
+
 
 .checkboxLeft{
 
