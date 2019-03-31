@@ -1,0 +1,76 @@
+@page
+
+@model her_care.Models.ReportModel
+
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+        <meta name="viewport" content="width-device-width"/>
+        <title>Search Results</title>
+        <link rel="site" href="~/css/site.css" /> 
+    </head>
+<style>
+    td {
+        padding: 7px;
+    }
+</style>
+
+
+
+<div>
+  
+    <br>
+<br>
+<table width="100%" height="100%" style="background-color: white;" border="1">
+    <tr>
+        <td height="100%">
+            <br>
+            <table align="center" width="80%" border="1">
+                <tr>
+                    <td align="center"><font style="font-size: 20px"><strong>Date</strong></font></td>
+                    <td align="center"><font style="font-size: 20px"><strong>First Name</strong></font></td>
+                    <td align="center"><font style="font-size: 20px"><strong>Last Name</strong></font></td>
+                    <td align="center"><font style="font-size: 20px"><strong>Recieved</strong></font></td>
+                    <td align="center"><font style="font-size: 20px"><strong>Amount</strong></font></td>
+                </tr>
+                @foreach (var rec in ViewBag.MyModel)
+                {
+                    <tr>
+                        <td>
+                            @rec.DateSubmitted
+                        </td>
+                        <td>
+                            @rec.FName
+                        </td>
+                        <td>
+                            @rec.LName
+                        </td>
+                        <td>
+                            @rec.HelpType
+                        </td>
+                        <td>
+                            $@rec.Amount
+                        </td>
+                    </tr>
+                }
+                <tr>
+                    <td colspan="5" align="center">
+                        <a href="/Report">Back</a>
+                    </td>
+                </tr>
+            </table>
+            <br>
+        </td>
+    </tr>
+</table>
+
+
+</div>
+
+
+   
+
+</html>
