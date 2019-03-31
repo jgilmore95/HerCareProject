@@ -1,32 +1,55 @@
 @page
 @model CSignInModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Sign In";
 }
 @using(Html.BeginForm("Submit", "SignIn", "", FormMethod.Post, false, ""))
 {
-    <table>
+    <table align="center">
         <tr>
-            <td>
-                First Name:  @Html.TextBox("FName", "", new { placeholder = "", required="required" })
-            </td>
-            <td>
-                LastName:  @Html.TextBox("LName", "", new { placeholder = "", required="required" })
+            <td colspan="4" align="center">
+                <h1>Sign In</h1>
             </td>
         </tr>
         <tr>
-            <td>
-                Organization:  @Html.TextBox("Organization", "", new { placeholder = "", required="required" })
+            <td colspan="4">
+                <hr style="border-color: black;">
+            </td>
+        </tr>
+        <tr >
+            <td style="padding: 10px;">
+                First Name:  
+            </td>
+            <td style="padding: 10px;">
+                @Html.TextBox("FName", "", new { placeholder = "", required="required" })
+            </td>
+            <td style="padding: 10px;">
+                Last Name:  
+            </td>
+            <td style="padding: 10px;">
+                @Html.TextBox("LName", "", new { placeholder = "", required="required" })
             </td>
         </tr>
         <tr>
-            <td>
-                E-Mail:  @Html.TextBox("eMail", "", new { placeholder = "", required="required" })
+            <td style="padding: 10px;">
+                Organization:  
+            </td>
+            <td style="padding: 10px;">
+                @Html.TextBox("Organization", "", new { placeholder = "", required="required" })
+            </td>      
+            <td style="padding: 10px;">
+                Email:  
+            </td>
+            <td style="padding: 10px;">
+                @Html.TextBox("eMail", "", new { type = "email", placeholder = "", required="required" })
             </td>
         </tr>
         <tr>
-            <td>
-                Branch of Service:  @{List<SelectListItem> listItems= new List<SelectListItem>();
+            <td style="padding: 10px;">
+                Branch of Service:  
+            </td>
+            <td style="padding: 10px;" colspan="3">
+                @{List<SelectListItem> listItems= new List<SelectListItem>();
                                     listItems.Add(new SelectListItem
                                     {
                                         Text = "Air Force",
@@ -56,7 +79,11 @@
                                     
                             }
 @Html.DropDownListFor(model => model.BranchofService, listItems, "-- Select Status --")
-        <input type="submit" Value="Submit">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center" style="padding: 10px;">
+                <input type="submit" Value="Submit">
             </td>
         </tr>
     </table>
