@@ -9,7 +9,9 @@ using System.ComponentModel.DataAnnotations;
 
     public class Demographics
     {
+        [Required(ErrorMessage="Please enter your first name")]
         public string FirstName {get; set;}
+        [Required (ErrorMessage="Please enter your last name")]
         public string LastName {get; set;}
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -17,16 +19,26 @@ using System.ComponentModel.DataAnnotations;
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DateOfBirth {get; set;}
+        [Required (ErrorMessage="Please enter a phone number")]
         public int Phone {get; set;}
+        [Required (ErrorMessage="Please enter your e-mail address")]
         public string EmailAddress {get; set;}
+        [Required (ErrorMessage="Please enter your address")]
         public string AddressOne { get; set; }
          public string AddressTwo { get; set; }
+         [Required (ErrorMessage="Please enter a city")]
          public string City { get; set; }
+         [Required (ErrorMessage="Please select a state")]
          public int State { get; set; }
+         [Required (ErrorMessage="Please enter a zipcode")]
          public int Zip { get; set; }
+         [Required (ErrorMessage="Please enter an emergency contacts first name")]
          public string EmergencyContactFirst {get; set;}
+         [Required (ErrorMessage="Please enter an emergency contacts last name")]
          public string EmergencyContactLast {get; set;}
+         [Required (ErrorMessage="Please enter your emergency contact's phone number")]
          public int EmergencyContactPhone {get; set;}
+         [Required (ErrorMessage="Please enter your branch of service")]
          public string BranchOfService {get; set;}
          [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -40,7 +52,7 @@ using System.ComponentModel.DataAnnotations;
          public Boolean ActiveDuty {get; set;} //were you or are you on active duty, reserves, or national guard
         public Boolean Reserves {get; set;} 
         public Boolean NationalGuard {get; set;} 
-          public Boolean Employed {get; set;}
+        public Boolean Employed {get; set;}
         public Boolean Student {get; set;}
         public Boolean SelfEmployed {get; set;}
         public Boolean Contractor {get; set;}

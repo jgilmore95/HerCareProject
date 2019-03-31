@@ -262,6 +262,34 @@ h2 {
   [type="date"]::-webkit-calendar-picker-indicator {
     opacity: 0;
   }
+  .flexfroggy{
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  align-items: center;
+  
+  padding-left: 30px;
+  padding-right: 30px;
+  }
+  .flexfroggy2{
+    display: flex;
+    justify-content: flex-start;
+    justify-content: space-around;
+    padding-bottom: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-right: 68%;
+  }
+  .flexfroggy3{
+    display: flex;
+    justify-content: flex-start;
+    justify-content: space-around;
+    padding-bottom: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-right: 45%;
+  }
 
 #wrapper
 {
@@ -276,12 +304,14 @@ h2 {
     background: rgb(249, 226, 237);
     border: 2px solid rgb(28, 8, 117);
     border-radius: 6px;
+    width: 100%;
 
 
 
 }
 .panel-success {
     background: rgb(249, 226, 237);
+    
 
 }
 .button {
