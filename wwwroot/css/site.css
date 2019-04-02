@@ -414,7 +414,7 @@ h2 {
 .clientGrid{
   display: grid;
   grid-gap: 10px 20px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
  
 }
 .triangle-right {
