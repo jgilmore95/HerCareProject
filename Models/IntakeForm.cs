@@ -20,7 +20,7 @@ using System.ComponentModel.DataAnnotations;
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DateOfBirth {get; set;}
         [Required (ErrorMessage="Please enter a phone number")]
-        public int Phone {get; set;}
+        public string Phone {get; set;}
         [Required (ErrorMessage="Please enter your e-mail address")]
         public string EmailAddress {get; set;}
         [Required (ErrorMessage="Please enter your address")]

@@ -1,6 +1,6 @@
 @page
 
-@model her_care.Models.SearchModel
+
 
 @{
     Layout = "~/Pages/Shared/_Layout.cshtml";
@@ -150,6 +150,7 @@
               <button onclick="location.href = '/PhotoConsent';" type="button" class="buttonHome" :hover>Photo Consent Form</button> 
               @foreach (var client in ViewBag.MyModel){
               <button onclick="location.href = '/MonetaryAssistance?id=@client.Id';"  type="button" class="buttonHome" :hover> Monetary assistance</button>
+               @Html.ActionLink("Edit Client", "EditClient", new {id=client.Id })
                 }
         </div>
     

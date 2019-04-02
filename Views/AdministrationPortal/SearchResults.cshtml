@@ -29,32 +29,24 @@
         <td>
 
             <table border="1" width="100%">
-                <tr>
-                    <td><strong>ID</strong></td>
-                    <td><strong>First Name</strong></td>
-                    <td><strong>Last Name</strong></td>
-                    <td><strong>Details</strong></td>
-                </tr>
+                
                
                     
                 
                 @foreach (var result in ViewBag.MyModel)
                 { 
                    
-                    <tr>
-                        <td>@result.Id
-                            @if(result.isClient){@Html.Label("[Client]")}
-                            @if(!result.isClient){@Html.Label("[Volunteer]")}
-                        </td>
-                        <td>@result.FName</td>
-                        <td>@result.LName</td>  
+                    <tr align="center">
+                      
+                        
                         <td>    
-                            @if(result.isClient){        
-                             @Html.ActionLink("Details", "ClientProfile", new {id=result.Id })
-                            }
-                            @if(!result.isClient){
-                                @Html.ActionLink("Details", "VolunteerProfile", new {id=result.Id })
-                            }
+                          
+
+                            <a href="@Url.Action("ClientProfile", new {id = result.Id})" >
+                            @result.FName @result.LName
+                            </a>
+
+                          
             
                          </td>                      
                     </tr>

@@ -190,6 +190,7 @@ namespace her_care.Controllers
                     Term.City = rdr["City"].ToString();
                     Term.State = Convert.ToInt32(rdr["StateID"].ToString());
                     Term.Zip = Convert.ToInt32(rdr["ZipCode"].ToString());                    
+                    Term.Phone = rdr["Phone"].ToString();
                     Term.EmailAddress = rdr["EmailAddress"].ToString();
                     Term.EmergencyContactFirst = rdr["EmergencyContactFirst"].ToString();
                     Term.EmergencyContactLast = rdr["EmergencyContactLast"].ToString();
@@ -198,6 +199,7 @@ namespace her_care.Controllers
                     Term.DisabilityRating = Convert.ToInt32(rdr["DisabilityRating"].ToString());
                     Term.Employed = (bool) rdr["Employed"];
                     Term.Contractor = (bool) rdr["Contractor"];
+                    
 
                     Terms.Add(Term); //Add object to list
                 }
@@ -406,6 +408,8 @@ namespace her_care.Controllers
             
             
         }
+
+        
         
        
 
