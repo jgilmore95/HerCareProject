@@ -13,14 +13,13 @@ using System.ComponentModel.DataAnnotations;
         public string FirstName {get; set;}
         [Required (ErrorMessage="Please enter your last name")]
         public string LastName {get; set;}
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime TodaysDate {get; set;}
+
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DateOfBirth {get; set;}
+        
         [Required (ErrorMessage="Please enter a phone number")]
-        public int Phone {get; set;}
+        public string Phone {get; set;}
         [Required (ErrorMessage="Please enter your e-mail address")]
         public string EmailAddress {get; set;}
         [Required (ErrorMessage="Please enter your address")]
@@ -49,6 +48,7 @@ using System.ComponentModel.DataAnnotations;
          public string DischargeType {get; set;}
          public Boolean CombatVet {get; set;}
          public int DisabilityRating {get; set;}
+        //  public Boolean DisabilityRatingNone {get; set;}
          public Boolean ActiveDuty {get; set;} //were you or are you on active duty, reserves, or national guard
         public Boolean Reserves {get; set;} 
         public Boolean NationalGuard {get; set;} 

@@ -41,16 +41,12 @@
                     @Html.TextBox("LastName", null, new { @class = "form-control" })
                 </div>
                 <div class="flexfroggy">
-                    <label asp-for="TodaysDate">Today's Date:</label>
-                    <input type="date" class="form-control" asp-for="TodaysDate"/>
-                </div>
-                <div class="flexfroggy">
                     <label asp-for="DateOfBirth">DOB:</label>
                     <input type="date" class="form-control" asp-for="DateOfBirth"/>                    
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="Phone">Phone:</label>
-                    <input class="form-control" placeholder="0000000000" asp-for="Phone">
+                    <input class="form-control"  asp-for="Phone">
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="EmailAddress">Email:</label>
@@ -168,11 +164,11 @@
 
                 <!-- /*Disaility drop-down*/ -->
                 <div class="flexfroggy3">
-                    <label asp-for="DisabilityRating">Disibility Rating (please enter a percentage):</label>
+                    <label asp-for="DisabilityRating">Disibility Rating (please select a percentage):</label>
                      @Html.DropDownListFor(m => m.DisabilityRating, Enumerable.Range(0, 101).Select(i => new SelectListItem { Text = i.ToString(), Value = i.ToString()  }))
                
                     <label class="checkboxLeft">None
-                    <input type="checkbox" value="true" name="DisibilityRating" value="Disibilityrating" />
+                    <input type="checkbox" value="true" name="DisibilityRatingNone" value="DisibilityratingNone" />
                     <span class="checkmark"></span>
                     </label>
                 </div>
