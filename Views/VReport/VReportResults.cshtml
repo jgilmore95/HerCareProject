@@ -1,6 +1,6 @@
 @page
 
-@model her_care.Models.ReportModel
+@model her_care.Models.VReportModel
 
 @{
     Layout = "~/Pages/Shared/_Layout.cshtml";
@@ -27,21 +27,20 @@
 <table width="100%" height="100%" style="background-color: white;" border="1">
     <tr>
         <td height="100%">
-            <br>
-            <header>Report Monetary Assistance</header>
+            <header>Report Volunteer Hours</header>
+            
             <table align="center" width="80%" border="1">
                 <tr>
                     <td align="center"><font style="font-size: 20px"><strong>Date</strong></font></td>
                     <td align="center"><font style="font-size: 20px"><strong>First Name</strong></font></td>
                     <td align="center"><font style="font-size: 20px"><strong>Last Name</strong></font></td>
-                    <td align="center"><font style="font-size: 20px"><strong>Recieved</strong></font></td>
-                    <td align="center"><font style="font-size: 20px"><strong>Amount</strong></font></td>
+                    <td align="center"><font style="font-size: 20px"><strong>Hours</strong></font></td>
                 </tr>
                 @foreach (var rec in ViewBag.MyModel)
                 {
                     <tr>
                         <td>
-                            @rec.DateSubmitted
+                            @rec.DateCreated
                         </td>
                         <td>
                             @rec.FName
@@ -50,16 +49,13 @@
                             @rec.LName
                         </td>
                         <td>
-                            @rec.HelpType
-                        </td>
-                        <td>
-                            $@rec.Amount
+                            @rec.VolunteerHours
                         </td>
                     </tr>
                 }
                 <tr>
                     <td colspan="5" align="center">
-                        <a href="/Report">Back</a>
+                        <a href="/VReport">Back</a>
                     </td>
                 </tr>
             </table>
