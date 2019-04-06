@@ -30,7 +30,7 @@ namespace her_care.Controllers
         [HttpPost]
         public ActionResult AdminLogin(AdminLoginModel model)
         { 
-            //HttpContext.Session.Remove("UserName");
+            HttpContext.Session.Remove("UserName");
 
             SqlCommand cmd = null;
 
@@ -44,17 +44,17 @@ namespace her_care.Controllers
                 SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
                 if (rdr.HasRows == true) {
-                    //HttpContext.Session.SetString("UserName", model.Username);
+                    HttpContext.Session.SetString("UserName", model.Username);
 
                     UserManagement.Username = model.Username;
 
                          return RedirectToPage("/AdministrationPortal");
                     
 
-                    //System.Diagnostics.Debug.WriteLine("Found Record");
+                    System.Diagnostics.Debug.WriteLine("Found Record");
                 }
                 else if (rdr.HasRows == false) {
-                    //HttpContext.Session.SetString("LoginErrorMessage", "Login / Password Is Incorrect");
+                    HttpContext.Session.SetString("LoginErrorMessage", "Login / Password Is Incorrect");
                     return View("/Pages/InvalidLogin.cshtml");
                 }
             }
