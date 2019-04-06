@@ -41,7 +41,7 @@
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="LastName">Last Name:</label>                   
-                   @Html.TextBoxFor(m => m.LastName, new {value = client.LastName, @class = "form-control"})
+                   @Html.TextBox("LastName", null, new { @class = "form-control", placeholder = client.LastName})
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="TodaysDate">Today's Date:</label>

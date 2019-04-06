@@ -16,48 +16,27 @@
 
 
 
-<div>
-  
-    <table width="60%" align="center">
-    <tr align="center">
-        <td>
-            <h1>Client and Volunteer Search</h1>
-            
-        </td>
-    </tr>
-    <tr align="center">
-        <td>
 
-            <table border="1" width="100%">
-                
+    
+            <h1>Client Search Results</h1> </br></br>
                
-                    
-                
+               <!-- <div class="flexfroggySearch">
+                   <label style="font-weight: bold;">First Name</label>
+                   <label style="font-weight: bold;">Last Name</label>
+               </div> -->
+               
                 @foreach (var result in ViewBag.MyModel)
-                { 
-                   
-                    <tr align="center">
-                      
-                        
-                        <td>    
-                          
+                { <div class="flexfroggySearch">
+                     <a href="@Url.Action("ClientProfile", new {id = result.Id})" >
+                     @result.FName 
+                     @result.LName
+                     </a>     
+                           
+            </div>
 
-                            <a href="@Url.Action("ClientProfile", new {id = result.Id})" >
-                            @result.FName @result.LName
-                            </a>
-
-                          
-            
-                         </td>                      
-                    </tr>
-                
                 }
                 
-        </td>
-    </tr>
-</table>
 
-</div>
 
 
    

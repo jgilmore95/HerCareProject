@@ -46,7 +46,7 @@ namespace her_care.Controllers
         [HttpPost]
         public ActionResult SearchResults(SearchModel model)
         {
-            ViewBag.MyModel = her_care.Controllers.DBBaseAdmin.CombinedSearch(model.SearchValue);
+            ViewBag.MyModel = her_care.Controllers.DBBaseAdmin.ClientSearch(model.SearchValue);
 
             /*
             if(model.isClient)
