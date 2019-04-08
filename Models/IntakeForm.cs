@@ -46,6 +46,7 @@ using System.ComponentModel.DataAnnotations;
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
          public DateTime DischargeDate {get; set;}
          public string DischargeType {get; set;}
+         public string SSN {get; set;}
          public Boolean CombatVet {get; set;}
          public int DisabilityRating {get; set;}
         //  public Boolean DisabilityRatingNone {get; set;}
