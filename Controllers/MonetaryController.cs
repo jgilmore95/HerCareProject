@@ -14,11 +14,26 @@ using her_care.Models;
 
  namespace her_care.Controllers {
 
-     public class MonetaryController : DBBase
-    {
-        [Route("submitMonetary")]
+     public class MonetaryAssistanceController : DBBase
+
+     {
+public void OnGet()
+        {
+            //   
+        }
+
+   [HttpGet]
+  // [Route("MonetaryAssistance")]
+    public IActionResult Index()
+        {         
+            return View("MonetaryAssistance.cshtml");
+        }
+/* */
+        [Route("MonetaryAssistance")]
         [HttpPost]
-        public ActionResult Submit(MonetaryModel model){
+        public ActionResult SubmitMonetary(MonetaryModel model, String id){
+               
+               
                 SqlCommand cmd = null;
 
               try
@@ -28,6 +43,7 @@ using her_care.Models;
                 cmd.Parameters.Add("@Services", SqlDbType.Int).Value = model.Services;
                 cmd.Parameters.Add("@StaffSigMA", SqlDbType.VarChar, 50).Value = model.StaffSigMA;
                 cmd.Parameters.Add("@MoneyMA", SqlDbType.Decimal).Value = model.MoneyMA;
+                cmd.Parameters.Add("@ClientID", SqlDbType.Int).Value = id;
 
 
                 cmd.ExecuteNonQuery();
@@ -42,8 +58,11 @@ using her_care.Models;
             }
  
  
-           return View("/Pages/Index.cshtml");  
+           return RedirectToAction("ClientProfile", "AdministrationPortal", new {id =id});
         }
+
+      
+        
 /* public class MonetaryController : Controller
     {
        public ActionResult Index()
@@ -62,6 +81,7 @@ using her_care.Models;
         { 
             return View(); 
         } */
-    } 
+
+     }     
  }
  

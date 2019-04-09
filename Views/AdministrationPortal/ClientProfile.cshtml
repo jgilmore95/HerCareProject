@@ -6,18 +6,159 @@
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 <html>
-    
 <body>
-        <div>
-            <header>Client Name: @foreach (var result in ViewBag.MyModel){@result.FirstName}</header>
+        <div style="float: right; padding-top: 10px; padding-right: 10px;">
+            <label style="font-family: Georgia;" onclick="window.print()">Print</label>
+             <input type="image" src="~/images/printer.png" onclick="window.print()" width="20" height="20">
         </div>
+        <br />
+        <div class="borderTOP" >
+            <br />
+            <br />
+            <header >@foreach (var result in ViewBag.MyModel){@result.FirstName @result.LastName}'s Client Profile</header>
+        </div>
+        <br />
+        <br />
+      
+    
+    @foreach (var client in ViewBag.MyModel){
 
-       <div>
+        <div class="clientGrid">
+            <div class="clientText"><label class="triangle-right"></label>
+            Client Name: @client.FirstName @client.LastName</div>
+            <div class="clientText"><label class="triangle-right"></label>
+            Branch of Service: @client.BranchOfService</div>
+        
+            <div class="clientText"><label class="triangle-right"></label>
+            Date of Birth: </div>
+            <div class="clientText"><label class="triangle-right"></label>
+            Entry Date: </div>
 
-              <a asp-page="/MonetaryAssistance" type="button" class="buttonHome">Monetary Assistance</a> </br>
-              <a asp-page="/EmergencyContact" type="button" class="buttonHome">Emergency Contact </a> </br>
-              <a asp-page="/PhotoConsent" type="button" class="buttonHome">Photo Consent Form</a> </br>
-    </div>
+            <div class="clientText"><label class="triangle-right"></label>
+            Street Address: @client.AddressOne</div>
+            <div class="clientText"><label class="triangle-right"></label>
+            Discharge Date: </div>
 
+            <div class="clientText"><label class="triangle-right"></label>
+            City: @client.City</div>
+            <div class="clientText"><label class="triangle-right"></label>
+            Disability Rating: @client.DisabilityRating</div>
+            
+            <div class="clientText"><label class="triangle-right"></label>
+            State: @client.State</div>
+            <div class="clientText"><label class="triangle-right"></label>
+            Emergecy Contact: @client.EmergencyContactFirst @client.EmergencyContactLast</div>
+
+            <div class="clientText"><label class="triangle-right"></label>
+            ZipCode: @client.Zip</div>
+            <div class="clientText"><label class="triangle-right"></label>
+            Emergency Contact Phone: @client.EmergencyContactPhone</div>
+            
+            <div class="clientText"><label class="triangle-right"></label>
+            Email Address: @client.EmailAddress</div>
+            <div class="clientText"></div>
+
+            <div class="clientText"><label class="triangle-right"></label>
+            Phone Nunber: @client.Phone</div>
+            <div class="clientText"></div>
+
+            <div class="clientText"><label class="triangle-right"></label>
+            SSN: @client.SSN</div>
+            <div class="clientText"></div>
+            
+        </div>
+        <br />
+        <br />
+       
+    /*
+    <!-- <table border="1">
+      <tr><th></th><th></th></tr>
+        <tr>
+            <td>Name </td>
+            <td>@client.FirstName @client.LastName </td>
+        </tr>
+        <tr>
+            <td>Date of Birth</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Address </td>
+            <td>@client.AddressOne</td>
+        </tr>
+        <tr>
+            <td>City </td>
+            <td>@client.City</td>
+        </tr>
+        <tr>
+            <td>State </td>
+            <td>@client.State</td>
+        </tr>
+        <tr>
+            <td>Zip </td>
+            <td>@client.Zip</td>
+        </tr>
+        <tr>
+            <td>Email Address</td>
+            <td>@client.EmailAddress</td>
+        </tr>
+        <tr>
+            <td>Emergency Contact</td>
+            <td>@client.EmergencyContactFirst @client.EmergencyContactLast</td>
+        </tr>
+        <tr>
+            <td>Emergency Contact Phone</td>
+            <td>@client.EmergencyContactPhone</td>
+        </tr>
+        <tr>
+            <td>Branch of Service</td>
+            <td>@client.BranchOfService</td>
+        </tr>
+        <tr>
+            <td>Entry Date</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Discharge Date</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Disability Rating</td>
+            <td>@client.DisabilityRating</td>
+        </tr>
+        <tr>
+            <td>Employed</td>
+            <td>@if (@client.Employed == true)
+                {
+                    <input type="checkbox" checked="checked">
+                }else
+                {
+                    <input type="checkbox">
+                }
+            </td>
+        </tr>
+        <tr>
+            <td>Contractor</td>
+            <td>@if (@client.Contractor == true)
+                {
+                    <input type="checkbox" checked="checked">
+                }else
+                {
+                    
+                    <input type="checkbox">
+                }
+            </td>
+        </tr>
+        
+    </table> -->
+    */
+    }    
+         <div class="CPGrid"> 
+              <button onclick="location.href = '/EmergencyContact';" type="button" class="buttonHome" :hover>Emergency Contact</button> 
+              <button onclick="location.href = '/PhotoConsent';" type="button" class="buttonHome" :hover>Photo Consent Form</button> 
+              @foreach (var client in ViewBag.MyModel){
+              <button onclick="location.href = '/MonetaryAssistance?id=@client.Id';"  type="button" class="buttonHome" :hover> Monetary assistance</button>
+                }
+        </div>
+    
     </body>
 </html>

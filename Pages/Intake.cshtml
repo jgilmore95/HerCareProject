@@ -15,53 +15,52 @@
         <link rel="site" href="~/css/site.css" /> 
     </head>
     <body>
-        <h2>THE PRIVACY ACT OF 1974.5 U.S.C S.S. 552a ESTABLISHES A CODE OF FAIR INFORMATION PRACTICES THAT GOVERNS
+        
+    <div class="panel panel-success" >
+         <div class="panel-body">
+            <h2>THE PRIVACY ACT OF 1974.5 U.S.C S.S. 552a ESTABLISHES A CODE OF FAIR INFORMATION PRACTICES THAT GOVERNS
             THE COLLECTION, MAINTENANCE, USE, AND DISSEMINATION OF INFORMATION ABOUT INDIVIDUALS THAT IS 
             MAINTAINED IN SYSTEMS OF RECORDS BY FEDERAL AGENCIES.
         </h2>
-    <div class="panel panel-success" >
-        <div class"panel-heading text-center"> <h1>Intake Form</h1></div>
+        <h1>Intake Form</h1>
         <div style="float: right; padding-top: 10px; padding-right: 10px;">
+            <label style="font-family: Georgia;" onclick="window.print()">Print</label>
              <input type="image" src="~/images/printer.png" onclick="window.print()" width="20" height="20">
         </div>
-        <div class="panel-body">
-            <h3>DEMOGRAPHICS</h3>
+        <br />
+        <br />
+        <br />
             @using (Html.BeginForm("submit","Intake", FormMethod.Post, new {})) {
                 <div asp-validation-summary="All"></div>
-                <div class="form-group">
+                <div class="flexfroggy">
                     <label asp-for="FirstName">First Name:</label>
                     @Html.TextBox("FirstName", null, new { @class = "form-control" })
                 </div>
-                <div class="form-group">
+                <div class="flexfroggy">
                     <label asp-for="LastName">Last Name:</label>
-                    
                     @Html.TextBox("LastName", null, new { @class = "form-control" })
                 </div>
-                <div class="form-group">
-                    <label asp-for="TodaysDate">Today's Date:</label>
-                    <input type="date" class="form-control" asp-for="TodaysDate"/>
-                </div>
-                <div class="form-group">
+                <div class="flexfroggy">
                     <label asp-for="DateOfBirth">DOB:</label>
                     <input type="date" class="form-control" asp-for="DateOfBirth"/>                    
                 </div>
-                <div class="form-group">
+                <div class="flexfroggy">
                     <label asp-for="Phone">Phone:</label>
-                    <input class="form-control" asp-for="Phone">
+                    <input class="form-control"  asp-for="Phone">
                 </div>
-                <div class="form-group">
+                <div class="flexfroggy">
                     <label asp-for="EmailAddress">Email:</label>
                     <input class="form-control" asp-for="EmailAddress"/>
                 </div>
-                <div class="form-group">
+                <div class="flexfroggy">
                     <label asp-for="AddressOne">Address:</label>
                     <input class="form-control" asp-for="AddressOne"/>
                 </div>
-                <div class="form-group">
+                <div class="flexfroggy">
                     <label asp-for="City">City:</label>
                     <input class="form-control" asp-for="City"/>
                 </div>
-                <div class="form-group">
+                <div class="flexfroggy">
                     <label asp-for="State">State:</label>
                    <select name="state" class="form-control">
                         <option selected="selected">Select State</option>
@@ -118,67 +117,69 @@
                         <option value="52">Wyoming</option>
                     </select>
                 </div>
-                <div class="form-group">
+                <div class="flexfroggy">
                     <label asp-for="Zip">ZipCode:</label>
                     <input class="form-control" asp-for="Zip"/>
                 </div>
-                <div class="form-group">
+                <div class="flexfroggy">
                     <label asp-for="EmergencyContactFirst">Emergency Contact First Name:</label>
                     <input class="form-control" asp-for="EmergencyContactFirst"/>
                 </div>
-                <div class="form-group">
+                <div class="flexfroggy">
                     <label asp-for="EmergencyContactLast">Emergency Contact Last Name:</label>
                     <input class="form-control" asp-for="EmergencyContactLast"/>
                 </div>
-                <br>
-                <br>
-                <div class="form-group">
+                <div class="flexfroggy">
                     <label asp-for="BranchOfService">Branch Of Service:</label>
                     <input class="form-control" asp-for="BranchOfService"/>
                 </div>
-                <div class="form-group">
+                <div class="flexfroggy">
                  <label for="ADDBranch">Please specify additional branch here: </label>
                  <input type="text" value="Leave Blank If Does Not Apply" id="addBranch" name="which-Branch" class="form-control" >
                  </div>   
                 
-                <div class="form-group">
+                <div class="flexfroggy">
                     <label asp-for="EntryDate">Entry Date:</label>
                     <input type="date" class="form-control" asp-for="EntryDate"/>
                 </div>
-                <div class="form-group">
+                <div class="flexfroggy">
                     <label asp-for="DischargeDate">Discharge Date:</label>
                     <input type="date" class="form-control" asp-for="DischargeDate"/>
                 </div>
-                
-                <div class="form-group" style="padding-top: 20px;">
-                <label asp-for="CombatVet">Are You A Combat Vet?</label>
+                <div class="flexfroggy">
+                    <label asp-for="SSN">Last 4 of SSN:</label>
+                    <input type="text" style="width: 7%; margin-right:38.5%;" placeholder="0000" class="form-control" asp-for="SSN">
                 </div>
-                <div class="form-group" style="padding-left: 15px;">
+
+                <div class="flexfroggy2" style="padding-top: 20px;">
+                <label asp-for="CombatVet">Are You A Combat Vet?</label>
+               
+               
                 <div class="btn-switch">					
                 <input type="radio" id="yes" name="switch" class="btn-switch__radio btn-switch__radio_yes" />
                 <input type="radio" checked id="no" name="switch" class="btn-switch__radio btn-switch__radio_no" />		
                 <label for="yes" class="btn-switch__label btn-switch__label_yes"><span class="btn-switch__txt">Yes</span></label>								 
                 <label for="no" class="btn-switch__label btn-switch__label_no"><span class="btn-switch__txt">No</span></label>							
+            
                 </div>
                 </div>    
                    
                
 
                 <!-- /*Disaility drop-down*/ -->
-                <div class="form-group" style="padding-top: 20px; padding-left: 120px;">
-                    <label asp-for="DisabilityRating">Disibility Rating (please enter a percentage):</label>
+                <div class="flexfroggy3">
+                    <label asp-for="DisabilityRating">Disibility Rating (please select a percentage):</label>
                      @Html.DropDownListFor(m => m.DisabilityRating, Enumerable.Range(0, 101).Select(i => new SelectListItem { Text = i.ToString(), Value = i.ToString()  }))
-                </div>
-                <div class="form-group" style="padding: 10px; padding-top: 10px;" >  
+               
                     <label class="checkboxLeft">None
-                    <input type="checkbox" value="true" name="DisibilityRating" value="Disibilityrating" />
+                    <input type="checkbox" value="true" name="DisibilityRatingNone" value="DisibilityratingNone" />
                     <span class="checkmark"></span>
                     </label>
                 </div>
                 
                 <table style="margin:1em auto;">
                     
-                        <th style="padding-bottom: 10px;">
+                        <th style="padding-bottom: 10px;" colspan="3">
                     Were you or are you on Active Duty, in the Reserves, or the National Guard?
                         </th>
                         
@@ -210,7 +211,7 @@
                 </td>
                 </tr>
                 
-                <th style="text-align: center; padding-bottom: 10px;" colspan="4">
+                <th style="text-align: center; padding-bottom: 10px; padding-top:20px;" colspan="4">
                 <h3>CURRENT EMPLOYMENT STATUS (check all that apply)</h3></th>
                 <tr>
                 <td>
@@ -280,7 +281,7 @@
                 </div>
                 </td>
                 </tr>
-                <th style="text-align: center; padding-bottom: 10px;">
+                <th style="text-align: center; padding-bottom: 10px;padding-top:20px;" colspan="4">
                 <h3>LIVING SITUATION (check all that apply)</h3></th>
                 <tr>
                 <td>
@@ -350,7 +351,7 @@
                 </div>
                 </td>
                 </tr>
-                <th style="text-align: center; padding-bottom: 10px;">
+                <th style="text-align: center; padding-bottom: 10px;padding-top:20px;" colspan="4">
                 <h3>LIVING ARRANGEMENTS</h3></th>
                 <tr>
                 <td>
@@ -386,7 +387,7 @@
                 </div>
                 </td>
                 </tr>
-                <th style="text-align: center; padding-bottom: 10px;">
+                <th style="text-align: center; padding-bottom: 10px;padding-top:20px;" colspan="4">
                  <h3>SERVICE NEEDS (Check all that apply)</h3></th>    
                 <tr>
                 <td>
@@ -488,7 +489,9 @@
                     <span class="checkmark"></span>
                     </label>
                 </div>
-                  </td>
+                  </td>  
+                  </tr>
+                  <tr>
                 <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Other
@@ -497,7 +500,7 @@
                     </label>
                 </div>  
                 </td>
-                </tr>  
+                  </tr>
                 </table>
             <div class="buttonCenter">
             <input type="submit" class="button" :hover type="submit" value="S U B M I T"></input>

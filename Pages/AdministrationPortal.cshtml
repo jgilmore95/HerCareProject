@@ -3,7 +3,7 @@
 @model her_care.Models.SearchModel
 
 @{
-    ViewData["Title"] = "Administration";
+   
 }
 <head>
         <meta name="viewport" content="width-device-width"/>
@@ -31,7 +31,7 @@
        
 @Html.TextBox("SearchValue", null, new { @class = "searchTerm", placeholder = "Enter Client Name" })
       
-      <input type="submit" class="searchButton" value="Search" />
+      <input style="left: 100%;" type="submit" class="searchButton" value="Search" />
        
    </div>
 </div>
@@ -45,9 +45,10 @@
 
 
 
-<div style="margin-top:50px;">
+<div class="CpGrid" style="margin-top: 50px;">
+<button onclick="location.href = '/PhotoConsent':" type="button" class="buttonHome">Photo Consent Form</button>
 <!--<a asp-page="/VolunteerVerification"><button type="button" class="buttonHome" :hover>Volunteer Hours</button></a>-->
-<a asp-page="/MonetaryAssistance" ><button type="button" class="buttonHome" :hover>Monetary Assistance</button></a> 
+<button onclick="location.href = '/MonetaryAssistance';" type="button" class="buttonHome" :hover>Monetary Assistance</button>
 </div>
 
 
