@@ -31,38 +31,39 @@
         <br />
         <br />
             @using (Html.BeginForm("submit","Intake", FormMethod.Post, new {})) {
-                <div asp-validation-summary="All"></div>
+                @Html.ValidationSummary(true)
+                <div asp-validation-summary="All">
                 <div class="flexfroggy">
                     <label asp-for="FirstName">First Name:</label>
-                    @Html.TextBox("FirstName", null, new { @class = "form-control" })
+                    @Html.TextBox("FirstName", null, new { @class = "form-control", Required="Required" })
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="LastName">Last Name:</label>
-                    @Html.TextBox("LastName", null, new { @class = "form-control" })
+                    @Html.TextBox("LastName", null, new { @class = "form-control", Required="Required" })
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="DateOfBirth">DOB:</label>
-                    <input type="date" class="form-control" asp-for="DateOfBirth"/>                    
+                    <input type="date" class="form-control" asp-for="DateOfBirth" Required/>                    
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="Phone">Phone:</label>
-                    <input class="form-control"  asp-for="Phone">
+                    <input class="form-control"  asp-for="Phone" Required>
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="EmailAddress">Email:</label>
-                    <input class="form-control" asp-for="EmailAddress"/>
+                    <input class="form-control" type="email" asp-for="EmailAddress" Required/>
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="AddressOne">Address:</label>
-                    <input class="form-control" asp-for="AddressOne"/>
+                    <input class="form-control" asp-for="AddressOne" Required/>
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="City">City:</label>
-                    <input class="form-control" asp-for="City"/>
+                    <input class="form-control" asp-for="City" Required/>
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="State">State:</label>
-                   <select name="state" class="form-control">
+                   <select name="state" class="form-control" Required>
                         <option selected="selected">Select State</option>
                         <option value="2">Alabama</option>
                         <option value="3">Alaska</option>
@@ -119,38 +120,38 @@
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="Zip">ZipCode:</label>
-                    <input class="form-control" asp-for="Zip"/>
+                    <input class="form-control" asp-for="Zip" Required/>
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="EmergencyContactFirst">Emergency Contact First Name:</label>
-                    <input class="form-control" asp-for="EmergencyContactFirst"/>
+                    <input class="form-control" asp-for="EmergencyContactFirst" Required/>
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="EmergencyContactLast">Emergency Contact Last Name:</label>
-                    <input class="form-control" asp-for="EmergencyContactLast"/>
+                    <input class="form-control" asp-for="EmergencyContactLast" Required/>
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="BranchOfService">Branch Of Service:</label>
-                    <input class="form-control" asp-for="BranchOfService"/>
+                    <input class="form-control" asp-for="BranchOfService" Required/>
                 </div>
                 <div class="flexfroggy">
                  <label for="ADDBranch">Please specify additional branch here: </label>
-                 <input type="text" value="Leave Blank If Does Not Apply" id="addBranch" name="which-Branch" class="form-control" >
+                 <input type="text" value="Leave Blank If Does Not Apply" id="addBranch" name="which-Branch" class="form-control" Required/>
                  </div>   
                 
                 <div class="flexfroggy">
                     <label asp-for="EntryDate">Entry Date:</label>
-                    <input type="date" class="form-control" asp-for="EntryDate"/>
+                    <input type="date" class="form-control" asp-for="EntryDate" Required/>
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="DischargeDate">Discharge Date:</label>
-                    <input type="date" class="form-control" asp-for="DischargeDate"/>
+                    <input type="date" class="form-control" asp-for="DischargeDate" Required/>
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="SSN">Last 4 of SSN:</label>
-                    <input type="text" style="width: 7%; margin-right:38.5%;" placeholder="0000" class="form-control" asp-for="SSN">
+                    <input type="text" style="width: 7%; margin-right:38.5%;" placeholder="0000" class="form-control" asp-for="SSN" Required>
                 </div>
-
+            </div>
                 <div class="flexfroggy2" style="padding-top: 20px;">
                 <label asp-for="CombatVet">Are You A Combat Vet?</label>
                
