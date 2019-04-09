@@ -14,9 +14,20 @@ namespace her_care.Models
 
         public string LName { get; set; }
 
-        public Double VolunteerHours { get; set; }
+        public int VolunteerHours { get; set; }
 
         public string DateCreated { get; set; }
+
+        public VReportModel()
+        {
+        }
+
+        public VReportModel(string lname, int volnHours)
+        {
+            LName = lname;
+
+            VolunteerHours = volnHours;
+        }
 
         public static List<VReportModel> printVReports()
         {
@@ -29,35 +40,37 @@ namespace her_care.Models
 
             List<VReportModel> opps = new List<VReportModel>();
 
+            int tvolhours = 0;
+
             try
             {
                 cmd = Connect("printVReport");
                 
                 cmd.Parameters.Add("@StartDate", SqlDbType.Date).Value = models.StartDate;
                 cmd.Parameters.Add("@EndDate", SqlDbType.Date).Value = models.EndDate;
-
+                
                 SqlDataReader rdr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
 
                 while (rdr.Read() == true)
                 {
                     VReportModel opp = new VReportModel();
-
     
                     opp.FName = rdr["FName"].ToString();
-                   // var DateSub =  rdr["DateSubmitted"];
 
                     opp.LName = rdr["LName"].ToString();
                     opp.DateCreated = rdr["DateCreated"].ToString();
-                    
 
                     if (String.IsNullOrEmpty(rdr["VolunteerHours"].ToString()) == false)
                     {
-                        opp.VolunteerHours = Convert.ToDouble(rdr["VolunteerHours"].ToString());
+                         opp.VolunteerHours = Convert.ToInt32(rdr["VolunteerHours"].ToString());
                     }
 
+                    tvolhours = tvolhours + opp.VolunteerHours;
 
                     opps.Add(opp);
                 }
+
+                opps.Add(new VReportModel("TOTAL", tvolhours));
             }
             catch (Exception ex)
             {
@@ -67,6 +80,7 @@ namespace her_care.Models
             {
                 CloseConnection(cmd);
             }
+            
             return opps;
         }
     }
