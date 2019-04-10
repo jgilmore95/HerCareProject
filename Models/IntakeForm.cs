@@ -39,6 +39,7 @@ using System.ComponentModel.DataAnnotations;
          public int EmergencyContactPhone {get; set;}
          [Required (ErrorMessage="Please enter your branch of service")]
          public string BranchOfService {get; set;}
+         public string whichbranch {get; set;}
          [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
          public DateTime EntryDate {get; set;}
@@ -49,7 +50,7 @@ using System.ComponentModel.DataAnnotations;
          public string SSN {get; set;}
          public Boolean CombatVet {get; set;}
          public int DisabilityRating {get; set;}
-        //  public Boolean DisabilityRatingNone {get; set;}
+        public Boolean DisabilityRatingNone {get; set;}
          public Boolean ActiveDuty {get; set;} //were you or are you on active duty, reserves, or national guard
         public Boolean Reserves {get; set;} 
         public Boolean NationalGuard {get; set;} 

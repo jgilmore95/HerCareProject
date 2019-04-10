@@ -38,9 +38,11 @@ namespace her_care.Controllers
                 cmd.Parameters.Add("@ECLName", SqlDbType.VarChar, 50).Value = model.EmergencyContactLast;
                 cmd.Parameters.Add("@ECPhone", SqlDbType.Int).Value = model.EmergencyContactPhone;
                 cmd.Parameters.Add("@BranchOfService", SqlDbType.VarChar, 30).Value = model.BranchOfService;
+                cmd.Parameters.Add("@whichbranch", SqlDbType.VarChar, 20).Value = model.whichbranch;
                 cmd.Parameters.Add("@EntryDate", SqlDbType.Date).Value = model.EntryDate;               
                 cmd.Parameters.Add("@DischargeDate", SqlDbType.Date).Value = model.DischargeDate;
                 cmd.Parameters.Add("@DisabilityRating", SqlDbType.Int).Value = model.DisabilityRating;
+                cmd.Parameters.Add("@DisabilityRatingNone", SqlDbType.Bit).Value = model.DisabilityRatingNone;
                 cmd.Parameters.Add("@SSN", SqlDbType.Char, 4).Value = model.SSN;
                 cmd.Parameters.Add("@ActiveDuty", SqlDbType.Bit).Value = model.ActiveDuty;
                 cmd.Parameters.Add("@Reserves", SqlDbType.Bit).Value = model.Reserves;

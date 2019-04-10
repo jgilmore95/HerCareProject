@@ -136,7 +136,7 @@
                 </div>
                 <div class="flexfroggy">
                  <label for="ADDBranch">Please specify additional branch here: </label>
-                 <input type="text" value="Leave Blank If Does Not Apply" id="addBranch" name="which-Branch" class="form-control" Required/>
+                 <input type="text" value="Leave Blank If Does Not Apply" asp-for="whichbranch" class="form-control" />
                  </div>   
                 
                 <div class="flexfroggy">
@@ -173,7 +173,7 @@
                      @Html.DropDownListFor(m => m.DisabilityRating, Enumerable.Range(0, 101).Select(i => new SelectListItem { Text = i.ToString(), Value = i.ToString()  }))
                
                     <label class="checkboxLeft">None
-                    <input type="checkbox" value="true" name="DisibilityRatingNone" value="DisibilityratingNone" />
+                    <input type="checkbox" value="true" name="DisabilityRatingNone" value="DisabilityRatingNone" />
                     <span class="checkmark"></span>
                     </label>
                 </div>
