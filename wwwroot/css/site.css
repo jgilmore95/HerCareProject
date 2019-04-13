@@ -301,6 +301,20 @@ h2 {
     padding-right: 30%;
     }
 
+    .EditButtonPos{
+     display: flex;
+     justify-content: flex-end;
+     margin-top: 40px;
+    
+    }
+    .EditButton{
+      background-color: rgb(15, 52, 107); 
+      color: white;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 12px;
+    }
 #wrapper
 {
   border: 1px solid #888;

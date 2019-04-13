@@ -11,6 +11,11 @@
             <label style="font-family: Georgia;" onclick="window.print()">Print</label>
              <input type="image" src="~/images/printer.png" onclick="window.print()" width="20" height="20">
         </div>
+        <div class="EditButtonPos">
+             @foreach (var client in ViewBag.MyModel){
+              <button onclick="location.href = '/EditClient?id=@client.Id';"  type="button" class="EditButton">Edit Client</button>
+                }
+        </div>
         <br />
         <div class="borderTOP" >
             <br />
@@ -150,6 +155,8 @@
               <button onclick="location.href = '/PhotoConsent';" type="button" class="buttonHome" :hover>Photo Consent Form</button> 
               @foreach (var client in ViewBag.MyModel){
               <button onclick="location.href = '/MonetaryAssistance?id=@client.Id';"  type="button" class="buttonHome" :hover> Monetary assistance</button>
+             
+
                @Html.ActionLink("Edit Client", "EditClient", new {id=client.Id })
                 }
         </div>
