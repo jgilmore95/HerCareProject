@@ -1,0 +1,523 @@
+@page
+
+@model Demographics  
+@{
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width-device-width"/>
+        <title>Intake</title>
+        <link rel="site" href="~/css/site.css" /> 
+    </head>
+    <body>
+        
+    <div class="panel panel-success" >
+         <div class="panel-body">
+            <h2>THE PRIVACY ACT OF 1974.5 U.S.C S.S. 552a ESTABLISHES A CODE OF FAIR INFORMATION PRACTICES THAT GOVERNS
+            THE COLLECTION, MAINTENANCE, USE, AND DISSEMINATION OF INFORMATION ABOUT INDIVIDUALS THAT IS 
+            MAINTAINED IN SYSTEMS OF RECORDS BY FEDERAL AGENCIES.
+        </h2>
+        <h1>Intake Form</h1>
+        <div style="float: right; padding-top: 10px; padding-right: 10px;">
+            <label style="font-family: Georgia;" onclick="window.print()">Print</label>
+             <input type="image" src="~/images/printer.png" onclick="window.print()" width="20" height="20">
+        </div>
+        <br />
+        <br />
+        
+   
+        <br />@foreach (var client in ViewBag.MyModel){
+            @using (Html.BeginForm("Update","AdministrationPortal", FormMethod.Post, new {id = @client.Id})) {
+                
+                <div asp-validation-summary="All"></div>
+                <div class="flexfroggy">
+                    <label asp-for="FirstName">First Name:</label>
+                    @Html.TextBox("FirstName", null, new { @class = "form-control", placeholder = client.FirstName})
+                </div>
+                <div class="flexfroggy">
+                    <label asp-for="LastName">Last Name:</label>                   
+                   @Html.TextBox("LastName", null, new { @class = "form-control", placeholder = client.LastName})
+                </div>
+                <div class="flexfroggy">
+                    <label asp-for="TodaysDate">Today's Date:</label>
+                    <input type="date" class="form-control" asp-for="TodaysDate"/>
+                </div>
+                <div class="flexfroggy">
+                    <label asp-for="DateOfBirth">DOB:</label>
+                    <input type="date" class="form-control" asp-for="DateOfBirth"/>                    
+                </div>
+                <div class="flexfroggy">
+                    <label asp-for="Phone">Phone:</label>                    
+                     @Html.TextBox("Phone", null, new { @class = "form-control", placeholder = client.Phone })
+                </div>
+                <div class="flexfroggy">
+                    <label asp-for="EmailAddress">Email:</label>                    
+                     @Html.TextBox("EmailAddress", null, new { @class = "form-control", placeholder = client.EmailAddress })        
+                </div>
+                <div class="flexfroggy">
+                    <label asp-for="AddressOne">Address:</label>                    
+                     @Html.TextBox("AddressOne", null, new { @class = "form-control", placeholder = client.AddressOne })
+                </div>
+                <div class="flexfroggy">
+                    <label asp-for="City">City:</label>
+                     @Html.TextBox("City", null, new { @class = "form-control", placeholder = client.City })
+                </div>
+                <div class="flexfroggy">
+                    <label asp-for="State">State:</label>
+                   <select name="state" class="form-control">
+                        <option selected="selected">Select State</option>
+                        <option value="2">Alabama</option>
+                        <option value="3">Alaska</option>
+                        <option value="4">Arizona</option>
+                        <option value="5">Arkansas</option>
+                        <option value="6">California</option>
+                        <option value="7">Colorado</option>
+                        <option value="8">Connecticut</option>
+                        <option value="9">Delaware</option>
+                        <option value="10">District of Columbia</option>
+                        <option value="1">Florida</option>
+                        <option value="11">Georgia</option>
+                        <option value="12">Hawaii</option>
+                        <option value="13">Idaho</option>
+                        <option value="14">Illinois</option>
+                        <option value="15">Indiana</option>
+                        <option value="16">Iowa</option>
+                        <option value="17">Kansas</option>
+                        <option value="18">Kentucky</option>
+                        <option value="19">Louisiana</option>
+                        <option value="20">Maine</option>
+                        <option value="21">Maryland</option>
+                        <option value="22">Massachusetts</option>
+                        <option value="23">Michigan</option>
+                        <option value="24">Minnesota</option>
+                        <option value="25">Mississippi</option>
+                        <option value="26">Missouri</option>
+                        <option value="27">Montana</option>
+                        <option value="29">Nebraska</option>
+                        <option value="30">Nevada</option>
+                        <option value="31">New Hampshire</option>
+                        <option value="32">New Jersey</option>
+                        <option value="33">New Mexico</option>
+                        <option value="34">New York</option>
+                        <option value="35">North Carolina</option>
+                        <option value="36">North Dakota</option>
+                        <option value="37">Ohio</option>
+                        <option value="38">Oklahoma</option>
+                        <option value="39">Oregon</option>
+                        <option value="40">Pennsylvania</option>
+                        <option value="41">Rhode Island</option>
+                        <option value="42">South Carolina</option>
+                        <option value="43">South Dakota</option>
+                        <option value="44">Tennessee</option>
+                        <option value="45">Texas</option>
+                        <option value="46">Utah</option>
+                        <option value="47">Vermont</option>
+                        <option value="48">Virginia</option>
+                        <option value="49">Washington</option>
+                        <option value="50">West Virginia</option>
+                        <option value="51">Wisconsin</option>
+                        <option value="52">Wyoming</option>
+                    </select>
+                </div>
+                <div class="flexfroggy">
+                    <label asp-for="Zip">ZipCode:</label>
+                     @Html.TextBox("Zip", null, new { @class = "form-control", placeholder = client.Zip })
+                </div>
+                <div class="flexfroggy">
+                    <label asp-for="EmergencyContactFirst">Emergency Contact First Name:</label>                    
+                     @Html.TextBox("EmergencyContactFirst", null, new { @class = "form-control", placeholder = client.EmergencyContactFirst })
+                </div>
+                <div class="flexfroggy">
+                    <label asp-for="EmergencyContactLast">Emergency Contact Last Name:</label>                    
+                     @Html.TextBox("EmergencyContactLast", null, new { @class = "form-control", placeholder = client.EmergencyContactLast })
+                </div>
+                <div class="flexfroggy">
+                    <label asp-for="BranchOfService">Branch Of Service:</label>                    
+                     @Html.TextBox("BranchOfService", null, new { @class = "form-control", placeholder = client.BranchOfService })
+                </div>
+                <div class="flexfroggy">
+                 <label for="ADDBranch">Please specify additional branch here: </label>
+                 <input type="text" value="Leave Blank If Does Not Apply" id="addBranch" name="which-Branch" class="form-control" >
+                 </div>   
+                
+                <div class="flexfroggy">
+                    <label asp-for="EntryDate">Entry Date:</label>
+                    <input type="date" class="form-control" asp-for="EntryDate"/>
+                </div>
+                <div class="flexfroggy">
+                    <label asp-for="DischargeDate">Discharge Date:</label>
+                    <input type="date" class="form-control" asp-for="DischargeDate"/>
+                </div>
+                
+                <div class="flexfroggy2" style="padding-top: 20px;">
+                <label asp-for="CombatVet">Are You A Combat Vet?</label>
+               
+               
+                <div class="btn-switch">					
+                <input type="radio" id="yes" name="switch" class="btn-switch__radio btn-switch__radio_yes" />
+                <input type="radio" checked id="no" name="switch" class="btn-switch__radio btn-switch__radio_no" />		
+                <label for="yes" class="btn-switch__label btn-switch__label_yes"><span class="btn-switch__txt">Yes</span></label>								 
+                <label for="no" class="btn-switch__label btn-switch__label_no"><span class="btn-switch__txt">No</span></label>							
+            
+                </div>
+                </div>    
+                   
+               
+
+                <!-- /*Disaility drop-down*/ -->
+                <div class="flexfroggy3">
+                    <label asp-for="DisabilityRating">Disibility Rating (please enter a percentage):</label>
+                     @Html.DropDownListFor(m => m.DisabilityRating, Enumerable.Range(0, 101).Select(i => new SelectListItem { Text = i.ToString(), Value = i.ToString()  }))
+               
+                    <label class="checkboxLeft">None
+                    <input type="checkbox" value="true" name="DisibilityRating" value="Disibilityrating" />
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                
+                <table style="margin:1em auto;">
+                    
+                        <th style="padding-bottom: 10px;" colspan="3">
+                    Were you or are you on Active Duty, in the Reserves, or the National Guard?
+                        </th>
+                        
+                                      
+                <tr style="">
+                <td>
+                <div class="checkboxLeft">
+                    <label class="checkboxLeft">Active Duty
+                    <input type="checkbox" value="true" name="ActiveDuty" value="ActiveDuty"/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                 </td>
+                 <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Reserves
+                    <input type="checkbox"  value="true" name="Reserves" value="Reserves"/>
+                    <span class="checkmark"></span>
+                     </label>
+                </div>
+                 </td>
+                 <td>
+                    <div class="checkboxLeft">
+                    <label class="checkboxLeft">National Guard
+                    <input type="checkbox" value="true" name="NationalGuard" value="NationalGuard"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                </tr>
+                
+                <th style="text-align: center; padding-bottom: 10px; padding-top:20px;" colspan="4">
+                <h3>CURRENT EMPLOYMENT STATUS (check all that apply)</h3></th>
+                <tr>
+                <td>
+                <div class="checkboxLeft">
+                    <label class="checkboxLeft">Employed
+                    <input type="checkbox"  value="true" name="Employed" value="Employed"/>
+                     <span class="checkmark"></span>
+                    </label>
+                </div>
+                </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Student
+                    <input type="checkbox"  value="true" name="Student" value="Student"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                <td> 
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Self Employed
+                    <input type="checkbox"  value="true" name="SelfEmployed" value="Self-Employed"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Contractor
+                    <input type="checkbox" value="true" name="Contractor" value="Contractor"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Work Study
+                    <input type="checkbox" value="true" name="WorkStudy" value="Work Study"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Intern
+                    <input type="checkbox" value="true" name="Intern" value="Intern"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Unemployed
+                    <input type="checkbox" value="true" name="Unemployed" value="Unemployed"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Other
+                    <input type="checkbox" value="true" name="OtherEmployed" value="OtherEmployed"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                </tr>
+                <th style="text-align: center; padding-bottom: 10px;padding-top:20px;" colspan="4">
+                <h3>LIVING SITUATION (check all that apply)</h3></th>
+                <tr>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">On Street
+                    <input type="checkbox" value="true" name="OnStreet" value="On Street"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Sofa Surfing
+                    <input type="checkbox" value="true" name="SofaSurfing" value="Sofa Surfing"/>
+                     <span class="checkmark"></span>
+                     </label>                     
+                </div>
+                </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Shelter
+                    <input type="checkbox" value="true" name="Shelter" value="Shelter"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Transitional Housing
+                    <input type="checkbox" value="true" name="TransitionalHousing" value="Transitional Housing"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Group Home
+                    <input type="checkbox" value="true" name="GroupHome" value="Group Home"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Rental
+                    <input type="checkbox" value="true" name="Rental" value="Rental"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Own Home
+                    <input type="checkbox" value="true" name="OwnHome" value="Own Home"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Other
+                    <input type="checkbox" value="true" name="OtherLiving" value="OtherLiving"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                </tr>
+                <th style="text-align: center; padding-bottom: 10px;padding-top:20px;" colspan="4">
+                <h3>LIVING ARRANGEMENTS</h3></th>
+                <tr>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Friends/Relatives
+                    <input type="checkbox" value="true" name="FreindsOrRelatives" value="FriendsOrRelatives"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Alone
+                    <input type="checkbox" value="true" name="Alone" value="Alone"/>
+                    <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Temporary
+                    <input type="checkbox" value="true" name="Temporary" value="Temporary"/>
+                    <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Permanent
+                    <input type="checkbox" value="true" name="Permanent" value="Permanent"/>
+                    <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                </tr>
+                <th style="text-align: center; padding-bottom: 10px;padding-top:20px;" colspan="4">
+                 <h3>SERVICE NEEDS (Check all that apply)</h3></th>    
+                <tr>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Business Resources
+                    <input type="checkbox"  value="true" name="BusinessResources" value="Business Resources"/>
+                    <span class="checkmark"></span>
+                     </label>
+                </div>
+                  </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Day Care
+                    <input type="checkbox" value="true" name="DayCare" value="Day Care"/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                  </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Housing
+                    <input type="checkbox" value="true" name="Housing" value="Housing"/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                  </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Clothing
+                    <input type="checkbox" value="true" name="Clothing" value="Clothing"/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                  </td>
+                  </tr>
+                <tr>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Disability Claim
+                    <input type="checkbox" value="true" name="DisabilityClaim" value="DisabilityClaim"/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Legal
+                    <input type="checkbox" value="true" name="Legal" value="Legal"/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                  </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Counseling
+                    <input type="checkbox" value="true" name="Counseling" value="Counseling"/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                  </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Education/Vocationaal Rehab
+                    <input type="checkbox" value="true" name="EducationalOrVocationalRehab" value="Education/Vocational Rehab"/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                  </td>
+                   </tr>
+                   <tr>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Utilities
+                    <input type="checkbox" value="true" name="Utilities" value="Utilities"/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Food
+                    <input type="checkbox"  value="true"name="Food" value="Food"/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                  </td>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Employment
+                    <input type="checkbox" value="true" name="Employment" value="Employment"/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                </td>
+                <td>    
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Transportation
+                    <input type="checkbox"  value="true"name="Transportation" value="Transportation"/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                  </td>  
+                  </tr>
+                  <tr>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Other
+                    <input type="checkbox" value="true" name="OtherService" value="OtherService"/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>  
+                </td>
+                  </tr>
+                </table>
+            <div class="buttonCenter">
+            <input type="submit" class="button" :hover type="submit" value="S U B M I T"></input>
+            </div>
+
+            }        }                           
+                                                  
+        </div>
+    </div>
+                        
+    </body>
+</html>
+
+
+                                              
+
+

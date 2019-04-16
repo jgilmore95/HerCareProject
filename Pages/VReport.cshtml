@@ -1,0 +1,41 @@
+@page
+@model her_care.Models.VReportListModel
+
+@{
+    //ViewData["Title"] = "Invalid Credentials";
+}
+
+<header id="header1">Report Volunteer Hours</header>
+@using (Html.BeginForm("VReportResults", "VReport", FormMethod.Post, 
+                                      new { }))
+{
+    <style>
+        td {
+            padding: 15px;
+        }
+    </style>
+    <table align="center" width="80%">
+        <tr>
+            <td align="right">
+                Start Date:
+            </td>
+            <td align="center">
+                @Html.TextBox("StartDate", null, new { @class = "searchTerm", placeholder = "Enter Start Date" , @type = "date", required="required"}) 
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                End Date:
+            </td>
+            <td align="center">
+                <!-- <input type="date" class="form-control" required value="EndDate"/> asp-for="EndDate" asp-for="StartDate" -->
+                @Html.TextBox("EndDate", null, new { @class = "searchTerm", placeholder = "Enter End Date", @type = "date", required="required"})
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Search" />
+            </td>
+        </tr>
+    </table>
+}
