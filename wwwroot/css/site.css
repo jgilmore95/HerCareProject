@@ -423,8 +423,9 @@ h2 {
   display: grid;
   align-items: center; 
   justify-content: center;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0% 10pxpx;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 10% 10%;
+  margin-bottom: -20%;
 }
 .buttonAdmin {
   background-color: rgb(15, 52, 107); 
