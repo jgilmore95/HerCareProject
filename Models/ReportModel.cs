@@ -20,6 +20,16 @@ namespace her_care.Models
 
         public string DateSubmitted { get; set; }
 
+        public ReportModel()
+        {
+        }
+
+        public ReportModel(string lname, Double Price)
+        {
+            HelpType = lname;
+
+            Amount = Price;
+        }
         public static List<ReportModel> printReports()
         {
             return getReport(null, null);
@@ -30,6 +40,8 @@ namespace her_care.Models
             SqlCommand cmd = null;
 
             List<ReportModel> opps = new List<ReportModel>();
+            
+            Double totalPrice = 0;
 
             try
             {
@@ -46,7 +58,6 @@ namespace her_care.Models
 
     
                     opp.FName = rdr["FName"].ToString();
-                   // var DateSub =  rdr["DateSubmitted"];
 
                     opp.LName = rdr["LName"].ToString();
                     opp.DateSubmitted = rdr["DateSubmitted"].ToString();
@@ -56,12 +67,15 @@ namespace her_care.Models
                     {
                         opp.Amount = Convert.ToDouble(rdr["ServiceAmount"].ToString());
                     }
-                    
-                    opp.HelpType = rdr["HelpType"].ToString();
 
+                    totalPrice = totalPrice + opp.Amount;
+
+                    opp.HelpType = rdr["HelpType"].ToString();
 
                     opps.Add(opp);
                 }
+
+                opps.Add(new ReportModel("TOTAL", totalPrice));
             }
             catch (Exception ex)
             {
