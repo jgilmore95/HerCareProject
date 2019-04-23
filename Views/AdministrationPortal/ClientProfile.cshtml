@@ -70,10 +70,18 @@
             <div class="clientText"><label class="triangle-right"></label>
             SSN: @client.SSN</div>
             <div class="clientText"></div>
+
+          
             
         </div>
         <br />
         <br />
+
+        @if (@client.Employed)
+        {
+            <label>Employed</label>
+            <input type="checkbox" name="Employed" checked />
+        }
        
     /*
     <!-- <table border="1">
