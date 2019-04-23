@@ -18,7 +18,13 @@
     }
 </style>
 
-
+@{
+    bool vDetail = false;
+    @foreach (var t in ViewBag.MyModel){
+        @if (t.isDetail){
+            vDetail = true;
+        }
+    }
 
 <div>
   
@@ -28,7 +34,7 @@
     <tr>
         <td height="100%">
             <header>Report Volunteer Hours</header>
-            
+            @if (!vDetail){
             <table align="center" width="80%" border="1">
                 <tr>
                     <td align="center"><font style="font-size: 20px"><strong>Date</strong></font></td>
@@ -59,6 +65,55 @@
                     </td>
                 </tr>
             </table>
+            }else{
+
+            <table align="center" width="80%" border="1">
+                <tr>
+                    <td align="center"><font style="font-size: 20px"><strong>Date</strong></font></td>
+                    <td align="center"><font style="font-size: 20px"><strong>First Name</strong></font></td>
+                    <td align="center"><font style="font-size: 20px"><strong>Last Name</strong></font></td>
+                    <td align="center"><font style="font-size: 20px"><strong>Event Name</strong></font></td>
+                    <td align="center"><font style="font-size: 20px"><strong>Event Description</strong></font></td>
+                    <td align="center"><font style="font-size: 20px"><strong>Hours</strong></font></td>
+
+                </tr>
+                @foreach (var rec in ViewBag.MyModel)
+                {
+                    <tr>
+                        <td>
+                            @rec.DateCreated
+                        </td>
+                        <td>
+                            @rec.FName
+                        </td>
+                        <td>
+                            @rec.LName
+                        </td>
+                        <td>
+                            @rec.VolEvent
+                        </td>
+                        <td>
+                            @rec.VolDescription
+                        </td>
+                        <td>
+                            @rec.VolunteerHours
+                        </td>
+                    </tr>
+                }
+                <tr>
+                    <td colspan="4" align="center">
+                        <a href="/VReport">Back</a>
+                    </td>
+                </tr>
+            </table>
+
+
+
+            }
+
+
+
+
             <br>
         </td>
     </tr>
@@ -68,6 +123,6 @@
 </div>
 
 
-   
+}
 
 </html>
