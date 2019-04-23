@@ -102,7 +102,7 @@ namespace her_care.Controllers
             try{
                  cmd = openConnection(); //Opens SQL connection
 
-                cmd.CommandText = "SELECT * FROM Client WHERE [Client].Fname like '"+ searchTerm + "%'"; //SQL statement
+                cmd.CommandText = "SELECT * FROM Client WHERE [Client].Fname like '"+ searchTerm + "%' OR [Client].LName like '"+ searchTerm + "%' OR [Client].SSN like '"+ searchTerm + "%'"; //SQL statement
                 cmd.CommandType = System.Data.CommandType.Text; //Execute statement
 
                 SqlDataReader rdr = cmd.ExecuteReader(System.Data.CommandBehavior.CloseConnection); //Create reader based on statement
