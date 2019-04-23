@@ -36,7 +36,7 @@ using System.ComponentModel.DataAnnotations;
          [Required (ErrorMessage="Please enter an emergency contacts last name")]
          public string EmergencyContactLast {get; set;}
          [Required (ErrorMessage="Please enter your emergency contact's phone number")]
-         public int EmergencyContactPhone {get; set;}
+         public string EmergencyContactPhone {get; set;}
          [Required (ErrorMessage="Please enter your branch of service")]
          public string BranchOfService {get; set;}
          public string whichbranch {get; set;}
@@ -87,6 +87,7 @@ using System.ComponentModel.DataAnnotations;
         public Boolean Employment {get; set;}
         public Boolean Transportation {get; set;}
         public Boolean OtherService {get; set;}
+        
 
 
 

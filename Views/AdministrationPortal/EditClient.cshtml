@@ -42,14 +42,10 @@
                 <div class="flexfroggy">
                     <label asp-for="LastName">Last Name:</label>                   
                    @Html.TextBox("LastName", null, new { @class = "form-control", placeholder = client.LastName})
-                </div>
-                <div class="flexfroggy">
-                    <label asp-for="TodaysDate">Today's Date:</label>
-                    <input type="date" class="form-control" asp-for="TodaysDate"/>
-                </div>
+                </div>              
                 <div class="flexfroggy">
                     <label asp-for="DateOfBirth">DOB:</label>
-                    <input type="date" class="form-control" asp-for="DateOfBirth"/>                    
+                    <input type="text" class="form-control" value='@client.DateOfBirth.ToString("d")' asp-for="DateOfBirth"/>                    
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="Phone">Phone:</label>                    

@@ -173,8 +173,13 @@ namespace her_care.Controllers
                 }
 
               //  cmd.Parameters.Add("@TodaysDate", SqlDbType.Date).Value = model.TodaysDate;
+              if(model.DateOfBirth == null){
+                  cmd.Parameters.Add("@DateOfBirth", SqlDbType.Date).Value = searchList[0].DateOfBirth;
+              }
+              else
+              {
                 cmd.Parameters.Add("@DateOfBirth", SqlDbType.Date).Value = model.DateOfBirth;
-
+              }
 
                 if(model.Phone == null)
                 {
@@ -242,13 +247,13 @@ namespace her_care.Controllers
                     cmd.Parameters.Add("@ECLName", SqlDbType.VarChar, 50).Value = model.EmergencyContactLast;
                 }
 
-                if(model.EmergencyContactPhone == 0)
+                if(model.EmergencyContactPhone == null)
                 {
-                    cmd.Parameters.Add("@ECPhone", SqlDbType.Int).Value = searchList[0].EmergencyContactPhone;
+                    cmd.Parameters.Add("@ECPhone", SqlDbType.Char, 12).Value = searchList[0].EmergencyContactPhone;
                 }
                 else
                 {
-                    cmd.Parameters.Add("@ECPhone", SqlDbType.Int).Value = model.EmergencyContactPhone;
+                    cmd.Parameters.Add("@ECPhone", SqlDbType.Char, 12).Value = model.EmergencyContactPhone;
                 }
 
                 if(model.BranchOfService == null)
