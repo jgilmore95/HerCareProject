@@ -187,6 +187,8 @@ namespace her_care.Controllers
                     Term.FirstName = rdr["FName"].ToString(); //Add first name
                     Term.LastName = rdr["LName"].ToString(); //Add Last Name
                     Term.DateOfBirth = (DateTime) rdr["DateOfBirth"];
+                    Term.EntryDate = (DateTime) rdr["EntryDate"];
+                    Term.DischargeDate = (DateTime) rdr["DischargeDate"];
                     Term.AddressOne = rdr["HomeAddress"].ToString();
                     Term.City = rdr["City"].ToString();
                     Term.State = Convert.ToInt32(rdr["StateID"].ToString());
@@ -207,6 +209,38 @@ namespace her_care.Controllers
                     Term.NationalGuard = (bool) rdr["NationalGuard"];
                     Term.CombatVet = (bool) rdr["CombatVet"];
                     Term.Rental = (bool) rdr["Rental"];
+                    Term.Student = (bool) rdr["Student"];
+                    Term.SelfEmployed = (bool) rdr["SelfEmployed"];
+                    Term.Intern = (bool) rdr["Intern"];
+                    Term.WorkStudy = (bool) rdr["WorkStudy"];
+                    Term.OtherEmployed = (bool) rdr["OtherEmployment"];
+                    Term.OnStreet = (bool) rdr["OnStreet"];
+                    Term.SofaSurfing = (bool) rdr["SofaSurfing"];
+                    Term.Shelter = (bool) rdr["Shelter"];
+                    Term.TransitionalHousing = (bool) rdr["TransitionalHousing"];
+                    Term.GroupHome = (bool) rdr["GroupHome"];
+                    Term.OwnHome = (bool) rdr["OwnHome"];
+                    Term.OtherLiving = (bool) rdr["OtherLiving"];
+                    Term.FriendsOrRelatives = (bool) rdr
+                    ["FriendsOrRelatives"];
+                    Term.Alone = (bool) rdr["Alone"];
+                    Term.Temporary = (bool) rdr["Temporary"];
+                    Term.Permanent = (bool) rdr["Permanent"];
+                    Term.BusinessResources = (bool) rdr["BusinessResources"];
+                    Term.DayCare = (bool) rdr["DayCare"];
+                    Term.Housing = (bool) rdr["Housing"];
+                    Term.Clothing = (bool) rdr["Clothing"];
+                    Term.DisabilityClaim = (bool) rdr["DisabilityClaim"];
+                    Term.Legal = (bool) rdr["Legal"];
+                    Term.Counseling = (bool) rdr["Counseling"];
+                    Term.EducationalOrVocationalRehab = (bool) rdr["EducationalOrVocationalRehab"];
+                    Term.Utilities = (bool) rdr["Utilities"];
+                    Term.Food = (bool) rdr["Food"];
+                    Term.Employment = (bool) rdr["Rental"];
+                    Term.Transportation = (bool) rdr["Transportation"];
+                    Term.OtherService = (bool) rdr["OtherService"];
+                    Term.CaseNotes = rdr["CaseNotes"].ToString();
+
 
                     Terms.Add(Term); //Add object to list
                 }

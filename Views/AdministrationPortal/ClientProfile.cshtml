@@ -41,12 +41,12 @@
             <div class="clientText"><label class="triangle-right"></label>
             Date of Birth: @client.DateOfBirth.ToString("d")</div>
             <div class="clientText"><label class="triangle-right"></label>
-            Entry Date: </div>
+            Entry Date:  @client.EntryDate.ToString("d")</div>
 
             <div class="clientText"><label class="triangle-right"></label>
             Street Address: @client.AddressOne</div>
             <div class="clientText"><label class="triangle-right"></label>
-            Discharge Date: </div>
+            Discharge Date:  @client.DischargeDate.ToString("d")</div>
 
             <div class="clientText"><label class="triangle-right"></label>
             City: @client.City</div>
@@ -134,6 +134,10 @@
        @if (@client.Employment){ <label>Employment</label> }
        @if (@client.Transportation){ <label>Transportation</label> }
        @if (@client.OtherService){ <label>Other</label> } 
+      </div>
+      <div>
+      
+      <label> @client.CaseNotes </label>
       </div>
     /*
     <!-- <table border="1">

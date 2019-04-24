@@ -316,6 +316,13 @@ namespace her_care.Controllers
                 cmd.Parameters.Add("@OtherService", SqlDbType.Bit).Value = model.OtherService;
                 cmd.Parameters.Add("@ClientID", SqlDbType.Int).Value = 12;
 
+                if(model.CaseNotes == null){
+                    cmd.Parameters.Add("@CaseNotes", SqlDbType.VarChar, -1).Value = searchList[0].CaseNotes;
+                }
+                else
+                {
+                cmd.Parameters.Add("@CaseNotes", SqlDbType.VarChar, -1).Value = model.CaseNotes;
+                }
                 cmd.ExecuteNonQuery();
             }
              catch (Exception ex)

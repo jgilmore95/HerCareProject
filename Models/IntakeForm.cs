@@ -97,6 +97,7 @@ using System.ComponentModel.DataAnnotations;
 
         
         public int ID {get; set;}
+        public string CaseNotes {get; set;}
     
     }
 
