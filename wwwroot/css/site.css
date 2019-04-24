@@ -263,6 +263,17 @@ h2 {
   [type="date"]::-webkit-calendar-picker-indicator {
     opacity: 0;
   }
+  .CPFlex{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    align-items: center;
+    
+    padding-left: 30px;
+    padding-right: 30px;
+    }
+
   .flexfroggy{
   display: flex;
   justify-content: center;
@@ -418,6 +429,11 @@ h2 {
   grid-gap: 0% 10pxpx;
   
 
+}
+#h10{
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+font-size: 18pt;
+font-weight: bolder;
 }
 .ADGrid{
   display: grid;

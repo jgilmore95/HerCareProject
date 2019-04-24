@@ -4,6 +4,10 @@
 
 @{
     Layout = "~/Pages/Shared/_Layout.cshtml";
+
+}
+@section styles{
+    <link href="@Url.Content("~/css/site.css")" rel="stylesheet" type="text/css" />
 }
 <html>
 <body>
@@ -75,14 +79,62 @@
             
         </div>
         <br />
-        <br />
 
-        @if (@client.Employed)
-        {
-            <label>Employed</label>
-            <input type="checkbox" name="Employed" checked />
-        }
+        
+        @if (@client.CombatVet){ <label >Is a combat vet</label>}else{<label> not a combat vet</label>}
+        <br />
+        <br />
+        <div style="display: flex;justify-content: center; justify-content: space-between;padding-bottom: 15px; align-items: center; padding-left: 30px; padding-right: 30px;">
+        <h4>Duty Status:</h4>
+        @if (@client.ActiveDuty){ <label>Active Duty </label> }
+        @if (@client.Reserves){ <label>Reserves </label> }
+        @if (@client.NationalGuard){ <label>National Guard </label> }
        
+        <h4>Current Employment Status:</h4> 
+        @if (@client.Employed) { <label>Employed</label> }
+        @if (@client.Unemployed) { <label>Unemployed</label> }
+        @if (@client.Student) { <label>Student</label> }
+        @if (@client.SelfEmployed){ <label>Self Employed</label> }
+        @if (@client.Contractor){ <label>Contractor</label> }
+        @if (@client.Intern){ <label>Intern</label> }
+        @if (@client.WorkStudy){ <label>Work Study</label> }
+        @if (@client.OtherEmployed){ <label>Other</label> }
+        </div>
+
+        <div style="display: flex;justify-content: center; justify-content: space-between;padding-bottom: 15px; align-items: center; padding-left: 30px; padding-right: 30px;">
+        <h4>Living Situation:</h4>
+        @if (@client.OnStreet){ <label>On The Street</label> }
+        @if (@client.SofaSurfing){ <label>Sofa Surfing</label> }
+        @if (@client.Shelter){ <label>Shelter</label> }
+        @if (@client.TransitionalHousing){ <label>Transitional Housing</label> }
+        @if (@client.GroupHome){ <label>Group Home</label> }
+        @if (@client.Rental){ <label>Rental</label> }
+        @if (@client.OwnHome){ <label>Owns a home</label> }
+        @if (@client.OtherLiving){ <label>Other</label> }
+
+       <h4>Living Arrangements:</h4>
+       @if (@client.FriendsOrRelatives){ <label>Friends/Relatives</label> }
+       @if (@client.Alone){ <label>Alone</label> }
+       @if (@client.Temporary){ <label>Temporary</label> }
+       @if (@client.Permanent){ <label>Permanent</label> }
+        </div>
+
+        <div style="display: flex;justify-content: center; justify-content: space-between;padding-bottom: 15px; align-items: center; padding-left: 30px; padding-right: 30px;">
+       <h4>Services needed:</h4>
+       @if (@client.BusinessResources){ <label>Business Resouces</label> }
+       @if (@client.DayCare){ <label>Day Care</label> }
+       @if (@client.Housing){ <label>Housing</label> }
+       @if (@client.Clothing){ <label>Clothing</label> }
+       @if (@client.DisabilityClaim){ <label>Disability Claim</label> }
+       @if (@client.Legal){ <label>Legal</label> }
+       @if (@client.Counseling){ <label>Counseling</label> }
+       @if (@client.EducationalOrVocationalRehab){ <label>Educational or Vocational Rehab</label> }
+       @if (@client.Utilities){ <label>Utilities</label> }
+       @if (@client.Food){ <label>Food</label> }
+       @if (@client.Employment){ <label>Employment</label> }
+       @if (@client.Transportation){ <label>Transportation</label> }
+       @if (@client.OtherService){ <label>Other</label> } 
+      </div>
     /*
     <!-- <table border="1">
       <tr><th></th><th></th></tr>

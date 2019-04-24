@@ -201,7 +201,12 @@ namespace her_care.Controllers
                     Term.Employed = (bool) rdr["Employed"];
                     Term.Contractor = (bool) rdr["Contractor"];
                     Term.SSN = rdr["SSN"].ToString();
-                    
+                    Term.Unemployed = (bool) rdr["Unemployed"];
+                    Term.Reserves = (bool) rdr["Reserves"];
+                    Term.ActiveDuty = (bool) rdr["ActiveDuty"];
+                    Term.NationalGuard = (bool) rdr["NationalGuard"];
+                    Term.CombatVet = (bool) rdr["CombatVet"];
+                    Term.Rental = (bool) rdr["Rental"];
 
                     Terms.Add(Term); //Add object to list
                 }
