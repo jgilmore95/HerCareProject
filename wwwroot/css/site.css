@@ -274,6 +274,29 @@ h2 {
     padding-right: 30px;
     }
 
+.clientComments{
+  display: flex;
+  justify-content: center;
+  width: 1000px;
+	height: 800px;
+	border: 6px solid rgb(15, 52, 107); 
+	margin-left: 65px;
+	font-family: Tahoma, sans-serif;
+	background-image: url(https://images.unsplash.com/photo-1511400691561-b3a6cfd8de93?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+  background-repeat: repeat;
+  font-size: 20px;
+  font-weight: bold;
+  color: #b6d0e4;
+}
+.nice{
+  
+
+  position: absolute; 
+	top: 83%;
+	left: 50%;
+  
+  }
+
   .flexfroggy{
   display: flex;
   justify-content: center;

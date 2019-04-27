@@ -501,8 +501,8 @@
                 </td>
                   </tr>
                 </table>
-
-               @Html.TextArea("CaseNotes", null, new {})
+               <h4 style="margin-left: 65px;">Add or modify client comments here: </h4>
+               @Html.TextArea("CaseNotes", null, new {@class="clientComments"})
 
             <div class="buttonCenter">
             <input type="submit" class="button" :hover type="submit" value="S U B M I T"></input>

@@ -84,61 +84,87 @@
         @if (@client.CombatVet){ <label >Is a combat vet</label>}else{<label> not a combat vet</label>}
         <br />
         <br />
-        <div style="display: flex;justify-content: center; justify-content: space-between;padding-bottom: 15px; align-items: center; padding-left: 30px; padding-right: 30px;">
-        <h4>Duty Status:</h4>
-        @if (@client.ActiveDuty){ <label>Active Duty </label> }
-        @if (@client.Reserves){ <label>Reserves </label> }
-        @if (@client.NationalGuard){ <label>National Guard </label> }
+        <div style="height: 10px; width: 10px;background-color: rgb(15, 52, 107);border-radius: 50%;display: inline-block;">
+             <h4 style="margin-top:10px;margin-left: 25px; width: 200px;">Duty Status: </h4>
+        </div>
+        <div style="margin-left: 25px;">
+        @if (@client.ActiveDuty){ <label>Active Duty </label> } <br />
+        @if (@client.Reserves){ <label>Reserves </label> } <br />
+        @if (@client.NationalGuard){ <label>National Guard </label> } <br />
+        </div>
+        <div style="height: 10px; width: 10px;background-color: rgb(15, 52, 107);border-radius: 50%;display: inline-block;">
+        <h4 style="margin-top:10px;margin-left: 25px; width: 250px;">Current Employment Status:</h4> 
+        </div>
+        <div style="margin-left: 25px;">
+        @if (@client.Employed) { <label>Employed</label> } <br />
+        @if (@client.Unemployed) { <label>Unemployed</label> } <br />
+        @if (@client.Student) { <label>Student</label> } <br />
+        @if (@client.SelfEmployed){ <label>Self Employed</label> } <br />
+        @if (@client.Contractor){ <label>Contractor</label> } <br />
+        @if (@client.Intern){ <label>Intern</label> } <br /> 
+        @if (@client.WorkStudy){ <label>Work Study</label> } <br />
+        @if (@client.OtherEmployed){ <label>Other</label> } <br />
+        </div>
+        
+
        
-        <h4>Current Employment Status:</h4> 
-        @if (@client.Employed) { <label>Employed</label> }
-        @if (@client.Unemployed) { <label>Unemployed</label> }
-        @if (@client.Student) { <label>Student</label> }
-        @if (@client.SelfEmployed){ <label>Self Employed</label> }
-        @if (@client.Contractor){ <label>Contractor</label> }
-        @if (@client.Intern){ <label>Intern</label> }
-        @if (@client.WorkStudy){ <label>Work Study</label> }
-        @if (@client.OtherEmployed){ <label>Other</label> }
+        <div style="height: 10px; width: 10px;background-color: rgb(15, 52, 107);border-radius: 50%;display: inline-block;">
+        <h4 style="margin-top:10px;margin-left: 25px; width: 200px;">Living Situation:</h4>
+        </div>
+        <div style="margin-left: 25px;">
+        @if (@client.OnStreet){ <label>On The Street</label> } <br />
+        @if (@client.SofaSurfing){ <label>Sofa Surfing</label> } <br />
+        @if (@client.Shelter){ <label>Shelter</label> } <br />
+        @if (@client.TransitionalHousing){ <label>Transitional Housing</label> } <br />
+        @if (@client.GroupHome){ <label>Group Home</label> } <br />
+        @if (@client.Rental){ <label>Rental</label> } <br />
+        @if (@client.OwnHome){ <label>Owns a home</label> } <br />
+        @if (@client.OtherLiving){ <label>Other</label> } <br />
+        </div>
+        <div class="nice">
+        <div style="height: 10px; width: 10px;background-color: rgb(15, 52, 107);border-radius: 50%;display: inline-block;">
+       <h4 style="margin-top:10px;margin-left: 25px; width: 200px;">Living Arrangements:</h4>
+        </div>
+        <div style="margin-left: 25px;">
+       @if (@client.FriendsOrRelatives){ <label>Friends/Relatives</label> } <br />
+       @if (@client.Alone){ <label>Alone</label> } <br />
+       @if (@client.Temporary){ <label>Temporary</label> } <br />
+       @if (@client.Permanent){ <label>Permanent</label> } <br />
         </div>
 
-        <div style="display: flex;justify-content: center; justify-content: space-between;padding-bottom: 15px; align-items: center; padding-left: 30px; padding-right: 30px;">
-        <h4>Living Situation:</h4>
-        @if (@client.OnStreet){ <label>On The Street</label> }
-        @if (@client.SofaSurfing){ <label>Sofa Surfing</label> }
-        @if (@client.Shelter){ <label>Shelter</label> }
-        @if (@client.TransitionalHousing){ <label>Transitional Housing</label> }
-        @if (@client.GroupHome){ <label>Group Home</label> }
-        @if (@client.Rental){ <label>Rental</label> }
-        @if (@client.OwnHome){ <label>Owns a home</label> }
-        @if (@client.OtherLiving){ <label>Other</label> }
-
-       <h4>Living Arrangements:</h4>
-       @if (@client.FriendsOrRelatives){ <label>Friends/Relatives</label> }
-       @if (@client.Alone){ <label>Alone</label> }
-       @if (@client.Temporary){ <label>Temporary</label> }
-       @if (@client.Permanent){ <label>Permanent</label> }
+       <div style="height: 10px; width: 10px;background-color: rgb(15, 52, 107);border-radius: 50%;display: inline-block;">
+       <h4 style="margin-top:10px;margin-left: 25px; width: 200px;">Services needed:</h4>
+       </div>
+        <div style="margin-left: 25px;">
+       @if (@client.BusinessResources){ <label>Business Resouces</label> } <br />
+       @if (@client.DayCare){ <label>Day Care</label> } <br />
+       @if (@client.Housing){ <label>Housing</label> } <br />
+       @if (@client.Clothing){ <label>Clothing</label> } <br />
+       @if (@client.DisabilityClaim){ <label>Disability Claim</label> } <br />
+       @if (@client.Legal){ <label>Legal</label> } <br />
+       @if (@client.Counseling){ <label>Counseling</label> } <br />
+       @if (@client.EducationalOrVocationalRehab){ <label>Educational or Vocational Rehab</label> } <br />
+       @if (@client.Utilities){ <label>Utilities</label> } <br />
+       @if (@client.Food){ <label>Food</label> } <br />
+       @if (@client.Employment){ <label>Employment</label> } <br />
+       @if (@client.Transportation){ <label>Transportation</label> } <br />
+       @if (@client.OtherService){ <label>Other</label> }  <br />
+      </div>
         </div>
+      <div style="height: 10px; width: 10px;background-color: rgb(15, 52, 107);border-radius: 50%;display: inline-block;">
+      <h4 style="margin-top:10px;margin-left: 25px; width: 200px;">Case Notes: </h4>
+      </div>
+      <br />
+      <label  style="margin-left: 25px;"> @client.CaseNotes </label>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
 
-        <div style="display: flex;justify-content: center; justify-content: space-between;padding-bottom: 15px; align-items: center; padding-left: 30px; padding-right: 30px;">
-       <h4>Services needed:</h4>
-       @if (@client.BusinessResources){ <label>Business Resouces</label> }
-       @if (@client.DayCare){ <label>Day Care</label> }
-       @if (@client.Housing){ <label>Housing</label> }
-       @if (@client.Clothing){ <label>Clothing</label> }
-       @if (@client.DisabilityClaim){ <label>Disability Claim</label> }
-       @if (@client.Legal){ <label>Legal</label> }
-       @if (@client.Counseling){ <label>Counseling</label> }
-       @if (@client.EducationalOrVocationalRehab){ <label>Educational or Vocational Rehab</label> }
-       @if (@client.Utilities){ <label>Utilities</label> }
-       @if (@client.Food){ <label>Food</label> }
-       @if (@client.Employment){ <label>Employment</label> }
-       @if (@client.Transportation){ <label>Transportation</label> }
-       @if (@client.OtherService){ <label>Other</label> } 
-      </div>
-      <div>
-      
-      <label> @client.CaseNotes </label>
-      </div>
     /*
     <!-- <table border="1">
       <tr><th></th><th></th></tr>
