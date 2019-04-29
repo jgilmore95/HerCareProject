@@ -2,8 +2,9 @@
 
 @model her_care.Models.SearchModel
 
-@{
-   
+
+@section styles{
+    <link href="@Url.Content("~/css/site.css")" rel="stylesheet" type="text/css" />
 }
 <head>
         <meta name="viewport" content="width-device-width"/>
@@ -15,6 +16,11 @@
     lon
 </div>
 -->
+ <div class="ADGrid" !important> 
+              <button onclick="location.href = '/Report';" type="button" class="buttonAdmin" :hover>Client Aid Report Search</button> 
+              <button onclick="location.href = '/VReport';" type="button" class="buttonAdmin" :hover>Volunteer Hour Report search</button> 
+            
+        </div>
 <body>
 <header id="header1">Administration Portal</header>
 @using (Html.BeginForm("SearchResults", "AdministrationPortal", FormMethod.Post, 
@@ -27,14 +33,17 @@
    <div class="search">
 
 
-      
-       
-@Html.TextBox("SearchValue", null, new { @class = "searchTerm", placeholder = "Enter Client Name" })
+@Html.TextBox("SearchValue", null, new { @class = "searchTerm", placeholder = "Enter Client Name or Last Four of SSN" })
       
       <input style="left: 100%;" type="submit" class="searchButton" value="Search" />
        
    </div>
+
 </div>
+<br />
+<br />
+<br />
+
 <!-- </form> -->
 }
 

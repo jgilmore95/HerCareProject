@@ -75,7 +75,7 @@ namespace her_care.Controllers
 
         
        [Route("AdministrationPortal/ClientProfile")]
-        public ActionResult ClientProfile(String id)
+        public ActionResult ClientProfile(int id)
         {
            
           // var testvar = model.Id;
@@ -93,7 +93,7 @@ namespace her_care.Controllers
             }
            
            */
-           var searchList = her_care.Controllers.DBBaseAdmin.ClientDetails(id);
+           var searchList = her_care.Controllers.DBBaseAdmin.ClientDetails(id.ToString());
             ViewBag.MyModel = searchList;
            
             return View();
@@ -142,13 +142,13 @@ namespace her_care.Controllers
 
         [Route("EditClient")]
         [HttpPost]
-        public ActionResult Update(Demographics model, String id)
+        public ActionResult Update(Demographics model, int id)
         {
             /*If anyone is looking at this and wondering why in the world. I'm asking that myself. 
             Just forgive me for I have sinned. plz */
 
 
-            var searchList = her_care.Controllers.DBBaseAdmin.ClientDetails("12");
+            var searchList = her_care.Controllers.DBBaseAdmin.ClientDetails(id.ToString());
             SqlCommand cmd = null;
 
             try
@@ -172,9 +172,14 @@ namespace her_care.Controllers
                     cmd.Parameters.Add("@LastName", SqlDbType.VarChar, 50).Value = model.LastName;
                 }
 
-                cmd.Parameters.Add("@TodaysDate", SqlDbType.Date).Value = model.TodaysDate;
+              //  cmd.Parameters.Add("@TodaysDate", SqlDbType.Date).Value = model.TodaysDate;
+              if(model.DateOfBirth == null){
+                  cmd.Parameters.Add("@DateOfBirth", SqlDbType.Date).Value = searchList[0].DateOfBirth;
+              }
+              else
+              {
                 cmd.Parameters.Add("@DateOfBirth", SqlDbType.Date).Value = model.DateOfBirth;
-
+              }
 
                 if(model.Phone == null)
                 {
@@ -242,13 +247,13 @@ namespace her_care.Controllers
                     cmd.Parameters.Add("@ECLName", SqlDbType.VarChar, 50).Value = model.EmergencyContactLast;
                 }
 
-                if(model.EmergencyContactPhone == 0)
+                if(model.EmergencyContactPhone == null)
                 {
-                    cmd.Parameters.Add("@ECPhone", SqlDbType.Int).Value = searchList[0].EmergencyContactPhone;
+                    cmd.Parameters.Add("@ECPhone", SqlDbType.Char, 12).Value = searchList[0].EmergencyContactPhone;
                 }
                 else
                 {
-                    cmd.Parameters.Add("@ECPhone", SqlDbType.Int).Value = model.EmergencyContactPhone;
+                    cmd.Parameters.Add("@ECPhone", SqlDbType.Char, 12).Value = model.EmergencyContactPhone;
                 }
 
                 if(model.BranchOfService == null)
@@ -309,8 +314,15 @@ namespace her_care.Controllers
                 cmd.Parameters.Add("@Employment", SqlDbType.Bit).Value = model.Employment;
                 cmd.Parameters.Add("@Transportation", SqlDbType.Bit).Value = model.Transportation;
                 cmd.Parameters.Add("@OtherService", SqlDbType.Bit).Value = model.OtherService;
-                cmd.Parameters.Add("@ClientID", SqlDbType.Int).Value = 12;
+                cmd.Parameters.Add("@ClientID", SqlDbType.Int).Value =  id;
 
+                if(model.CaseNotes == null){
+                    cmd.Parameters.Add("@CaseNotes", SqlDbType.VarChar, -1).Value = searchList[0].CaseNotes;
+                }
+                else
+                {
+                cmd.Parameters.Add("@CaseNotes", SqlDbType.VarChar, -1).Value = model.CaseNotes;
+                }
                 cmd.ExecuteNonQuery();
             }
              catch (Exception ex)
@@ -323,7 +335,7 @@ namespace her_care.Controllers
             }
 
 
-            return RedirectToAction("ClientProfile", "AdministrationPortal", new {id = 12});
+            return RedirectToAction("ClientProfile", "AdministrationPortal",new {@id = id});
         }
 
   //      [Route("MonetaryAssistance")]

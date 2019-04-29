@@ -5,6 +5,9 @@
 @{
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
+@section styles{
+    <link href="@Url.Content("~/css/site.css")" rel="stylesheet" type="text/css" />
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +37,7 @@
                     <td align="center"><font style="font-size: 20px"><strong>Date</strong></font></td>
                     <td align="center"><font style="font-size: 20px"><strong>First Name</strong></font></td>
                     <td align="center"><font style="font-size: 20px"><strong>Last Name</strong></font></td>
-                    <td align="center"><font style="font-size: 20px"><strong>Recieved</strong></font></td>
+                    <td align="center"><font style="font-size: 20px"><strong>Purpose</strong></font></td>
                     <td align="center"><font style="font-size: 20px"><strong>Amount</strong></font></td>
                 </tr>
                 @foreach (var rec in ViewBag.MyModel)

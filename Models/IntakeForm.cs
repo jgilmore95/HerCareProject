@@ -13,12 +13,11 @@ using System.ComponentModel.DataAnnotations;
         public string FirstName {get; set;}
         [Required (ErrorMessage="Please enter your last name")]
         public string LastName {get; set;}
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime TodaysDate {get; set;}
+
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DateOfBirth {get; set;}
+        
         [Required (ErrorMessage="Please enter a phone number")]
         public string Phone {get; set;}
         [Required (ErrorMessage="Please enter your e-mail address")]
@@ -37,9 +36,10 @@ using System.ComponentModel.DataAnnotations;
          [Required (ErrorMessage="Please enter an emergency contacts last name")]
          public string EmergencyContactLast {get; set;}
          [Required (ErrorMessage="Please enter your emergency contact's phone number")]
-         public int EmergencyContactPhone {get; set;}
+         public string EmergencyContactPhone {get; set;}
          [Required (ErrorMessage="Please enter your branch of service")]
          public string BranchOfService {get; set;}
+         public string whichbranch {get; set;}
          [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
          public DateTime EntryDate {get; set;}
@@ -47,8 +47,10 @@ using System.ComponentModel.DataAnnotations;
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
          public DateTime DischargeDate {get; set;}
          public string DischargeType {get; set;}
+         public string SSN {get; set;}
          public Boolean CombatVet {get; set;}
          public int DisabilityRating {get; set;}
+        public Boolean DisabilityRatingNone {get; set;}
          public Boolean ActiveDuty {get; set;} //were you or are you on active duty, reserves, or national guard
         public Boolean Reserves {get; set;} 
         public Boolean NationalGuard {get; set;} 
@@ -85,6 +87,7 @@ using System.ComponentModel.DataAnnotations;
         public Boolean Employment {get; set;}
         public Boolean Transportation {get; set;}
         public Boolean OtherService {get; set;}
+        
 
 
 
@@ -94,6 +97,7 @@ using System.ComponentModel.DataAnnotations;
 
         
         public int ID {get; set;}
+        public string CaseNotes {get; set;}
     
     }
 

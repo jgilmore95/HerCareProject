@@ -1,5 +1,9 @@
 @page
 @model AdminLoginModel
+@section styles{
+    <link href="@Url.Content("~/css/site.css")" rel="stylesheet" type="text/css" />
+}
+
     @using(Html.BeginForm("AdminLogin", "AdminLogin", "", FormMethod.Post, false, ""))
 {
 <table align="center" width="100%" height="100%">

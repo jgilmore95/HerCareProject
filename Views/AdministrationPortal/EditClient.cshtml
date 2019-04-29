@@ -5,6 +5,9 @@
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
+@section styles{
+    <link href="@Url.Content("~/css/site.css")" rel="stylesheet" type="text/css" />
+}
 
 <!DOCTYPE html>
 
@@ -22,18 +25,18 @@
             THE COLLECTION, MAINTENANCE, USE, AND DISSEMINATION OF INFORMATION ABOUT INDIVIDUALS THAT IS 
             MAINTAINED IN SYSTEMS OF RECORDS BY FEDERAL AGENCIES.
         </h2>
-        <h1>Intake Form</h1>
+        <h1>Edit Client</h1>
         <div style="float: right; padding-top: 10px; padding-right: 10px;">
             <label style="font-family: Georgia;" onclick="window.print()">Print</label>
              <input type="image" src="~/images/printer.png" onclick="window.print()" width="20" height="20">
         </div>
         <br />
         <br />
-        
+       
    
         <br />@foreach (var client in ViewBag.MyModel){
-            @using (Html.BeginForm("Update","AdministrationPortal", FormMethod.Post, new {id = @client.Id})) {
-                
+            @using (Html.BeginForm("Update","AdministrationPortal", new {id = client.Id}, FormMethod.Post )) {
+              
                 <div asp-validation-summary="All"></div>
                 <div class="flexfroggy">
                     <label asp-for="FirstName">First Name:</label>
@@ -42,14 +45,10 @@
                 <div class="flexfroggy">
                     <label asp-for="LastName">Last Name:</label>                   
                    @Html.TextBox("LastName", null, new { @class = "form-control", placeholder = client.LastName})
-                </div>
-                <div class="flexfroggy">
-                    <label asp-for="TodaysDate">Today's Date:</label>
-                    <input type="date" class="form-control" asp-for="TodaysDate"/>
-                </div>
+                </div>              
                 <div class="flexfroggy">
                     <label asp-for="DateOfBirth">DOB:</label>
-                    <input type="date" class="form-control" asp-for="DateOfBirth"/>                    
+                    <input type="text" class="form-control" value='@client.DateOfBirth.ToString("d")' asp-for="DateOfBirth"/>                    
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="Phone">Phone:</label>                    
@@ -70,7 +69,7 @@
                 <div class="flexfroggy">
                     <label asp-for="State">State:</label>
                    <select name="state" class="form-control">
-                        <option selected="selected">Select State</option>
+                        <option selected=client.State></option>
                         <option value="2">Alabama</option>
                         <option value="3">Alaska</option>
                         <option value="4">Arizona</option>
@@ -147,11 +146,11 @@
                 
                 <div class="flexfroggy">
                     <label asp-for="EntryDate">Entry Date:</label>
-                    <input type="date" class="form-control" asp-for="EntryDate"/>
+                    <input type="text" class="form-control" asp-for="EntryDate" value='@client.EntryDate.ToString("d")' />
                 </div>
                 <div class="flexfroggy">
                     <label asp-for="DischargeDate">Discharge Date:</label>
-                    <input type="date" class="form-control" asp-for="DischargeDate"/>
+                    <input type="text" class="form-control" asp-for="DischargeDate" value='@client.DischargeDate.ToString("d")' />
                 </div>
                 
                 <div class="flexfroggy2" style="padding-top: 20px;">
@@ -186,17 +185,46 @@
                     Were you or are you on Active Duty, in the Reserves, or the National Guard?
                         </th>
                         
-                                      
+                                    
                 <tr style="">
-                <td>
-                <div class="checkboxLeft">
+                
+                     @if (client.ActiveDuty){
+                    <td>
+                         <div class="checkboxLeft">
                     <label class="checkboxLeft">Active Duty
-                    <input type="checkbox" value="true" name="ActiveDuty" value="ActiveDuty"/>
+                    <input type="checkbox" value="true" name="ActiveDuty" value="ActiveDuty" checked/>
                     <span class="checkmark"></span>
                     </label>
+                    
                 </div>
                  </td>
-                 <td>
+                     }
+                     else 
+                     {
+                    <td>
+                         <div class="checkboxLeft">
+                    <label class="checkboxLeft">Active Duty
+                    <input type="checkbox" value="true" name="ActiveDuty" value="ActiveDuty" />
+                    <span class="checkmark"></span>
+                    </label>
+                    
+                </div>
+                 </td>
+                     }
+                
+               @if (client.Reserves){
+               <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Reserves
+                    <input type="checkbox"  value="true" name="Reserves" value="Reserves" checked/>
+                    <span class="checkmark"></span>
+                     </label>
+                </div>
+                 </td>
+               }
+               else
+               {
+                    <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Reserves
                     <input type="checkbox"  value="true" name="Reserves" value="Reserves"/>
@@ -204,28 +232,69 @@
                      </label>
                 </div>
                  </td>
-                 <td>
+               }
+
+
+                @if (client.NationalGuard){
+                  <td>
                     <div class="checkboxLeft">
                     <label class="checkboxLeft">National Guard
-                    <input type="checkbox" value="true" name="NationalGuard" value="NationalGuard"/>
+                    <input type="checkbox" value="true" name="NationalGuard" value="NationalGuard" checked/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
-                </td>
+                </td>   
+                }
+                else{
+                     <td>
+                    <div class="checkboxLeft">
+                    <label class="checkboxLeft">National Guard
+                    <input type="checkbox" value="true" name="NationalGuard" value="NationalGuard" />
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>   
+                }
+                 
                 </tr>
-                
                 <th style="text-align: center; padding-bottom: 10px; padding-top:20px;" colspan="4">
                 <h3>CURRENT EMPLOYMENT STATUS (check all that apply)</h3></th>
                 <tr>
-                <td>
-                <div class="checkboxLeft">
+                
+                     @if(client.Employed){
+                    <td>
+                    <div class="checkboxLeft">
+                    <label class="checkboxLeft">Employed
+                    <input type="checkbox"  value="true" name="Employed" value="Employed" checked/>
+                     <span class="checkmark"></span>
+                    </label>
+                </div>  
+                 </td>
+                     }
+                     else 
+                     {
+                          <td>
+                             <div class="checkboxLeft">
                     <label class="checkboxLeft">Employed
                     <input type="checkbox"  value="true" name="Employed" value="Employed"/>
                      <span class="checkmark"></span>
                     </label>
+                </div>   </td>
+                     }
+                
+               @if (client.Student){
+                    <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Student
+                    <input type="checkbox"  value="true" name="Student" value="Student" checked/>
+                     <span class="checkmark"></span>
+                     </label>
                 </div>
                 </td>
-                <td>
+               }
+               else
+               {
+                    <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Student
                     <input type="checkbox"  value="true" name="Student" value="Student"/>
@@ -233,15 +302,43 @@
                      </label>
                 </div>
                 </td>
-                <td> 
+               }
+                
+                @if (client.SelfEmployed){
+                  <td> 
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Self Employed
+                    <input type="checkbox"  value="true" name="SelfEmployed" value="Self-Employed" checked/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>   
+                }
+                else
+                {
+               <td> 
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Self Employed
                     <input type="checkbox"  value="true" name="SelfEmployed" value="Self-Employed"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
+                </td>   
+                }
+                @if (client.Contractor){
+               <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Contractor
+                    <input type="checkbox" value="true" name="Contractor" value="Contractor" checked/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
                 </td>
-                <td>
+                
+                }
+                else
+                {
+                    <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Contractor
                     <input type="checkbox" value="true" name="Contractor" value="Contractor"/>
@@ -249,9 +346,25 @@
                      </label>
                 </div>
                 </td>
-                </tr>
+                
+                }
+                
+
                 <tr>
-                <td>
+               
+               @if (client.WorkStudy){
+                    <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Work Study
+                    <input type="checkbox" value="true" name="WorkStudy" value="Work Study" checked/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+               }
+               else
+               {
+                    <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Work Study
                     <input type="checkbox" value="true" name="WorkStudy" value="Work Study"/>
@@ -259,7 +372,21 @@
                      </label>
                 </div>
                 </td>
-                <td>
+               }
+                
+                @if (client.Intern){
+                    <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Intern
+                    <input type="checkbox" value="true" name="Intern" value="Intern" checked/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                }
+                else
+                {
+                     <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Intern
                     <input type="checkbox" value="true" name="Intern" value="Intern"/>
@@ -267,7 +394,21 @@
                      </label>
                 </div>
                 </td>
-                <td>
+                }
+                
+               @if (client.Unemployed){
+                 <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Unemployed
+                    <input type="checkbox" value="true" name="Unemployed" value="Unemployed" checked/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>   
+               }
+               else
+               {
+                    <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Unemployed
                     <input type="checkbox" value="true" name="Unemployed" value="Unemployed"/>
@@ -275,7 +416,21 @@
                      </label>
                 </div>
                 </td>
-                <td>
+               }
+                
+                @if (client.OtherEmployed){
+                   <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Other
+                    <input type="checkbox" value="true" name="OtherEmployed" value="OtherEmployed" checked/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>  
+                }
+                else 
+                {
+                     <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Other
                     <input type="checkbox" value="true" name="OtherEmployed" value="OtherEmployed"/>
@@ -283,11 +438,25 @@
                      </label>
                 </div>
                 </td>
+                }
+                
                 </tr>
                 <th style="text-align: center; padding-bottom: 10px;padding-top:20px;" colspan="4">
                 <h3>LIVING SITUATION (check all that apply)</h3></th>
                 <tr>
-                <td>
+                     @if (client.OnStreet){
+                          <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">On Street
+                    <input type="checkbox" value="true" name="OnStreet" value="On Street" checked/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                     }
+                     else
+                     {
+                          <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">On Street
                     <input type="checkbox" value="true" name="OnStreet" value="On Street"/>
@@ -295,7 +464,43 @@
                      </label>
                 </div>
                 </td>
-                <td>
+                     }
+               
+               @if (client.OnStreet){
+                    <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">On Street
+                    <input type="checkbox" value="true" name="OnStreet" value="On Street" checked/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+               }
+               else
+               {
+                    <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">On Street
+                    <input type="checkbox" value="true" name="OnStreet" value="On Street"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+               }
+                
+                @if (client.SofaSurfing){
+                     <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Sofa Surfing
+                    <input type="checkbox" value="true" name="SofaSurfing" value="Sofa Surfing" checked/>
+                     <span class="checkmark"></span>
+                     </label>                     
+                </div>
+                </td>
+                }
+                else
+                {
+                     <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Sofa Surfing
                     <input type="checkbox" value="true" name="SofaSurfing" value="Sofa Surfing"/>
@@ -303,7 +508,22 @@
                      </label>                     
                 </div>
                 </td>
-                <td>
+                }
+                
+                @if (client.Shelter){
+                     <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Shelter
+                    <input type="checkbox" value="true" name="Shelter" value="Shelter" checked/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                
+                }
+                else
+                {
+                     <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Shelter
                     <input type="checkbox" value="true" name="Shelter" value="Shelter"/>
@@ -311,17 +531,47 @@
                      </label>
                 </div>
                 </td>
-                <td>
-                <div class="checkboxLeft">
+                
+                }
+                
+               @if (client.TransitionalHousing){
+                    <td>
+                    <div class="checkboxLeft">
                      <label class="checkboxLeft" >Transitional Housing
                     <input type="checkbox" value="true" name="TransitionalHousing" value="Transitional Housing"/>
                      <span class="checkmark"></span>
                      </label>
                 </div>
                 </td>
+               }
+               else
+               {
+                    <td>
+                    <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Transitional Housing
+                    <input type="checkbox" value="true" name="TransitionalHousing" value="Transitional Housing"/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+               }
+                
                 </tr>
                 <tr>
-                <td>
+
+               @if (client.GroupHome){
+                    <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Group Home
+                    <input type="checkbox" value="true" name="GroupHome" value="Group Home" checked/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+               }
+               else
+               {
+                    <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Group Home
                     <input type="checkbox" value="true" name="GroupHome" value="Group Home"/>
@@ -329,7 +579,20 @@
                      </label>
                 </div>
                 </td>
-                <td>
+               }
+                
+                @if (client.Rental){
+                     <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Rental
+                    <input type="checkbox" value="true" name="Rental" value="Rental" checked/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                }
+                else{
+                     <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Rental
                     <input type="checkbox" value="true" name="Rental" value="Rental"/>
@@ -337,7 +600,21 @@
                      </label>
                 </div>
                 </td>
-                <td>
+                }
+                
+                @if (client.OwnHome){
+                     <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Own Home
+                    <input type="checkbox" value="true" name="OwnHome" value="Own Home" checked/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                }
+                else
+                {
+                     <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Own Home
                     <input type="checkbox" value="true" name="OwnHome" value="Own Home"/>
@@ -345,7 +622,21 @@
                      </label>
                 </div>
                 </td>
-                <td>
+                }
+                
+                @if (client.OtherLiving){
+                     <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Other
+                    <input type="checkbox" value="true" name="OtherLiving" value="OtherLiving" checked/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                }
+                else
+                {
+                     <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Other
                     <input type="checkbox" value="true" name="OtherLiving" value="OtherLiving"/>
@@ -353,11 +644,26 @@
                      </label>
                 </div>
                 </td>
+                }
+                
+                
                 </tr>
                 <th style="text-align: center; padding-bottom: 10px;padding-top:20px;" colspan="4">
                 <h3>LIVING ARRANGEMENTS</h3></th>
                 <tr>
-                <td>
+               @if(client.FriendsOrRelatives){
+                    <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Friends/Relatives
+                    <input type="checkbox" value="true" name="FreindsOrRelatives" value="FriendsOrRelatives" checked/>
+                     <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+               }
+               else
+               {
+                    <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Friends/Relatives
                     <input type="checkbox" value="true" name="FreindsOrRelatives" value="FriendsOrRelatives"/>
@@ -365,7 +671,22 @@
                      </label>
                 </div>
                 </td>
-                <td>
+               }
+
+
+               @if(client.Alone){
+                    <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Alone
+                    <input type="checkbox" value="true" name="Alone" value="Alone" checked/>
+                    <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+               } 
+               else
+               {
+                    <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Alone
                     <input type="checkbox" value="true" name="Alone" value="Alone"/>
@@ -373,7 +694,21 @@
                      </label>
                 </div>
                 </td>
-                <td>
+               }
+                
+                @if (client.Temporary){
+                     <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Temporary
+                    <input type="checkbox" value="true" name="Temporary" value="Temporary" checked/>
+                    <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                }
+                else
+                {
+                     <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Temporary
                     <input type="checkbox" value="true" name="Temporary" value="Temporary"/>
@@ -381,7 +716,21 @@
                      </label>
                 </div>
                 </td>
-                <td>
+                }
+                
+                @if (client.Permanent){
+                     <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Permanent
+                    <input type="checkbox" value="true" name="Permanent" value="Permanent" checked/>
+                    <span class="checkmark"></span>
+                     </label>
+                </div>
+                </td>
+                }
+                else
+                {
+                     <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Permanent
                     <input type="checkbox" value="true" name="Permanent" value="Permanent"/>
@@ -389,11 +738,25 @@
                      </label>
                 </div>
                 </td>
+                }
+                
                 </tr>
                 <th style="text-align: center; padding-bottom: 10px;padding-top:20px;" colspan="4">
                  <h3>SERVICE NEEDS (Check all that apply)</h3></th>    
                 <tr>
-                <td>
+               @if (client.BusinessResources){
+                    <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Business Resources
+                    <input type="checkbox"  value="true" name="BusinessResources" value="Business Resources" checked/>
+                    <span class="checkmark"></span>
+                     </label>
+                </div>
+                  </td>
+               }
+               else
+               {
+                    <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Business Resources
                     <input type="checkbox"  value="true" name="BusinessResources" value="Business Resources"/>
@@ -401,7 +764,22 @@
                      </label>
                 </div>
                   </td>
-                <td>
+               }
+                
+                @if (client.DayCare){
+                     <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Day Care
+                    <input type="checkbox" value="true" name="DayCare" value="Day Care" checked/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                  </td>
+                
+                }
+                else
+                {
+                     <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Day Care
                     <input type="checkbox" value="true" name="DayCare" value="Day Care"/>
@@ -409,7 +787,22 @@
                     </label>
                 </div>
                   </td>
-                <td>
+                
+                }
+
+                @if (client.Housing){
+                     <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft">Housing
+                    <input type="checkbox" value="true" name="Housing" value="Housing" checked/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                  </td>
+                }
+                else
+                {
+                     <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft">Housing
                     <input type="checkbox" value="true" name="Housing" value="Housing"/>
@@ -417,7 +810,21 @@
                     </label>
                 </div>
                   </td>
-                <td>
+                }
+                
+                @if (client.Clothing){
+                      <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Clothing
+                    <input type="checkbox" value="true" name="Clothing" value="Clothing" checked/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                  </td>
+                }
+                else
+                {
+                      <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Clothing
                     <input type="checkbox" value="true" name="Clothing" value="Clothing"/>
@@ -425,9 +832,24 @@
                     </label>
                 </div>
                   </td>
+                }
+               
                   </tr>
                 <tr>
-                <td>
+
+               @if (client.DisabilityClaim){
+                    <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Disability Claim
+                    <input type="checkbox" value="true" name="DisabilityClaim" value="DisabilityClaim" checked/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                </td>
+               }
+               else
+               {
+                    <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Disability Claim
                     <input type="checkbox" value="true" name="DisabilityClaim" value="DisabilityClaim"/>
@@ -435,7 +857,10 @@
                     </label>
                 </div>
                 </td>
-                <td>
+               }
+                
+                @if (client.Legal){
+                     <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Legal
                     <input type="checkbox" value="true" name="Legal" value="Legal"/>
@@ -443,7 +868,32 @@
                     </label>
                 </div>
                   </td>
-                <td>
+                }
+                else
+                {
+                     <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Legal
+                    <input type="checkbox" value="true" name="Legal" value="Legal" checked/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                  </td>
+                }
+                
+                @if (client.Counseling){
+                     <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Counseling
+                    <input type="checkbox" value="true" name="Counseling" value="Counseling" checked/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                  </td>
+                }
+                else
+                {
+                     <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Counseling
                     <input type="checkbox" value="true" name="Counseling" value="Counseling"/>
@@ -451,7 +901,21 @@
                     </label>
                 </div>
                   </td>
-                <td>
+                }
+                
+                @if (client.EducationalOrVocationalRehab){
+                     <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Education/Vocationaal Rehab
+                    <input type="checkbox" value="true" name="EducationalOrVocationalRehab" value="Education/Vocational Rehab" checked/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                  </td>
+                }
+                else
+                {
+                     <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Education/Vocationaal Rehab
                     <input type="checkbox" value="true" name="EducationalOrVocationalRehab" value="Education/Vocational Rehab"/>
@@ -459,9 +923,22 @@
                     </label>
                 </div>
                   </td>
+                }
+                
                    </tr>
-                   <tr>
-                <td>
+                   @if(client.Utilities){
+                        <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Utilities
+                    <input type="checkbox" value="true" name="Utilities" value="Utilities" checked/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                </td>
+                   }
+                   else
+                   {
+                        <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Utilities
                     <input type="checkbox" value="true" name="Utilities" value="Utilities"/>
@@ -469,15 +946,41 @@
                     </label>
                 </div>
                 </td>
+                   }
+                   <tr>
+                
+                @if(client.Food){
                 <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Food
-                    <input type="checkbox"  value="true"name="Food" value="Food"/>
+                    <input type="checkbox"  value="true"name="Food" value="Food" checked/>
                     <span class="checkmark"></span>
                     </label>
                 </div>
                   </td>
+                }
+                else {
+                      <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Food
+                    <input type="checkbox"  value="true"name="Food" value="Food" />
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                  </td>
+                }
+                @if (client.Employment){
                 <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Employment
+                    <input type="checkbox" value="true" name="Employment" value="Employment" checked/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>
+                </td>
+                }
+               else{
+                     <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Employment
                     <input type="checkbox" value="true" name="Employment" value="Employment"/>
@@ -485,6 +988,8 @@
                     </label>
                 </div>
                 </td>
+               }
+               @if (client.Transportation){
                 <td>    
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Transportation
@@ -493,8 +998,24 @@
                     </label>
                 </div>
                   </td>  
-                  </tr>
+                  
+                     }
+                     </tr>
+                  @if (client.OtherService){
                   <tr>
+                <td>
+                <div class="checkboxLeft">
+                     <label class="checkboxLeft" >Other
+                    <input type="checkbox" value="true" name="OtherService" value="OtherService" checked/>
+                    <span class="checkmark"></span>
+                    </label>
+                </div>  
+                </td>
+                  </tr>
+                  }
+                  else
+                  {
+                       <tr>
                 <td>
                 <div class="checkboxLeft">
                      <label class="checkboxLeft" >Other
@@ -504,7 +1025,12 @@
                 </div>  
                 </td>
                   </tr>
+                  }
                 </table>
+               <h4 style="margin-left: 65px;">Add or modify client comments here: </h4>
+               
+               @Html.TextArea("CaseNotes", (string) client.CaseNotes, new {@class="clientComments"})
+
             <div class="buttonCenter">
             <input type="submit" class="button" :hover type="submit" value="S U B M I T"></input>
             </div>
