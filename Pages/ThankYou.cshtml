@@ -1,4 +1,7 @@
 @page
+@section styles{
+    <link href="@Url.Content("~/css/site.css")" rel="stylesheet" type="text/css" />
+}
 
 @using(Html.BeginForm("Submit", "SignIn", "", FormMethod.Post, false, ""))
 {

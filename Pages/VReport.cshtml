@@ -4,6 +4,9 @@
 @{
     //ViewData["Title"] = "Invalid Credentials";
 }
+@section styles{
+    <link href="@Url.Content("~/css/site.css")" rel="stylesheet" type="text/css" />
+}
 
 <header id="header1">Report Volunteer Hours</header>
 @using (Html.BeginForm("VReportResults", "VReport", FormMethod.Post, 

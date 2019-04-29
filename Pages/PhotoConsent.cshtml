@@ -4,6 +4,10 @@
 @{
     //ViewData["Title"] = "Home page";
 }
+@section styles{
+    <link href="@Url.Content("~/css/site.css")" rel="stylesheet" type="text/css" />
+}
+
 @using(Html.BeginForm("Submit", "PhotoConsent", "", FormMethod.Post, false, ""))
 {
 		<table height="100%" width="100%" >
