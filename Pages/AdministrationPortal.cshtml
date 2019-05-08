@@ -19,7 +19,7 @@
  <div class="ADGrid" !important> 
               <button onclick="location.href = '/Report';" type="button" class="buttonAdmin" :hover>Client Aid Report Search</button> 
               <button onclick="location.href = '/VReport';" type="button" class="buttonAdmin" :hover>Volunteer Hour Report search</button> 
-            
+               <button type="button" class="buttonAdmin" :hover >@Html.ActionLink("LogOut", "Logout", "AdministrationPortal")</button> 
         </div>
 <body>
 <header id="header1">Administration Portal</header>
@@ -44,7 +44,7 @@
 <br />
 <br />
 
-@Html.ActionLink("LoggingOut", "Logout", "AdministrationPortal")
+
 
 <!-- </form> -->
 }
