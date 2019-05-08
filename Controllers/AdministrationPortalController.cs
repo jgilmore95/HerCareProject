@@ -12,13 +12,27 @@ using System.Configuration.Assemblies;
 using System.Data;
 using her_care.Models;
 using System.Dynamic;
-
+using System.Timers;
 
 namespace her_care.Controllers
 {
     public class AdministrationPortalController : DBBase
     {
-        
+        private static System.Timers.Timer aTimer;
+        private static void SetTimer()
+   {
+        // Create a timer with a two second interval.
+        aTimer = new System.Timers.Timer(2000);
+        // Hook up the Elapsed event for the timer. 
+        aTimer.Elapsed += OnTimedEvent;
+        aTimer.AutoReset = true;
+        aTimer.Enabled = true;
+    }
+      private static void OnTimedEvent(Object source, ElapsedEventArgs e)
+    {
+        Console.WriteLine("The Elapsed event was raised at {0:HH:mm:ss.fff}",
+                          e.SignalTime);
+    }
         public void OnGet()
         {
             //   
@@ -27,6 +41,9 @@ namespace her_care.Controllers
         [HttpGet]
         [Route("AdministrationPortal")]
         public IActionResult Index(){
+
+           // SetTimer();
+            
              if (UserManagement.IsValidAdmin == false)
             {
                 return RedirectToPage("/AdminLogin");
@@ -336,6 +353,16 @@ namespace her_care.Controllers
 
 
             return RedirectToAction("ClientProfile", "AdministrationPortal",new {@id = id});
+        }
+
+        [Route("LogOut")]
+        public ActionResult LogOut()
+        {
+           // HttpContext.Session.Clear();
+            UserManagement.Username = null;
+           // HttpContext.Session.Remove("UserName");
+            return RedirectToPage("/AdminLogin");
+         //  return View("Index.cshtml");
         }
 
   //      [Route("MonetaryAssistance")]
